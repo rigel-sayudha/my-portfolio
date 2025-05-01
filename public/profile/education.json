@@ -1,19 +1,22 @@
 {
     "education":[
         {
-            "title": "Jun 20XX - Jun 20YY",
-            "cardTitle": "B.Tech, Computer Science",
-            "cardSubtitle":"XYZ University, City",
-            "cardDetailedText": "CGPA - 9.5",
+            "title": "September 2021 - March 2025",
+            "cardTitle": "Bachelor Degree, Computer Science",
+            "cardSubtitle":"AMIKOM University, Yogyakarta",
+            "cardDetailedText": "GPA - 3.67",
             "icon" : {
-                "src": "images/education/lorem-ipsum.png"
+                "src": "images/education/foto.png"
             }
         },
         {
-            "title": "Apr 20XX",
-            "cardTitle": "High School",
-            "cardSubtitle":"ABC School, City",
-            "cardDetailedText": "Marks - 95%"
+            "title": "July 2018 - April 2021",
+            "cardTitle": "High School, Software Engineering",
+            "cardSubtitle":"State Vocational School Airlangga, Balikpapan",
+            "cardDetailedText": "Marks - 84/100",
+            "icon" : {
+                "src": "images/education/foto.png"
+            }
         }
     ]
 }

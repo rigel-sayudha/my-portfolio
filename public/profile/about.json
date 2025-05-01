@@ -1,5 +1,8 @@
 {
-    "about": " This is where you can describe about **yourself**. The more you describe about yourself, the better it is!\n\n\nExtra Information about you, like hobbies and your goals.\nExample Paragraph: I am passionate about my work. Because I love what I do, I have a steady source of motivation that drives me to do my best. In my last job, this passion led me to challenge myself daily and learn new skills that helped me to do better work. For example, I taught myself how to use Photoshop to improve the quality of our photos and graphics. I soon became the go-to person for any design needs.",
-    "imageSource": "images/about/profile.png"
-    
+    "about": "Bachelor of Information Systems graduate from AMIKOM University Yogyakarta who has a high spirit in developing a career in information technology with work experience as a Digital Marketing and internship as a Web Developer. Has skills in website development and project management. Has the ability to work effectively in teams and individually. Active in various activities, both college projects and organizations, so that he has good time management and cooperation skills.",
+    "imageSource": "images/about/pas-foto.jpg",
+    "imageStyle": {
+        "width": "300px",
+        "height": "auto"
+    }
 }

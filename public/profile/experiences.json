@@ -1,33 +1,48 @@
 {
     "experiences": [
+       
         {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
-            "workType": "Full-time",
-            "workDescription": [
-                "Integrated **2** new product.",
-                "Worked on adding **def** to **bcd**. Improved speed by 50%."
-            ],
-            "dateText": "06/20XX – Present"
-        },
-        {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
+            "title": "Web Developer",
+            "subtitle": "Telkom Indonesia",
             "workType": "Internship",
             "workDescription": [
-                "Worked on abc."
+                "Tasked with managing projects with Trello Jira Tools.",
+                "Learning to use Github and Livewire, Vite, and Tailwind CSS Libraries.",
+                "Learning to use the Laravel Framework.",
+                "Learning to use the LivewireFramework.",
+                "Learning to use the Visual Studio Code IDE.",
+                "Learning to use the Figma Design Tools.",
+                "Learning to use the Git and Github Tools.",
+                "Learning to use the MySQL Database Management System.",
+                "Learning to use the Trello and Jira Project Management Tools.",
+                "Learning to use the XAMPP Server Tools."
             ],
-            "dateText": "01/20XX – 05/20XX"
+            "dateText": "02/2024 – 06/2024"
         },
         {
-            "title": "App Developer",
-            "subtitle": "ABC Pvt Ltd",
+            "title": "Freelance Digital Marketing",
+            "subtitle": "PT Putra Jaya Mandiri Abadi 5 YK1",
             "workType": "Freelance",
             "workDescription": [
-                "Developed the official apps for the startup for both Android and iOS using hybrid framework.",
-                "Done bcd work."
+                "Marketing products online through Facebook Marketplace and Facebook Ads.",
+                "Promoting products directly to the field to potential customers.",
+                "Analyzing and conducting surveys in the field to monitor the market.",
+                "Holding weekly meetings to monitor performance results."
+
             ],
-            "dateText": "09/20XX – 01/20YY"
+            "dateText": "11/2024 – Present"
+        },
+        {
+            "title": "Freelance Wordpress Developer",
+            "subtitle": "ABC Company",
+            "workType": "Freelance",
+            "workDescription": [
+                "Developed the Wordpress project website.",
+                "Create a website using the Elementor plugin.",
+                "Advertise  website through Google Ads and successfully increase customers ."
+               
+            ],
+            "dateText": "09/2024 – Present"
         }
     ]
 }

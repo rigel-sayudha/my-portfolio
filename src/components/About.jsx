@@ -1,3 +1,4 @@
+// filepath: d:\laravel\dev-portfolio\src\components\About.jsx
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Container, Col, Row } from 'react-bootstrap';
@@ -53,10 +54,16 @@ function About(props) {
               <Fade>
                 <Row>
                   <Col style={styles.introTextContainer}>
+                  <div className="about-text">
                     {parseIntro(data.about)}
+                  </div>
                   </Col>
                   <Col style={styles.introImageContainer}>
-                    <img src={data?.imageSource} alt="profile" />
+                    <img
+                      src={data?.imageSource}
+                      alt="profile"
+                      style={data?.imageStyle} // Terapkan ukuran dari JSON
+                    />
                   </Col>
                 </Row>
               </Fade>

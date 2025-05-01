@@ -6,10 +6,6 @@
             "items" : [
      
                 {
-                    "icon": "images/skills/java.png",
-                    "title": "Java"
-                },
-                {
                     "icon": "images/skills/php.png",
                     "title": "PHP"
                 },
@@ -30,16 +26,20 @@
             "title": "Frameworks & Technologies",
             "items" : [
                 {
-                    "icon": "images/skills/android_new.png",
-                    "title": "Android"
+                    "icon": "images/skills/laravel.png",
+                    "title": "Laravel"
                 },
                 {
                     "icon": "images/skills/react.png",
                     "title": "React"
                 },
                 {
-                    "icon": "images/skills/nodejs.png",
-                    "title": "Nodejs"
+                    "icon": "images/skills/livewire.png",
+                    "title": "Livewire"
+                },
+                {
+                    "icon": "images/skills/ci.png",
+                    "title": "CodeIgniter"
                 }
             ]
         },
@@ -47,16 +47,20 @@
             "title" : "Tools & Platforms",
             "items": [
                 {
-                    "icon": "images/skills/android-studio.png",
-                    "title": "Android Studio"
+                    "icon": "images/skills/vs code.png",
+                    "title": "Visual Studio Code"
                 },
                 {
                     "icon": "images/skills/git.png",
                     "title": "Git"
                 },
                 {
-                    "icon": "images/skills/docker.png",
-                    "title": "Docker"
+                    "icon": "images/skills/github.png",
+                    "title": "Github"
+                },
+                {
+                    "icon": "images/skills/wordpress.png",
+                    "title": "Wordpress"
                 }
             ]
     }

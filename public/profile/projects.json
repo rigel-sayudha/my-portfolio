@@ -2,7 +2,7 @@
     "projects" : [
         {
             "image" : "images/projects/portfolio-poster.png",
-            "title": "Dev Portfolio",
+            "title": "My Portfolio",
             "bodyText": "- Developer Portfolio Website made in React\n -  Fully customisable and dynamic, easily change data and images.\n - Dark Mode Support",
             "links": [
                 {
@@ -21,85 +21,98 @@
             ]
         },
         {
-            "image" : "images/projects/caaring-poster.png",
-            "title": "Caaring -  Cab Share App",
-            "bodyText": "- A Cab Sharing web app made using **Django** for **VIT** Students. People can create a new cab or request to join an existing cab.\n - Added User authentication and password reset using **SendGrid**.\n - Deployed on **heroku** using **gunicorn**.",
+            "image" : "images/projects/kasirku.jpg",
+            "title": "Kasirku -  Cashier Management System",
+            "bodyText": "- A Cashier Management System made using **Codeigniter**. \n - Uses **Bootstrap** for UI.\n - Payment gateway integration with **Midtrans**.\n - Uses **jQuery** for AJAX.", 
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/Caaring"
-                },
-                {
-                    "text": "Live",
-                    "href": "http://caaring.herokuapp.com"
+                    "href": "https://github.com/rigel-sayudha/kasirku"
                 }
+
             ],
             "tags" : [
-                "Python",
-                "Django",
-                "BootStrap",
-                "SendGrid",
-                "Heroku",
-                "Gunicorn",
-                "VIT"
+                "PHP",
+                "Codeigniter",
+                "Bootstrap",
+                "Midtrans"
             ]
         },
         {
-            "image" : "images/projects/quiet-hours-poster.jpg",
-            "title": "Quiet Hours App",
-            "bodyText": "- An Android App that **automatically silences** your phone during class hours, designed for **VITians**.\n - Option to select class **slots** and **custom time**.\n - Option to put on Vibrate instead of Silent.",
+            "image" : "images/projects/sikl.png",
+            "title": "Sikl App",
+            "bodyText": "- Local Shoe Sales Application Based on Android Application.\n - Built with **Kotlin** and **Android Studio**.",
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/QuietHours-Android"
-                }
-            ],
-            "tags" : [
-                "Java",
-                "Android",
-                "Alarm Manager",
-                "VIT"
-            ]
-        },
-        {
-            "title": "Secure Chat App",
-            "bodyText": "- An Android App that allows users to send texts in real time.\n - End to End encryption using **RSA** Algorithm.\n - Uses **Firebase** database to store texts.\n - Secured with **Fingerprint** lock.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/SecureChatApp"
-                }
-            ],
-            "tags" : [
-                "Java",
-                "Android",
-                "Firebase",
-                "RSA"
-            ]
-        },
-        {
-            "title": "MVVM Sample App",
-            "bodyText": "- An Android App that loads data from mock API and show in both **LinearLayout** and **GridLayout RecyclerView**.\n - Offline support using **Room** DB and **NetworkBoundResource**.\n - Uses the **MVVM** architecture.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/mvvm-sample-app"
+                    "href": "https://github.com/rigel-sayudha/sikl"
                 }
             ],
             "tags" : [
                 "Kotlin",
                 "Android",
-                "MVVM",
-                "Room",
-                "Coroutines",
-                "Flow",
-                "Hilt-Dagger",
-                "NetworkBoundResource"
+                "Android Studio"
             ]
         },
         {
-            "title": "Feed List App",
-            "bodyText": "- An Android App that loads list of feeds from a **paginated** API and shows in a RecyclerView.\n - Uses the **MVVM** architecture.\n - Uses **Paging 3** library along with other Architecture Components.",
+            "image" : "images/projects/absensimagang.jpg",
+            "title": "Absensi Magang",
+            "bodyText": "- Internship Attendance Management System Based on Website.\n - Built with PHP, CSS, JS with Laravel Framework and Livewire, Vite, Tailwind CSS Library.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/rigel-sayudha/absensimagang"
+                }
+            ],
+            "tags" : [
+                "PHP",
+                "Laravel",
+                "Livewire",
+                "Vite",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "image" : "images/projects/presensi.jpg",
+            "title": "Presensi Karyawan",
+            "bodyText": "- Internship Attendance Management System Based on Website.\n - Built with PHP, CSS, JS with Laravel Framework and Livewire, Vite, Tailwind CSS Library. \n - Location detection feature using GPS permission. \n - PDF report generation feature.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/rigel-sayudha/presensikaryawan"
+                }
+            ],
+            "tags" : [
+                "PHP",
+                "Laravel",
+                "Livewire",
+                "Vite",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "image" : "images/projects/ojeatv.jpg",
+            "title": "Oje ATV - A company that rent ATV for offroad adventure",
+            "bodyText": " - Built with Wordpress.\n - Uses **Elementor** for page builder.", 
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/rigel-sayudha/ojeatv"
+                },
+                {
+                    "text": "Live",
+                    "href": "https://ojeatvkaliurang.com"
+                }
+            ],
+            "tags" : [
+                "Wordpress",
+                "Elementor"
+            ]
+        },
+        {
+            "image" : "images/projects/diabetes-analytics.jpg",
+            "title": "Diabetes Disease Analysis based on Machine Learning",
+            "bodyText": "- Prediction of diabetes disease based on disease history with the Decision Tree algorithm model.\n - Built with Python, and Streamlit for App.\n - Uses **Pandas** and **Numpy** for data manipulation and analysis.\n - Uses **Matplotlib** and **Seaborn** for data visualization.",
             "links": [
                 {
                     "text": "GitHub",
@@ -107,44 +120,29 @@
                 }
             ],
             "tags" : [
-                "Kotlin",
-                "Android",
-                "MVVM",
-                "Paging 3",
-                "Coroutines",
-                "Flow"
-            ]
-        },
-        {
-            "title": "Task Tracker",
-            "bodyText": "- A simple Task Tracker web app made with **Angular 12**.\n - Uses **mock JSON server** to get, add, delete or update tasks.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/task-tracker-app"
-                }
-            ],
-            "tags" : [
-                "TypeScript",
-                "Angular 12",
-                "JavaScript"
-            ]
-        },
-        {
-            "title": "Image Encryption/Decryption",
-            "bodyText": "- A Web App for Image Encryption and Decryption made in **Django**.\n - Uses **SDES** algorithm for encryption/decryption.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/img-encrypt-sdes"
-                }
-            ],
-            "tags" : [
                 "Python",
-                "Django",
-                "SDES",
-                "Cryptography"
+                "Streamlit",
+                "Pandas",
+                "Numpy",
+                "Matplotlib",
+                "Seaborn"
             ]
-        }
+        },
+        {
+            "title": "Pariwisata Kaltim",
+            "bodyText": "- A website that provides information about tourism in East Kalimantan.\n - Built with PHP, CSS, JS with Laravel Framework and React.js. ",
+            "links": [
+                {
+                    "text": "Coming Soon",
+                    "href": "https://github.com/rigel-sayudha/pariwisata-kaltim"
+                }
+            ],
+            "tags" : [
+                "Laravel",
+                "React",
+                "Javascript",
+                "Tailwind CSS"
+            ]
+        }    
     ]
 }

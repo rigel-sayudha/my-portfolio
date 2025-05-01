@@ -7,6 +7,9 @@
   height: 100vh;
   flex-direction: row;
 }
+.about-text {
+  text-align: justify;
+}
 
 .navbar-custom {
   font-size:large;
