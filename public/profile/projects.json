@@ -23,7 +23,7 @@
         {
             "image" : "images/projects/kasirku.jpg",
             "title": "Kasirku -  Cashier Management System",
-            "bodyText": "- A Cashier Management System made using **Codeigniter**. \n - Uses **Bootstrap** for UI.\n - Payment gateway integration with **Midtrans**.\n - Uses **jQuery** for AJAX.", 
+            "bodyText": "- Cashier Point of Sales (POS) made using **Codeigniter**. \n - Uses **Bootstrap** for UI.\n - Payment gateway integration with **Midtrans**.\n - Uses **jQuery** for AJAX.", 
             "links": [
                 {
                     "text": "GitHub",
