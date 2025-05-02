@@ -30,9 +30,7 @@ function About(props) {
   const [data, setData] = useState(null);
 
   const parseIntro = (text) => (
-    <ReactMarkdown
-      children={text}
-    />
+    <ReactMarkdown children={text} />
   );
 
   useEffect(() => {
@@ -49,26 +47,26 @@ function About(props) {
       <Header title={header} />
       <div className="section-content-container">
         <Container>
-          {data
-            ? (
-              <Fade>
-                <Row>
-                  <Col style={styles.introTextContainer}>
+          {data ? (
+            <Fade>
+              <Row>
+                <Col style={styles.introTextContainer}>
                   <div className="about-text">
                     {parseIntro(data.about)}
                   </div>
-                  </Col>
-                  <Col style={styles.introImageContainer}>
-                    <img
-                      src={data?.imageSource}
-                      alt="profile"
-                      style={data?.imageStyle} // Terapkan ukuran dari JSON
-                    />
-                  </Col>
-                </Row>
-              </Fade>
-            )
-            : <FallbackSpinner />}
+                </Col>
+                <Col style={styles.introImageContainer}>
+                  <img
+                    src={data?.imageSource}
+                    alt="profile"
+                    style={data?.imageStyle} // Terapkan ukuran dari JSON
+                  />
+                </Col>
+              </Row>
+            </Fade>
+          ) : (
+            <FallbackSpinner />
+          )}
         </Container>
       </div>
     </>
