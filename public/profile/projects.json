@@ -116,7 +116,7 @@
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/Paginated-App-Feeds-List"
+                    "href": "https://github.com/rigel-sayudha/prediksi-diabetes-python"
                 }
             ],
             "tags" : [
@@ -126,6 +126,25 @@
                 "Numpy",
                 "Matplotlib",
                 "Seaborn"
+            ]
+        },
+          {
+            "image" : "images/projects/diabetes-analytics.jpg",
+            "title": "Portal Sekolah SD IT Semesta Cendekia",
+            "bodyText": "- Prediction of diabetes disease based on disease history with the Decision Tree algorithm model.\n - Built with Python, and Streamlit for App.\n - Uses **Pandas** and **Numpy** for data manipulation and analysis.\n - Uses **Matplotlib** and **Seaborn** for data visualization.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/rigel-sayudha/sditsc"
+                }
+            ],
+            "tags" : [
+                "PHP",
+                "Laravel",
+                "Alpine.js",
+                "Tailwind CSS",
+                "Website",
+                "School Portal"
             ]
         },
         {
