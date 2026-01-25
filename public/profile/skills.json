@@ -1,67 +1,82 @@
 {
-    "intro": "I love to learn new things and experiment with new technologies.\nThese are some of the major languages, technologies, tools and platforms I have worked with:",
-    "skills": [{
-     
-            "title": "Languages & Databases",
-            "items" : [
-     
-                {
-                    "icon": "images/skills/php.png",
-                    "title": "PHP"
-                },
-                {
-                    "icon": "images/skills/js.png",
-                    "title": "JavaScript"
-                },
-                {
-                    "icon": "images/skills/python.png",
-                    "title": "Python"
-                },
-                {
-                    "icon": "images/skills/mysql.png",
-                    "title": "MySQL"
-                }
-        ]},
+    "intro": "Saya telah meraih berbagai sertifikat dan penghargaan melalui pendidikan, pelatihan profesional, dan partisipasi dalam berbagai kompetisi untuk meningkatkan kompetensi di bidang teknologi informasi.",
+    "certificates": [
         {
-            "title": "Frameworks & Technologies",
-            "items" : [
-                {
-                    "icon": "images/skills/laravel.png",
-                    "title": "Laravel"
-                },
-                {
-                    "icon": "images/skills/react.png",
-                    "title": "React"
-                },
-                {
-                    "icon": "images/skills/livewire.png",
-                    "title": "Livewire"
-                },
-                {
-                    "icon": "images/skills/ci.png",
-                    "title": "CodeIgniter"
-                }
-            ]
+            "id": 1,
+            "title": "E-Certificate Payment Processing Staff",
+            "issuer": "PT BFI Finance Indonesia, Tbk",
+            "logo": "images/certificates/bfi-finance-logo.png",
+            "certificateImage": "images/certificates/bfi-finance-cert.jpg",
+            "issueDate": "Jun 2025",
+            "expiryDate": null,
+            "credentialId": null,
+            "description": "Sertifikat keahlian dalam Payment Processing Staff dari PT BFI Finance Indonesia, Tbk"
         },
         {
-            "title" : "Tools & Platforms",
-            "items": [
-                {
-                    "icon": "images/skills/vs code.png",
-                    "title": "Visual Studio Code"
-                },
-                {
-                    "icon": "images/skills/git.png",
-                    "title": "Git"
-                },
-                {
-                    "icon": "images/skills/github.png",
-                    "title": "Github"
-                },
-                {
-                    "icon": "images/skills/wordpress.png",
-                    "title": "Wordpress"
-                }
-            ]
-    }
-]}
+            "id": 2,
+            "title": "DATA SCIENCE FUNDAMENTAL",
+            "issuer": "MySkill",
+            "logo": "images/certificates/myskill-logo.png",
+            "certificateImage": "images/certificates/myskill-cert.jpg",
+            "issueDate": "Apr 2025",
+            "expiryDate": null,
+            "credentialId": null,
+            "description": "Sertifikat penyelesaian program Data Science Fundamental dari MySkill"
+        },
+        {
+            "id": 3,
+            "title": "Sertifikat Amikom English Proficiency Test",
+            "issuer": "Universitas AMIKOM Yogyakarta",
+            "logo": "images/certificates/amikom-logo.png",
+            "certificateImage": "images/certificates/amikom-aept-cert.jpg",
+            "issueDate": "Mar 2025",
+            "expiryDate": "Mar 2026",
+            "credentialId": "#AEPT032506706",
+            "description": "Sertifikat Amikom English Proficiency Test dari Universitas AMIKOM Yogyakarta"
+        },
+        {
+            "id": 4,
+            "title": "Sertifikat Program Praktek Kerja Lapangan",
+            "issuer": "Telkom Indonesia",
+            "logo": "images/certificates/telkom-logo.png",
+            "certificateImage": "images/certificates/telkom-cert.jpg",
+            "issueDate": "Aug 2024",
+            "expiryDate": null,
+            "credentialId": "TEL.0807/PD 620/TR6-R200/2024",
+            "description": "Sertifikat penyelesaian program magang Praktek Kerja Lapangan dari Telkom Indonesia"
+        },
+        {
+            "id": 5,
+            "title": "Certificate of Appreciation: Energy System Integration",
+            "issuer": "DTMI Departemen Teknik Mesin dan Industri FT UGM",
+            "logo": "images/certificates/ugm-logo.png",
+            "certificateImage": "images/certificates/ugm-cert.jpg",
+            "issueDate": "Nov 2023",
+            "expiryDate": null,
+            "credentialId": null,
+            "description": "Certificate of Appreciation untuk Energy System Integration: A Pathway to Increase Efficiency and Reliability Across Industries"
+        },
+        {
+            "id": 6,
+            "title": "Sosialisasi Kebijakan Perdagangan Elektronik (E-Commerce)",
+            "issuer": "Kementerian Perdagangan Republik Indonesia",
+            "logo": "images/certificates/kemdag-logo.png",
+            "certificateImage": "images/certificates/kemdag-cert.jpg",
+            "issueDate": "Nov 2023",
+            "expiryDate": null,
+            "credentialId": null,
+            "description": "Sertifikat kehadiran Sosialisasi Kebijakan di Bidang Perdagangan Melalui Sistem Elektronik (E-Commerce)"
+        },
+        {
+            "id": 7,
+            "title": "Penghargaan Kompetisi UI/UX Design AMICTA 2023",
+            "issuer": "Universitas AMIKOM Yogyakarta",
+            "logo": "images/certificates/amikom-amicta-logo.png",
+            "certificateImage": "images/certificates/amicta-award.jpg",
+            "issueDate": "Sep 2023",
+            "expiryDate": null,
+            "credentialId": null,
+            "description": "Penghargaan sebagai Peserta Kompetisi UI/UX Design dalam rangkaian kegiatan AMICTA 2023 \"Get up, Innovate, and Forward\""
+        }
+    ]
+}
