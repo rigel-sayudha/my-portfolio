@@ -1,7 +1,7 @@
 {
     "projects" : [
         {
-            "image" : "images/projects/portfolio-poster.png",
+            "image" : "images/projects/PORTFOLIO RIGEL.png",
             "title": "My Portfolio",
             "bodyText": "- Developer Portfolio Website made in React\n -  Fully customisable and dynamic, easily change data and images.\n - Dark Mode Support",
             "links": [
@@ -52,24 +52,6 @@
                 "Kotlin",
                 "Android",
                 "Android Studio"
-            ]
-        },
-        {
-            "image" : "images/projects/absensimagang.jpg",
-            "title": "Absensi Magang",
-            "bodyText": "- Internship Attendance Management System Based on Website.\n - Built with PHP, CSS, JS with Laravel Framework and Livewire, Vite, Tailwind CSS Library.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/rigel-sayudha/absensimagang"
-                }
-            ],
-            "tags" : [
-                "PHP",
-                "Laravel",
-                "Livewire",
-                "Vite",
-                "Tailwind CSS"
             ]
         },
         {
@@ -162,6 +144,24 @@
                 "Javascript",
                 "Tailwind CSS"
             ]
-        }    
+        },
+        {
+            "image" : "images/projects/desa-ganten.png",
+            "title": "Desa Ganten Website",
+            "bodyText": "- Village profile website providing information about Desa Ganten.\n - Built with PHP and Laravel Framework.\n - Features include tourism information, news, and community services.\n - Responsive design for mobile and desktop users.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/rigel-sayudha/desa-ganten"
+                }
+            ],
+            "tags" : [
+                "PHP",
+                "Laravel",
+                "Website",
+                "Village Portal",
+                "Tailwind CSS"
+            ]
+        }
     ]
 }
