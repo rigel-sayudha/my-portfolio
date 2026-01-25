@@ -1,8 +1,7 @@
 {
-    "intro": "Saya telah meraih berbagai sertifikat dan penghargaan melalui pendidikan, pelatihan profesional, dan partisipasi dalam berbagai kompetisi untuk meningkatkan kompetensi di bidang teknologi informasi.",
+    "intro": "",
     "certificates": [
         {
-            "id": 1,
             "title": "E-Certificate Payment Processing Staff",
             "issuer": "PT BFI Finance Indonesia, Tbk",
             "logo": "images/certificates/bfi-finance-logo.png",
@@ -13,7 +12,6 @@
             "description": "Sertifikat keahlian dalam Payment Processing Staff dari PT BFI Finance Indonesia, Tbk"
         },
         {
-            "id": 2,
             "title": "DATA SCIENCE FUNDAMENTAL",
             "issuer": "MySkill",
             "logo": "images/certificates/myskill-logo.png",
@@ -24,7 +22,6 @@
             "description": "Sertifikat penyelesaian program Data Science Fundamental dari MySkill"
         },
         {
-            "id": 3,
             "title": "Sertifikat Amikom English Proficiency Test",
             "issuer": "Universitas AMIKOM Yogyakarta",
             "logo": "images/certificates/amikom-logo.png",
@@ -35,7 +32,6 @@
             "description": "Sertifikat Amikom English Proficiency Test dari Universitas AMIKOM Yogyakarta"
         },
         {
-            "id": 4,
             "title": "Sertifikat Program Praktek Kerja Lapangan",
             "issuer": "Telkom Indonesia",
             "logo": "images/certificates/telkom-logo.png",
@@ -46,7 +42,6 @@
             "description": "Sertifikat penyelesaian program magang Praktek Kerja Lapangan dari Telkom Indonesia"
         },
         {
-            "id": 5,
             "title": "Certificate of Appreciation: Energy System Integration",
             "issuer": "DTMI Departemen Teknik Mesin dan Industri FT UGM",
             "logo": "images/certificates/ugm-logo.png",
@@ -57,7 +52,6 @@
             "description": "Certificate of Appreciation untuk Energy System Integration: A Pathway to Increase Efficiency and Reliability Across Industries"
         },
         {
-            "id": 6,
             "title": "Sosialisasi Kebijakan Perdagangan Elektronik (E-Commerce)",
             "issuer": "Kementerian Perdagangan Republik Indonesia",
             "logo": "images/certificates/kemdag-logo.png",
@@ -68,7 +62,6 @@
             "description": "Sertifikat kehadiran Sosialisasi Kebijakan di Bidang Perdagangan Melalui Sistem Elektronik (E-Commerce)"
         },
         {
-            "id": 7,
             "title": "Penghargaan Kompetisi UI/UX Design AMICTA 2023",
             "issuer": "Universitas AMIKOM Yogyakarta",
             "logo": "images/certificates/amikom-amicta-logo.png",

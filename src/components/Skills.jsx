@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { ThemeContext } from 'styled-components';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
@@ -15,59 +14,72 @@ const styles = {
   },
   certificateCard: {
     padding: 20,
-    borderRadius: 8,
-    marginBottom: 30,
+    borderRadius: 12,
+    marginBottom: 20,
     transition: 'all 0.3s ease',
     border: '1px solid',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    cursor: 'pointer',
   },
-  certificateCardHover: {
-    transform: 'translateY(-5px)',
-    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+  cardHover: {
+    transform: 'translateY(-8px)',
+    boxShadow: '0 12px 24px rgba(0, 0, 0, 0.15)',
   },
   logoSection: {
     textAlign: 'center',
     marginBottom: 15,
   },
   logo: {
-    height: 60,
-    width: 60,
+    height: 70,
+    width: 70,
     objectFit: 'contain',
     marginBottom: 10,
   },
-  titleSection: {
-    marginBottom: 15,
-  },
-  certificateTitle: {
-    fontSize: '1.1em',
+  cardNumber: {
+    fontSize: '0.8em',
     fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  issuerName: {
-    fontSize: '0.95em',
-    fontWeight: 500,
-    marginBottom: 10,
-  },
-  dateSection: {
-    fontSize: '0.9em',
-    marginBottom: 10,
-  },
-  credentialSection: {
-    fontSize: '0.85em',
-    padding: 10,
+    padding: '4px 8px',
     borderRadius: 4,
-    marginTop: 10,
+    display: 'inline-block',
   },
-  descriptionText: {
+  cardTitle: {
+    fontSize: '1.05em',
+    fontWeight: 'bold',
+    marginBottom: 8,
+    lineHeight: 1.4,
+  },
+  cardIssuer: {
     fontSize: '0.9em',
-    lineHeight: 1.6,
-    marginTop: 10,
+    fontWeight: 500,
+    marginBottom: 12,
   },
-  certificateImage: {
+  cardDate: {
+    fontSize: '0.85em',
+    marginBottom: 10,
+  },
+  cardImage: {
     maxWidth: '100%',
     height: 'auto',
     borderRadius: 8,
-    marginTop: 15,
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    marginTop: 12,
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    maxHeight: 200,
+    objectFit: 'cover',
+  },
+  credentialBadge: {
+    fontSize: '0.75em',
+    padding: '6px 10px',
+    borderRadius: 4,
+    marginTop: 10,
+    fontWeight: 500,
+  },
+  certificatesGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gap: '20px',
+    marginTop: 30,
   },
 };
 
@@ -76,12 +88,6 @@ function Skills(props) {
   const { header } = props;
   const [data, setData] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-
-  const renderIntro = (intro) => (
-    <h4 style={styles.introTextContainer}>
-      <ReactMarkdown children={intro} />
-    </h4>
-  );
 
   useEffect(() => {
     fetch(endpoints.skills, {
@@ -99,128 +105,103 @@ function Skills(props) {
         <Fade>
           <div className="section-content-container">
             <Container>
-              {renderIntro(data.intro)}
-
               {/* Title */}
-              <div style={{ marginBottom: 40 }}>
-                <h2 style={{ color: theme.color, marginBottom: 30 }}>
+              <div style={{ marginBottom: 40, textAlign: 'center' }}>
+                <h2 style={{ color: theme.color }}>
                   Achievements and Certifications
                 </h2>
               </div>
 
               {/* Certificates Grid */}
-              <div>
-                {data.certificates?.map((cert) => (
-                  <div
-                    key={cert.id}
-                    style={{
-                      ...styles.certificateCard,
-                      borderColor: theme.accentColor || '#4a90e2',
-                      backgroundColor: theme.highlightColor || 'transparent',
-                      ...(hoveredCard === cert.id && styles.certificateCardHover),
-                    }}
-                    onMouseEnter={() => setHoveredCard(cert.id)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                  >
-                    <Row>
-                      {/* Left Side - Logo and Details */}
-                      <Col md={4}>
-                        {/* Logo */}
-                        <div style={styles.logoSection}>
-                          {cert.logo && (
-                          <img
-                            src={cert.logo}
-                            alt={cert.issuer}
-                            style={styles.logo}
-                          />
-                          )}
-                          <div style={{
-                            fontSize: '0.85em',
-                            fontWeight: 500,
-                            color: theme.accentColor,
-                          }}
-                          >
-                            {cert.id}
-                          </div>
-                        </div>
-
-                        {/* Certificate Details */}
-                        <div style={styles.titleSection}>
-                          <div style={{
-                            ...styles.certificateTitle,
-                            color: theme.color,
-                          }}
-                          >
-                            {cert.title}
-                          </div>
-                          <div style={{
-                            ...styles.issuerName,
-                            color: theme.accentColor || '#4a90e2',
-                          }}
-                          >
-                            {cert.issuer}
-                          </div>
-                        </div>
-
-                        {/* Dates */}
-                        <div style={{
-                          ...styles.dateSection,
-                          color: theme.color,
-                        }}
-                        >
-                          <div>
-                            <strong>Diterbitkan</strong>
-                            {' '}
-                            {cert.issueDate}
-                          </div>
-                          {cert.expiryDate && (
-                          <div>
-                            <strong>Kedaluwarsa</strong>
-                            {' '}
-                            {cert.expiryDate}
-                          </div>
-                          )}
-                        </div>
-
-                        {/* Credential ID */}
-                        {cert.credentialId && (
+              <div style={styles.certificatesGrid}>
+                {data.certificates?.map((cert, index) => (
+                  <Fade key={cert.title}>
+                    <div
+                      style={{
+                        ...styles.certificateCard,
+                        borderColor: theme.accentColor || '#4a90e2',
+                        backgroundColor: theme.highlightColor || 'transparent',
+                        ...(hoveredCard === index && styles.cardHover),
+                      }}
+                      onMouseEnter={() => setHoveredCard(index)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                    >
+                      {/* Logo and Number */}
+                      <div style={styles.logoSection}>
+                        {cert.logo && (
+                        <img
+                          src={cert.logo}
+                          alt={cert.issuer}
+                          style={styles.logo}
+                        />
+                        )}
                         <div
                           style={{
-                            ...styles.credentialSection,
+                            ...styles.cardNumber,
                             backgroundColor: theme.accentColor || '#4a90e2',
                             color: '#fff',
                           }}
                         >
-                          <strong>ID Kredensial:</strong>
-                          {' '}
-                          {cert.credentialId}
+                          {index + 1}
                         </div>
-                        )}
+                      </div>
 
-                        {/* Description */}
-                        {cert.description && (
-                        <p style={{
-                          ...styles.descriptionText,
-                          color: theme.color,
+                      {/* Certificate Title */}
+                      <h5 style={{ ...styles.cardTitle, color: theme.color }}>
+                        {cert.title}
+                      </h5>
+
+                      {/* Issuer */}
+                      <p
+                        style={{
+                          ...styles.cardIssuer,
+                          color: theme.accentColor || '#4a90e2',
+                          marginBottom: 'auto',
                         }}
-                        >
-                          {cert.description}
-                        </p>
-                        )}
-                      </Col>
+                      >
+                        {cert.issuer}
+                      </p>
 
-                      {/* Right Side - Certificate Image */}
-                      <Col md={8}>
-                        {cert.certificateImage && (
-                        <img
-                          src={cert.certificateImage}
-                          alt={cert.title}
-                          style={styles.certificateImage}
-                        />
+                      {/* Issue Date */}
+                      <div style={{ ...styles.cardDate, color: theme.color }}>
+                        <strong>Diterbitkan:</strong>
+                        {' '}
+                        {cert.issueDate}
+                        {cert.expiryDate && (
+                        <>
+                          <br />
+                          <strong>Kedaluwarsa:</strong>
+                          {' '}
+                          {cert.expiryDate}
+                        </>
                         )}
-                      </Col>
-                    </Row>
-                  </div>
+                      </div>
+
+                      {/* Credential ID */}
+                      {cert.credentialId && (
+                      <div
+                        style={{
+                          ...styles.credentialBadge,
+                          backgroundColor: theme.accentColor || '#4a90e2',
+                          color: '#fff',
+                        }}
+                      >
+                        ID:
+                        {' '}
+                        {cert.credentialId}
+                      </div>
+                      )}
+
+                      {/* Certificate Image */}
+                      {cert.certificateImage && (
+                      <img
+                        src={cert.certificateImage}
+                        alt={cert.title}
+                        style={styles.cardImage}
+                      />
+                      )}
+                    </div>
+                  </Fade>
                 ))}
               </div>
             </Container>
