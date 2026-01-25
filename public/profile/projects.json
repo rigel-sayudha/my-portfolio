@@ -73,7 +73,7 @@
             ]
         },
         {
-            "image" : "images/projects/presensi.jpg",
+            "image" : "images/projects/POSTER PRESENSI WEB LANDSCAPE.png",
             "title": "Presensi Karyawan",
             "bodyText": "- Internship Attendance Management System Based on Website.\n - Built with PHP, CSS, JS with Laravel Framework and Livewire, Vite, Tailwind CSS Library. \n - Location detection feature using GPS permission. \n - PDF report generation feature.",
             "links": [
@@ -129,7 +129,7 @@
             ]
         },
           {
-            "image" : "images/projects/banner-sdit.jpg",
+            "image" : "images/projects/POSTER SD IT CENDEKIA LANSCAPE.png",
             "title": "Portal Sekolah SD IT Semesta Cendekia",
             "bodyText": "- Prediction of diabetes disease based on disease history with the Decision Tree algorithm model.\n - Built with Python, and Streamlit for App.\n - Uses **Pandas** and **Numpy** for data manipulation and analysis.\n - Uses **Matplotlib** and **Seaborn** for data visualization.",
             "links": [
