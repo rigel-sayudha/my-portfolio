@@ -1,8 +1,8 @@
 // filepath: d:\laravel\dev-portfolio\src\components\About.jsx
-import React, { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React, { useState, useEffect, useContext } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { ThemeContext } from 'styled-components';
 import Fade from 'react-reveal';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
@@ -23,15 +23,71 @@ const styles = {
     alignItems: 'center',
     display: 'flex',
   },
+  nameSection: {
+    marginBottom: 30,
+  },
+  nameHeading: {
+    fontSize: '2.5em',
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  titleText: {
+    fontSize: '0.9em',
+    color: '#666',
+    marginBottom: 30,
+  },
+  descriptionText: {
+    fontSize: '0.95em',
+    lineHeight: 1.7,
+    marginBottom: 20,
+    textAlign: 'justify',
+  },
+  educationSection: {
+    padding: 20,
+    borderLeft: '4px solid',
+    marginBottom: 20,
+    borderRadius: 4,
+  },
+  educationTitle: {
+    fontWeight: 'bold',
+    marginBottom: 10,
+    fontSize: '1.1em',
+  },
+  skillsContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: 12,
+    marginTop: 15,
+  },
+  skillBadge: {
+    padding: '8px 16px',
+    borderRadius: 20,
+    fontSize: '0.9em',
+    fontWeight: 500,
+    border: '1px solid',
+  },
+  contactSection: {
+    marginTop: 30,
+    padding: 20,
+    borderRadius: 8,
+  },
+  contactItem: {
+    marginBottom: 12,
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '0.95em',
+  },
+  contactIcon: {
+    marginRight: 15,
+    fontSize: '1.2em',
+    minWidth: 25,
+  },
 };
 
 function About(props) {
+  const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
-
-  const parseIntro = (text) => (
-    <ReactMarkdown children={text} />
-  );
 
   useEffect(() => {
     fetch(endpoints.about, {
@@ -49,18 +105,167 @@ function About(props) {
         <Container>
           {data ? (
             <Fade>
-              <Row>
-                <Col style={styles.introTextContainer}>
-                  <div className="about-text">
-                    {parseIntro(data.about)}
+              {/* Title Section */}
+              <div style={{ textAlign: 'center', marginBottom: 40 }}>
+                <p style={{ ...styles.titleText, color: theme.accentColor }}>
+                  {data.title}
+                </p>
+              </div>
+
+              {/* Main Content */}
+              <Row style={{ marginBottom: 40 }}>
+                {/* Left Side - Text Content */}
+                <Col lg={7}>
+                  {/* Name and Intro */}
+                  <div style={styles.nameSection}>
+                    <h1 style={{ ...styles.nameHeading, color: theme.color }}>
+                      Hello, I&apos;m
+                      <br />
+                      {data.name}
+                    </h1>
                   </div>
+
+                  {/* About Description */}
+                  <p style={{ ...styles.descriptionText, color: theme.color }}>
+                    {data.about}
+                  </p>
+
+                  {/* Education Section */}
+                  {data.education && (
+                  <div
+                    style={{
+                      ...styles.educationSection,
+                      borderLeftColor: theme.accentColor,
+                      backgroundColor: theme.highlightColor || 'transparent',
+                    }}
+                  >
+                    <div style={styles.educationTitle}>
+                      Educated
+                    </div>
+                    <div style={{ color: theme.accentColor, fontWeight: 'bold', marginBottom: 5 }}>
+                      {data.education.institution}
+                    </div>
+                    <p style={{ margin: 0, fontSize: '0.9em', color: theme.color }}>
+                      {data.education.degree}
+                      {' '}
+                      |
+                      {' '}
+                      {data.education.year}
+                    </p>
+                    {data.education.gpa && (
+                    <p style={{ margin: '5px 0 0 0', fontSize: '0.85em', color: theme.color }}>
+                      Cumulative GPA:
+                      {' '}
+                      {data.education.gpa}
+                    </p>
+                    )}
+                  </div>
+                  )}
+
+                  {/* Contact Info */}
+                  {data.contact && (
+                  <div
+                    style={{
+                      ...styles.contactSection,
+                      backgroundColor: theme.highlightColor || 'transparent',
+                    }}
+                  >
+                    {data.contact.instagram && (
+                    <div style={{ ...styles.contactItem, color: theme.color }}>
+                      <span style={{ ...styles.contactIcon, color: theme.accentColor }}>
+                        📷
+                      </span>
+                      <a
+                        href={`https://instagram.com/${data.contact.instagram}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: theme.accentColor, textDecoration: 'none' }}
+                      >
+                        @
+                        {data.contact.instagram}
+                      </a>
+                    </div>
+                    )}
+                    {data.contact.linkedin && (
+                    <div style={{ ...styles.contactItem, color: theme.color }}>
+                      <span style={{ ...styles.contactIcon, color: theme.accentColor }}>
+                        💼
+                      </span>
+                      <a
+                        href={data.contact.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: theme.accentColor, textDecoration: 'none' }}
+                      >
+                        LinkedIn Profile
+                      </a>
+                    </div>
+                    )}
+                    {data.contact.phone && (
+                    <div style={{ ...styles.contactItem, color: theme.color }}>
+                      <span style={{ ...styles.contactIcon, color: theme.accentColor }}>
+                        📱
+                      </span>
+                      <a
+                        href={`tel:${data.contact.phone}`}
+                        style={{ color: theme.accentColor, textDecoration: 'none' }}
+                      >
+                        {data.contact.phone}
+                      </a>
+                    </div>
+                    )}
+                    {data.contact.email && (
+                    <div style={{ ...styles.contactItem, color: theme.color }}>
+                      <span style={{ ...styles.contactIcon, color: theme.accentColor }}>
+                        ✉️
+                      </span>
+                      <a
+                        href={`mailto:${data.contact.email}`}
+                        style={{ color: theme.accentColor, textDecoration: 'none' }}
+                      >
+                        {data.contact.email}
+                      </a>
+                    </div>
+                    )}
+                  </div>
+                  )}
                 </Col>
-                <Col style={styles.introImageContainer}>
-                  <img
-                    src={data?.imageSource}
-                    alt="profile"
-                    style={data?.imageStyle} // Terapkan ukuran dari JSON
-                  />
+
+                {/* Right Side - Image and Skills */}
+                <Col lg={5}>
+                  {/* Profile Image */}
+                  <div style={styles.introImageContainer}>
+                    <img
+                      src={data?.imageSource}
+                      alt="profile"
+                      style={{
+                        ...data?.imageStyle,
+                        borderRadius: 12,
+                        boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+                      }}
+                    />
+                  </div>
+
+                  {/* Skills Section */}
+                  {data.skills && data.skills.length > 0 && (
+                  <div style={{ marginTop: 30 }}>
+                    <div style={styles.skillsContainer}>
+                      {data.skills.map((skill) => (
+                        <div
+                          key={skill}
+                          style={{
+                            ...styles.skillBadge,
+                            borderColor: theme.accentColor,
+                            color: theme.accentColor,
+                            backgroundColor: theme.highlightColor || 'transparent',
+                          }}
+                        >
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  )}
                 </Col>
               </Row>
             </Fade>

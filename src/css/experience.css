@@ -7,3 +7,53 @@
         margin-top: 10px !important;
     }
 }
+
+/* Enhanced Experience Styles */
+.section-content-container {
+    padding: 2rem 0;
+}
+
+.experience-container {
+    transition: all 0.3s ease;
+}
+
+.experience-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 768px) {
+    .experience-container {
+        padding: 15px !important;
+    }
+    
+    .header-box {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    .date-box {
+        width: 100% !important;
+        margin-top: 10px;
+    }
+    
+    .skill-badge {
+        font-size: 0.85em;
+        padding: 4px 8px !important;
+    }
+    
+    .skills-container {
+        gap: 5px !important;
+    }
+}
+
+/* Skills badge styling */
+.skill-badge {
+    display: inline-block;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-2px);
+}

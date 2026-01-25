@@ -1,8 +1,33 @@
 {
-    "about": "Bachelor of Information Systems graduate from AMIKOM University Yogyakarta who has a high spirit in developing a career in information technology with work experience as a Digital Marketing and internship as a Web Developer. Has skills in website development and project management. Has the ability to work effectively in teams and individually. Active in various activities, both college projects and organizations, so that he has good time management and cooperation skills.",
+    "name": "Rigel Donovan Sayudha",
+    "title": "Portfolio of Experience",
+    "about": "Lulusan S1 Sistem Informasi dari Universitas AMIKOM Yogyakarta yang memiliki semangat tinggi dalam mengembangkan karier di bidang teknologi informasi dengan pengalaman kerja sebagai Digital Marketing dan magang sebagai Web Developer. Memiliki keterampilan dalam pengembangan website dan manajemen proyek. Memiliki kemampuan bekerja secara efektif dalam tim maupun individu. Aktif dalam berbagai kegiatan baik project kuliah dan organisasi, sehingga memiliki kemampuan manajemen waktu dan kerja sama yang baik.",
     "imageSource": "images/about/pas-foto.jpg",
     "imageStyle": {
         "width": "300px",
         "height": "auto"
-    }
+    },
+    "education": {
+        "degree": "S1 Sistem Informasi",
+        "institution": "Universitas AMIKOM Yogyakarta",
+        "year": "2021 - 2025",
+        "gpa": "3.20 out of 4.00"
+    },
+    "contact": {
+        "phone": "+6285604450227",
+        "email": "rigeldonovan@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/rigel-donovan",
+        "portfolio": "https://portfolio-rigel.vercel.app/",
+        "instagram": "rigeldonovan",
+        "address": "Jl. Wonosari RT 26 No 68, Gunungsari Ilir, Balikpapan 76121"
+    },
+    "skills": [
+        "Systematic problem-solving",
+        "Initiative in driving improvements",
+        "Unlimited adaptability",
+        "Fast learning ability",
+        "Effective team collaboration",
+        "Critical thinking for process evaluation",
+        "Planning and organizational skills"
+    ]
 }

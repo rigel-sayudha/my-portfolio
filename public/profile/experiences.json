@@ -1,48 +1,114 @@
 {
     "experiences": [
-       
+        {
+            "title": "Payment Processing Staff",
+            "subtitle": "BFI Finance",
+            "subtitle2": "BFI Finance - Branch Balikpapan",
+            "workType": "Full-Time",
+            "companyDescription": "BFI Finance merupakan perusahaan yang bergerak di bidang pembiayaan kendaraan bermotor dengan fokus pada layanan terbaik kepada konsumen.",
+            "workDescription": [
+                "Bertanggung jawab dalam menerima dan mencatat penerimaan uang angsuran dari konsumen atau karyawan marketing, serta memastikan kesesuaian antara jumlah uang yang diterima dengan angsuran tertagih.",
+                "Menyetorkan uang hasil penerimaan angsuran dari konsumen ke Bank Escrow, sesuai dengan prosedur dan ketentuan yang berlaku, guna mendukung kelancaran arus perputaran dana (cash flow) perusahaan.",
+                "Menerima dan mencatat penerimaan PDC dari debitur atau karyawan lapangan, guna memastikan tersedianya pencatatan yang lengkap atas setiap transaksi.",
+                "Melakukan penyetoran ke Bank dalam rangka melakukan kliring terhadap PDC yang jatuh tempo, guna memastikan tersedianya penanganan yang tepat."
+            ],
+            "dateText": "Jun 2025 – Present",
+            "skills": [
+                "Payment Processing",
+                "Financial Record Management",
+                "Bank Operations",
+                "Customer Service"
+            ],
+            "image": "images/experiences/bfi-finance.jpg"
+        },
+        {
+            "title": "Digital Marketing Freelance",
+            "subtitle": "PT. Putra Jaya Mandiri Abadi (PJMA) 5 YK1",
+            "subtitle2": "PT. PJMA 5 YK1",
+            "workType": "Freelance",
+            "companyDescription": "PT. PJMA 5 YK1 merupakan perusahaan yang bergerak di bidang penjualan dan promosi produk Indihome dengan fokus pada pelayanan wifi rumah dan modem internet. Berlokasi di Sleman, DIY.",
+            "workDescription": [
+                "Memasarkan produk secara daring melalui Facebook Marketplace dan Facebook Ads.",
+                "Mempromosikan produk langsung ke lapangan kepada calon pelanggan.",
+                "Menganalisis dan melakukan survey ke lapangan untuk memantau pasar.",
+                "Mengadakan meeting setiap minggu untuk memantau hasil kinerja."
+            ],
+            "dateText": "Nov 2024 – Jul 2025",
+            "skills": [
+                "Digital Marketing",
+                "Facebook Ads",
+                "Social Media Marketing",
+                "Market Analysis"
+            ],
+            "image": "images/experiences/pjma.jpg"
+        },
+        {
+            "title": "Internship",
+            "subtitle": "Telkom Indonesia",
+            "subtitle2": "Telkom Regional VI Kalimantan",
+            "workType": "Internship",
+            "companyDescription": "Telkom Regional VI Kalimantan merupakan divisi regional Telkom yang berkantor di Balikpapan, dipimpin oleh seorang Executive General Manager (EGM) Divisi Regional VI, yang secara teritorial menangani pelanggan di wilayah Kalimantan.",
+            "workDescription": [
+                "Melakukan manajemen proyek dengan Tools Trello Jira.",
+                "Mempelajari penggunaan Github dan Library Livewire, Vite, dan Tailwind CSS.",
+                "Merancang desain UI/UX Website dengan Tools Figma.",
+                "Melaporkan hasil tugas harian kepada Mentor.",
+                "Merancang Website untuk absensi peserta magang berbasis PHP dan Framework Laravel.",
+                "Melakukan pengujian Website."
+            ],
+            "dateText": "Feb 2024 – Jun 2024",
+            "skills": [
+                "Web Development",
+                "Laravel Framework",
+                "UI/UX Design",
+                "Project Management",
+                "Git & Github",
+                "PHP"
+            ],
+            "image": "images/experiences/telkom.jpg"
+        },
+        {
+            "title": "Graphic Designer",
+            "subtitle": "Raja Geprek",
+            "subtitle2": "Raja Geprek - Makassar",
+            "workType": "Freelance",
+            "companyDescription": "Raja Geprek merupakan usaha yang bergerak di bidang F&B yang menjual berbagai menu makanan Ayam Geprek. Berlokasi di Makassar, Sulawesi Selatan.",
+            "workDescription": [
+                "Membuat desain banner dengan Tools Photoshop.",
+                "Membuat desain menu dengan Tools Photoshop.",
+                "Membuat desain logo dengan Tools Photoshop dan Coreldraw."
+            ],
+            "dateText": "Jun 2019 – Oct 2019",
+            "skills": [
+                "Graphic Design",
+                "Photoshop",
+                "Coreldraw",
+                "Logo Design",
+                "Banner Design"
+            ],
+            "image": "images/experiences/raja-geprek.jpg"
+        },
         {
             "title": "Web Developer",
-            "subtitle": "Telkom Indonesia",
-            "workType": "Internship",
-            "workDescription": [
-                "Tasked with managing projects with Trello Jira Tools.",
-                "Learning to use Github and Livewire, Vite, and Tailwind CSS Libraries.",
-                "Learning to use the Laravel Framework.",
-                "Learning to use the LivewireFramework.",
-                "Learning to use the Visual Studio Code IDE.",
-                "Learning to use the Figma Design Tools.",
-                "Learning to use the Git and Github Tools.",
-                "Learning to use the MySQL Database Management System.",
-                "Learning to use the Trello and Jira Project Management Tools.",
-                "Learning to use the XAMPP Server Tools."
-            ],
-            "dateText": "02/2024 – 06/2024"
-        },
-        {
-            "title": "Freelance Digital Marketing",
-            "subtitle": "PT Putra Jaya Mandiri Abadi 5 YK1",
+            "subtitle": "Freelance",
+            "subtitle2": "Freelance Web Development",
             "workType": "Freelance",
+            "companyDescription": "Freelance web developer yang menyediakan layanan desain dan pengembangan website sesuai kebutuhan klien dengan fokus pada user experience dan SEO optimization.",
             "workDescription": [
-                "Marketing products online through Facebook Marketplace and Facebook Ads.",
-                "Promoting products directly to the field to potential customers.",
-                "Analyzing and conducting surveys in the field to monitor the market.",
-                "Holding weekly meetings to monitor performance results."
-
+                "Merancang website berdasarkan keperluan usaha.",
+                "Melakukan promosi digital menggunakan Google Ads.",
+                "Optimasi search engine optimization (SEO) untuk meningkatkan jumlah pelanggan.",
+                "Menghasilkan traffic pelanggan yang meningkat."
             ],
-            "dateText": "11/2024 – Present"
-        },
-        {
-            "title": "Freelance Web Developer",
-            "subtitle": "ABC Company",
-            "workType": "Freelance",
-            "workDescription": [
-                "Developed the company website project.",
-                "Create a website using the PHP.",
-                "Advertise  website through Google Ads and successfully increase customers ."
-               
+            "dateText": "Oct 2024 – Present",
+            "skills": [
+                "Web Development",
+                "Digital Marketing",
+                "SEO Optimization",
+                "Google Ads",
+                "Website Design"
             ],
-            "dateText": "09/2024 – Present"
+            "image": "images/experiences/freelance.jpg"
         }
     ]
 }
