@@ -3,15 +3,15 @@
         {
             "image" : "images/projects/PORTFOLIO RIGEL.png",
             "title": "My Portfolio",
-            "bodyText": "- Developer Portfolio Website made in React\n -  Fully customisable and dynamic, easily change data and images.\n - Dark Mode Support",
+            "bodyText": "- Developer Portfolio Website made in React\n - Fully customizable and dynamic, easily change data and images.\n - Dark Mode Support",
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/dev-portfolio"
+                    "href": "https://github.com/rigel-sayudha/my-portfolio"
                 },
                 {
                     "text": "Live",
-                    "href": "https://mayankagarwal.me"
+                    "href": "https://portfolio-rigel.vercel.app"
                 }
             ],
             "tags" : [
@@ -22,14 +22,13 @@
         },
         {
             "image" : "images/projects/kasirku.jpg",
-            "title": "Kasirku -  Cashier Management System",
-            "bodyText": "- A Cashier Management System made using **Codeigniter**. \n - Uses **Bootstrap** for UI.\n - Payment gateway integration with **Midtrans**.\n - Uses **jQuery** for AJAX.", 
+            "title": "Kasirku - Cashier Management System",
+            "bodyText": "- A comprehensive Cashier Management System built using **CodeIgniter** framework.\n - Modern UI designed with **Bootstrap**.\n - Secure payment gateway integration with **Midtrans**.\n - Dynamic interactions powered by **jQuery** AJAX.", 
             "links": [
                 {
                     "text": "GitHub",
                     "href": "https://github.com/rigel-sayudha/kasirku"
                 }
-
             ],
             "tags" : [
                 "PHP",
@@ -40,8 +39,8 @@
         },
         {
             "image" : "images/projects/sikl.png",
-            "title": "Sikl App",
-            "bodyText": "- Local Shoe Sales Application Based on Android Application.\n - Built with **Kotlin** and **Android Studio**.",
+            "title": "Sikl App - Local Shoe Sales",
+            "bodyText": "- Mobile application for local shoe sales and management.\n - Built with **Kotlin** and **Android Studio** for optimal performance.\n - User-friendly interface for seamless shopping experience.",
             "links": [
                 {
                     "text": "GitHub",
@@ -56,8 +55,8 @@
         },
         {
             "image" : "images/projects/POSTER PRESENSI WEB LANDSCAPE.png",
-            "title": "Presensi Karyawan",
-            "bodyText": "- Internship Attendance Management System Based on Website.\n - Built with PHP, CSS, JS with Laravel Framework and Livewire, Vite, Tailwind CSS Library. \n - Location detection feature using GPS permission. \n - PDF report generation feature.",
+            "title": "Employee Attendance System",
+            "bodyText": "- Web-based Employee Attendance Management System for internship programs.\n - Built with PHP, CSS, JavaScript using Laravel Framework with Livewire, Vite, and Tailwind CSS.\n - Advanced GPS-based location detection feature.\n - Automated PDF report generation for attendance records.",
             "links": [
                 {
                     "text": "GitHub",
@@ -74,8 +73,8 @@
         },
         {
             "image" : "images/projects/ojeatv.jpg",
-            "title": "Oje ATV - A company that rent ATV for offroad adventure",
-            "bodyText": " - Built with Wordpress.\n - Uses **Elementor** for page builder.", 
+            "title": "Oje ATV - Offroad Adventure Rental",
+            "bodyText": "- Business website for ATV rental services specializing in offroad adventures.\n - Built with **WordPress** for easy content management.\n - Responsive design created with **Elementor** page builder.", 
             "links": [
                 {
                     "text": "GitHub",
@@ -93,8 +92,8 @@
         },
         {
             "image" : "images/projects/diabetes-analytics.jpg",
-            "title": "Diabetes Disease Analysis based on Machine Learning",
-            "bodyText": "- Prediction of diabetes disease based on disease history with the Decision Tree algorithm model.\n - Built with Python, and Streamlit for App.\n - Uses **Pandas** and **Numpy** for data manipulation and analysis.\n - Uses **Matplotlib** and **Seaborn** for data visualization.",
+            "title": "Diabetes Disease Prediction - Machine Learning",
+            "bodyText": "- Predictive analytics application for diabetes disease based on patient medical history.\n - Implemented using Decision Tree algorithm with **Python** and **Streamlit**.\n - Data processing with **Pandas** and **Numpy** libraries.\n - Professional visualizations using **Matplotlib** and **Seaborn**.",
             "links": [
                 {
                     "text": "GitHub",
@@ -110,10 +109,10 @@
                 "Seaborn"
             ]
         },
-          {
+        {
             "image" : "images/projects/POSTER SD IT CENDEKIA LANSCAPE.png",
-            "title": "Portal Sekolah SD IT Semesta Cendekia",
-            "bodyText": "- Prediction of diabetes disease based on disease history with the Decision Tree algorithm model.\n - Built with Python, and Streamlit for App.\n - Uses **Pandas** and **Numpy** for data manipulation and analysis.\n - Uses **Matplotlib** and **Seaborn** for data visualization.",
+            "title": "SD IT Semesta Cendekia School Portal",
+            "bodyText": "- Comprehensive school portal website for SD IT Semesta Cendekia.\n - Built with **PHP** and **Laravel Framework** for robust backend.\n - Interactive frontend using **Alpine.js** and styled with **Tailwind CSS**.\n - Features include student management, announcements, and administrative tools.",
             "links": [
                 {
                     "text": "GitHub",
@@ -130,11 +129,11 @@
             ]
         },
         {
-            "title": "Pariwisata Kaltim",
-            "bodyText": "- A website that provides information about tourism in East Kalimantan.\n - Built with PHP, CSS, JS with Laravel Framework and React.js. ",
+            "title": "East Kalimantan Tourism Information",
+            "bodyText": "- Comprehensive tourism information platform for East Kalimantan destinations.\n - Built with **Laravel** backend framework and **React.js** frontend.\n - Modern responsive design with **Tailwind CSS**.",
             "links": [
                 {
-                    "text": "Coming Soon",
+                    "text": "GitHub",
                     "href": "https://github.com/rigel-sayudha/pariwisata-kaltim"
                 }
             ],
@@ -146,9 +145,9 @@
             ]
         },
         {
-            "image" : "images/projects/desa-ganten.png",
-            "title": "Desa Ganten Website",
-            "bodyText": "- Village profile website providing information about Desa Ganten.\n - Built with PHP and Laravel Framework.\n - Features include tourism information, news, and community services.\n - Responsive design for mobile and desktop users.",
+            "image" : "images/projects/POSTER DESA GANTEN LANDSCAPE.png",
+            "title": "Desa Ganten - Village Portal",
+            "bodyText": "- Official village website providing comprehensive information about Desa Ganten.\n - Developed using **PHP** and **Laravel Framework** for reliable performance.\n - Features tourism information, local news, and community services.\n - Fully responsive design optimized for mobile and desktop devices.",
             "links": [
                 {
                     "text": "GitHub",

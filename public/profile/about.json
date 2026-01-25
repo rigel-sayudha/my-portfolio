@@ -1,14 +1,14 @@
 {
     "name": "Rigel Donovan Sayudha",
-    "about": "Lulusan S1 Sistem Informasi dari Universitas AMIKOM Yogyakarta yang memiliki semangat tinggi dalam mengembangkan karier di bidang teknologi informasi dengan pengalaman Dunia Finansial, Digital Marketing dan Praktek Kerja Lapangan sebagai Web Developer. Memiliki keterampilan dalam pengembangan website dan manajemen proyek. Memiliki kemampuan bekerja secara efektif dalam tim maupun individu. Aktif dalam berbagai kegiatan baik project kuliah dan organisasi, sehingga memiliki kemampuan manajemen waktu dan kerja sama yang baik.",
+    "about": "Information Systems graduate from AMIKOM Yogyakarta University with strong enthusiasm for developing a career in information technology with experience in Finance, Digital Marketing, and internship as a Web Developer. Skilled in website development and project management. Capable of working effectively both in teams and individually. Active in various activities including college projects and organizations, demonstrating excellent time management and teamwork abilities.",
     "imageSource": "images/about/pas-foto.jpg",
     "imageStyle": {
         "width": "300px",
         "height": "auto"
     },
     "education": {
-        "degree": "S1 Sistem Informasi",
-        "institution": "Universitas AMIKOM Yogyakarta",
+        "degree": "Bachelor of Information Systems",
+        "institution": "AMIKOM Yogyakarta University",
         "year": "2021 - 2025",
         "gpa": "3.67 out of 4.00",
         "documents": {
@@ -30,7 +30,7 @@
         "Problem Solving",
         "Discipline",
         "Fast Adaptation",
-        "Critical thinking for process evaluation",
-        "Hardworker"
+        "Critical Thinking",
+        "Hardworking"
     ]
 }

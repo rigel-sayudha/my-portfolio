@@ -5,14 +5,20 @@
             "subtitle": "BFI Finance",
             "subtitle2": "BFI Finance - Branch Balikpapan",
             "workType": "Full-Time",
-            "companyDescription": "BFI Finance merupakan perusahaan pembiayaan kendaraan bermotor terkemuka dengan fokus pada memberikan layanan terbaik kepada konsumen.",
+            "companyDescription": "BFI Finance is a leading vehicle financing company focused on providing excellent service to consumers.",
             "workDescription": [
-                "Menerima dan mencatat penerimaan uang angsuran dari konsumen dengan verifikasi akurat antara jumlah uang dan angsuran tertagih.",
-                "Menyetorkan hasil penerimaan angsuran ke Bank Escrow sesuai prosedur untuk memastikan kelancaran cash flow perusahaan.",
-                "Mengelola dan mencatat penerimaan PDC (Post Dated Cheque) dari debitur dengan dokumentasi transaksi yang lengkap.",
-                "Melakukan kliring PDC yang jatuh tempo ke bank sesuai jadwal yang telah ditentukan."
+                "Receive and record installment payments from consumers with accurate verification of payment amounts against outstanding installments.",
+                "Deposit received installment payments to Escrow Bank according to procedures to ensure smooth company cash flow.",
+                "Manage and record Post Dated Cheque (PDC) receipts from debtors with complete transaction documentation.",
+                "Perform clearing of matured PDCs to the bank according to the established schedule."
             ],
             "dateText": "Jun 2025 – Present",
+            "skills": [
+                "Payment Processing",
+                "Financial Record Management",
+                "Bank Operations",
+                "Customer Service"
+            ],
             "image": "images/experiences/bfi-finance.jpg"
         },
         {
@@ -20,14 +26,20 @@
             "subtitle": "PT. Putra Jaya Mandiri Abadi (PJMA) 5 YK1",
             "subtitle2": "PT. PJMA 5 YK1",
             "workType": "Freelance",
-            "companyDescription": "PT. PJMA 5 YK1 adalah perusahaan penjual produk Indihome yang fokus pada layanan internet rumah dan modem dengan wilayah operasional di Sleman, DIY.",
+            "companyDescription": "PT. PJMA 5 YK1 is an Indihome product seller company focused on home internet and modem services operating in Sleman, DIY.",
             "workDescription": [
-                "Memasarkan produk secara daring melalui Facebook Marketplace dan menjalankan kampanye Facebook Ads untuk menjangkau target audience.",
-                "Melakukan promosi langsung ke lapangan kepada calon pelanggan dengan presentasi produk yang efektif.",
-                "Melakukan analisis pasar dan survey lapangan untuk mengidentifikasi peluang dan tren penjualan.",
-                "Mengikuti evaluasi kinerja mingguan untuk memantau progress dan mencapai target penjualan."
+                "Market products online through Facebook Marketplace and run Facebook Ads campaigns to reach target audiences.",
+                "Conduct direct field promotions to potential customers with effective product presentations.",
+                "Perform market analysis and field surveys to identify sales opportunities and trends.",
+                "Participate in weekly performance evaluations to monitor progress and achieve sales targets."
             ],
             "dateText": "Nov 2024 – Jul 2025",
+            "skills": [
+                "Digital Marketing",
+                "Facebook Ads",
+                "Social Media Marketing",
+                "Market Analysis"
+            ],
             "image": "images/experiences/pjma.jpg"
         },
         {
@@ -35,16 +47,24 @@
             "subtitle": "Telkom Indonesia",
             "subtitle2": "Telkom Regional VI Kalimantan",
             "workType": "Internship",
-            "companyDescription": "Telkom Regional VI Kalimantan adalah divisi regional Telkom yang berkantor di Balikpapan, menangani pelanggan di wilayah Kalimantan dengan pelayanan telekomunikasi terpadu.",
+            "companyDescription": "Telkom Regional VI Kalimantan is a regional division of Telkom headquartered in Balikpapan, serving customers in the Kalimantan region with integrated telecommunications services.",
             "workDescription": [
-                "Melakukan manajemen proyek menggunakan tools Trello dan Jira untuk tracking progress dan kolaborasi tim.",
-                "Mempelajari penggunaan Git, Github, dan library modern seperti Livewire, Vite, dan Tailwind CSS.",
-                "Merancang UI/UX website menggunakan Figma dengan fokus pada user experience yang optimal.",
-                "Mengembangkan website absensi peserta magang menggunakan PHP dan Laravel Framework dengan database management.",
-                "Melakukan testing dan quality assurance terhadap website sebelum production deployment.",
-                "Melaporkan progress harian dan hasil kerja kepada mentor untuk memastikan kesesuaian dengan standar perusahaan."
+                "Perform project management using Trello and Jira tools for progress tracking and team collaboration.",
+                "Learn and utilize Git, Github, and modern libraries such as Livewire, Vite, and Tailwind CSS.",
+                "Design website UI/UX using Figma with focus on optimal user experience.",
+                "Develop internship attendance management website using PHP and Laravel Framework with database management.",
+                "Conduct testing and quality assurance for the website before production deployment.",
+                "Report daily progress and work results to mentor to ensure compliance with company standards."
             ],
             "dateText": "Feb 2024 – Jun 2024",
+            "skills": [
+                "Web Development",
+                "Laravel Framework",
+                "UI/UX Design",
+                "Project Management",
+                "Git & Github",
+                "PHP"
+            ],
             "image": "images/experiences/telkom.jpg"
         },
         {
@@ -52,13 +72,20 @@
             "subtitle": "Raja Geprek",
             "subtitle2": "Raja Geprek - Makassar",
             "workType": "Freelance",
-            "companyDescription": "Raja Geprek adalah usaha F&B yang menjual berbagai menu Ayam Geprek berkualitas, berlokasi di Makassar, Sulawesi Selatan.",
+            "companyDescription": "Raja Geprek is a F&B business selling quality Fried Chicken menu items, located in Makassar, South Sulawesi.",
             "workDescription": [
-                "Membuat desain banner promosi yang menarik menggunakan Adobe Photoshop untuk kebutuhan marketing offline dan online.",
-                "Merancang desain menu produk dengan layout yang menarik dan mudah dibaca menggunakan Photoshop.",
-                "Membuat desain logo profesional menggunakan Photoshop dan CorelDRAW dengan konsep yang sesuai brand identity perusahaan."
+                "Create attractive promotional banner designs using Adobe Photoshop for offline and online marketing needs.",
+                "Design product menu layouts that are visually appealing and easy to read using Photoshop.",
+                "Create professional logo designs using Photoshop and CorelDRAW aligned with company brand identity."
             ],
             "dateText": "Jun 2019 – Oct 2019",
+            "skills": [
+                "Graphic Design",
+                "Photoshop",
+                "Coreldraw",
+                "Logo Design",
+                "Banner Design"
+            ],
             "image": "images/experiences/raja-geprek.jpg"
         },
         {
@@ -66,14 +93,21 @@
             "subtitle": "Freelance",
             "subtitle2": "Freelance Web Development",
             "workType": "Freelance",
-            "companyDescription": "Freelance web developer yang menyediakan layanan desain dan pengembangan website custom sesuai kebutuhan klien dengan fokus pada user experience, performance, dan SEO optimization.",
+            "companyDescription": "Freelance web developer providing custom website design and development services tailored to client needs with focus on user experience, performance, and SEO optimization.",
             "workDescription": [
-                "Merancang dan mengembangkan website berdasarkan requirement dan kebutuhan spesifik dari klien.",
-                "Melakukan optimasi search engine optimization (SEO) untuk meningkatkan visibility dan organic traffic website.",
-                "Menjalankan kampanye Google Ads untuk meningkatkan reach dan conversion rate klien.",
-                "Menganalisis metrik performa dan memberikan rekomendasi improvement untuk mencapai target bisnis klien."
+                "Design and develop websites based on client requirements and specific needs.",
+                "Perform search engine optimization (SEO) to increase website visibility and organic traffic.",
+                "Run Google Ads campaigns to improve client reach and conversion rates.",
+                "Analyze performance metrics and provide improvement recommendations to achieve client business targets."
             ],
             "dateText": "Oct 2024 – Present",
+            "skills": [
+                "Web Development",
+                "Digital Marketing",
+                "SEO Optimization",
+                "Google Ads",
+                "Website Design"
+            ],
             "image": "images/experiences/freelance.jpg"
         }
     ]
