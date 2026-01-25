@@ -10,7 +10,11 @@
         "degree": "S1 Sistem Informasi",
         "institution": "Universitas AMIKOM Yogyakarta",
         "year": "2021 - 2025",
-        "gpa": "3.20 out of 4.00"
+        "gpa": "3.67 out of 4.00",
+        "documents": {
+            "diploma": "https://drive.google.com/file/d/your-diploma-id/view",
+            "transcript": "https://drive.google.com/file/d/your-transcript-id/view"
+        }
     },
     "contact": {
         "phone": "+6285604450227",
@@ -21,12 +25,12 @@
         "address": "Jl. Wonosari RT 26 No 68, Gunungsari Ilir, Balikpapan 76121"
     },
     "skills": [
-        "Systematic problem-solving",
-        "Initiative in driving improvements",
-        "Unlimited adaptability",
-        "Fast learning ability",
-        "Effective team collaboration",
+        "Teamwork",
+        "Time Management",
+        "Problem Solving",
+        "Discipline",
+        "Fast Adaptation",
         "Critical thinking for process evaluation",
-        "Planning and organizational skills"
+        "Hardworker"
     ]
 }

@@ -159,6 +159,79 @@ function About(props) {
                       {data.education.gpa}
                     </p>
                     )}
+
+                    {/* Education Documents Buttons */}
+                    {data.education.documents && (
+                    <div
+                      style={{
+                        marginTop: 15,
+                        display: 'flex',
+                        gap: 10,
+                        flexWrap: 'wrap',
+                      }}
+                    >
+                      {data.education.documents.diploma && (
+                      <a
+                        href={data.education.documents.diploma}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          padding: '8px 14px',
+                          backgroundColor: theme.accentColor || '#4a90e2',
+                          color: '#fff',
+                          borderRadius: 4,
+                          textDecoration: 'none',
+                          fontSize: '0.9em',
+                          fontWeight: 500,
+                          transition: 'all 0.3s ease',
+                          display: 'inline-block',
+                          border: 'none',
+                          cursor: 'pointer',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.transform = 'translateY(-2px)';
+                          e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.transform = 'translateY(0)';
+                          e.target.style.boxShadow = 'none';
+                        }}
+                      >
+                        📄 Ijazah
+                      </a>
+                      )}
+                      {data.education.documents.transcript && (
+                      <a
+                        href={data.education.documents.transcript}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          padding: '8px 14px',
+                          backgroundColor: theme.accentColor || '#4a90e2',
+                          color: '#fff',
+                          borderRadius: 4,
+                          textDecoration: 'none',
+                          fontSize: '0.9em',
+                          fontWeight: 500,
+                          transition: 'all 0.3s ease',
+                          display: 'inline-block',
+                          border: 'none',
+                          cursor: 'pointer',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.transform = 'translateY(-2px)';
+                          e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.transform = 'translateY(0)';
+                          e.target.style.boxShadow = 'none';
+                        }}
+                      >
+                        📋 Transkrip Nilai
+                      </a>
+                      )}
+                    </div>
+                    )}
                   </div>
                   )}
 
