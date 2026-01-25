@@ -13,12 +13,6 @@
                 "Melakukan kliring PDC yang jatuh tempo ke bank sesuai jadwal yang telah ditentukan."
             ],
             "dateText": "Jun 2025 – Present",
-            "skills": [
-                "Payment Processing",
-                "Financial Record Management",
-                "Bank Operations",
-                "Customer Service"
-            ],
             "image": "images/experiences/bfi-finance.jpg"
         },
         {
@@ -34,12 +28,6 @@
                 "Mengikuti evaluasi kinerja mingguan untuk memantau progress dan mencapai target penjualan."
             ],
             "dateText": "Nov 2024 – Jul 2025",
-            "skills": [
-                "Digital Marketing",
-                "Facebook Ads",
-                "Social Media Marketing",
-                "Market Analysis"
-            ],
             "image": "images/experiences/pjma.jpg"
         },
         {
@@ -57,14 +45,6 @@
                 "Melaporkan progress harian dan hasil kerja kepada mentor untuk memastikan kesesuaian dengan standar perusahaan."
             ],
             "dateText": "Feb 2024 – Jun 2024",
-            "skills": [
-                "Web Development",
-                "Laravel Framework",
-                "UI/UX Design",
-                "Project Management",
-                "Git & Github",
-                "PHP"
-            ],
             "image": "images/experiences/telkom.jpg"
         },
         {
@@ -79,13 +59,6 @@
                 "Membuat desain logo profesional menggunakan Photoshop dan CorelDRAW dengan konsep yang sesuai brand identity perusahaan."
             ],
             "dateText": "Jun 2019 – Oct 2019",
-            "skills": [
-                "Graphic Design",
-                "Photoshop",
-                "Coreldraw",
-                "Logo Design",
-                "Banner Design"
-            ],
             "image": "images/experiences/raja-geprek.jpg"
         },
         {
@@ -101,13 +74,6 @@
                 "Menganalisis metrik performa dan memberikan rekomendasi improvement untuk mencapai target bisnis klien."
             ],
             "dateText": "Oct 2024 – Present",
-            "skills": [
-                "Web Development",
-                "Digital Marketing",
-                "SEO Optimization",
-                "Google Ads",
-                "Website Design"
-            ],
             "image": "images/experiences/freelance.jpg"
         }
     ]

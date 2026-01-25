@@ -270,7 +270,7 @@ function About(props) {
                         rel="noopener noreferrer"
                         style={{ color: theme.accentColor, textDecoration: 'none' }}
                       >
-                        LinkedIn Profile
+                        LinkedIn
                       </a>
                     </div>
                     )}
