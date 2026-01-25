@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import ReactMarkdown from 'react-markdown';
+import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 import Fade from 'react-reveal';
@@ -10,57 +9,107 @@ import FallbackSpinner from './FallbackSpinner';
 import '../css/experience.css';
 
 const styles = {
-  ulStyle: {
-    listStylePosition: 'outside',
-    paddingLeft: 20,
+  timelineContainer: {
+    position: 'relative',
+    padding: '20px 0',
   },
-  subtitleContainerStyle: {
-    marginTop: 10,
-    marginBottom: 10,
+  timelineCenter: {
+    position: 'absolute',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '4px',
+    height: '100%',
+    backgroundColor: '#ddd',
+    top: 0,
   },
-  subtitleStyle: {
-    display: 'inline-block',
+  timelineItem: {
+    marginBottom: 50,
+    position: 'relative',
   },
-  inlineChild: {
-    display: 'inline-block',
+  timelineItemLeft: {
+    width: '46%',
+    marginRight: 'auto',
+    paddingRight: 30,
+    textAlign: 'right',
   },
-  itemStyle: {
-    marginBottom: 10,
+  timelineItemRight: {
+    width: '46%',
+    marginLeft: 'auto',
+    paddingLeft: 30,
   },
-  experienceContainer: {
-    marginBottom: 40,
+  timelineMarker: {
+    position: 'absolute',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: 20,
+    height: 20,
+    backgroundColor: '#fff',
+    border: '4px solid',
+    borderRadius: '50%',
+    top: 20,
+  },
+  contentBox: {
     padding: 20,
     borderRadius: 8,
-  },
-  headerBox: {
-    padding: 15,
-    borderRadius: 6,
-    marginBottom: 20,
+    border: '2px solid',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    minHeight: 250,
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexWrap: 'wrap',
+    flexDirection: 'column',
+  },
+  contentBoxHover: {
+    transform: 'translateY(-5px)',
+    boxShadow: '0 12px 24px rgba(0, 0, 0, 0.15)',
   },
   dateBox: {
-    padding: 12,
-    borderRadius: 6,
-    minWidth: 200,
-    textAlign: 'center',
+    fontSize: '1em',
+    fontWeight: 'bold',
+    marginBottom: 10,
+    padding: '8px 12px',
+    borderRadius: 4,
+    display: 'inline-block',
   },
-  descriptionSection: {
-    marginBottom: 20,
+  jobTitle: {
+    fontSize: '1.3em',
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  company: {
+    fontSize: '1em',
+    fontWeight: 600,
+    marginBottom: 10,
+  },
+  companyDetail: {
+    fontSize: '0.9em',
+    marginBottom: 15,
+    lineHeight: 1.5,
+  },
+  descriptionList: {
+    listStylePosition: 'inside',
+    paddingLeft: 0,
+    marginBottom: 15,
+    flex: 1,
+  },
+  descriptionItem: {
+    fontSize: '0.9em',
+    lineHeight: 1.6,
+    marginBottom: 8,
   },
   skillsContainer: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: 10,
-    marginTop: 10,
+    gap: 8,
+    marginTop: 'auto',
+    paddingTop: 10,
   },
   skillBadge: {
     padding: '6px 12px',
-    borderRadius: 4,
-    fontSize: '0.9em',
+    borderRadius: 20,
+    fontSize: '0.85em',
     fontWeight: 500,
+    display: 'inline-block',
+    border: '1px solid',
   },
 };
 
@@ -68,6 +117,7 @@ function Experience(props) {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
     fetch(endpoints.experiences, {
@@ -86,131 +136,118 @@ function Experience(props) {
         ? (
           <div className="section-content-container">
             <Container>
-              <div>
-                {data.map((item) => (
+              {/* Intro Section */}
+              <div style={{ textAlign: 'center', marginBottom: 50 }}>
+                <h3 style={{ fontWeight: 'bold', color: theme.color, marginBottom: 15 }}>
+                  Work Experience
+                </h3>
+                <p
+                  style={{
+                    color: theme.color,
+                    fontSize: '1em',
+                    maxWidth: 600,
+                    margin: '0 auto',
+                  }}
+                >
+                  Pengalaman kerja saya mencakup berbagai bidang mulai dari payment processing,
+                  digital marketing, web development, hingga graphic design.
+                </p>
+              </div>
+
+              {/* Timeline */}
+              <div style={{ ...styles.timelineContainer, position: 'relative' }}>
+                {/* Center Line */}
+                <div
+                  style={{
+                    ...styles.timelineCenter,
+                    backgroundColor: theme.accentColor || '#4a90e2',
+                  }}
+                />
+
+                {/* Timeline Items */}
+                {data.map((item, index) => (
                   <Fade key={item.title + item.dateText}>
                     <div
                       style={{
-                        ...styles.experienceContainer,
-                        backgroundColor: theme.highlightColor || 'transparent',
+                        ...styles.timelineItem,
+                        ...(index % 2 === 0 ? styles.timelineItemLeft : styles.timelineItemRight),
                       }}
+                      onMouseEnter={() => setHoveredIndex(index)}
+                      onMouseLeave={() => setHoveredIndex(null)}
                     >
-                      {/* Header Section with Title and Date */}
-                      <Row style={{ marginBottom: 20 }}>
-                        <Col md={8}>
-                          <div
-                            style={{
-                              ...styles.headerBox,
-                              backgroundColor: theme.accentColor || '#4a90e2',
-                              color: '#fff',
-                            }}
-                          >
-                            <div>
-                              <h4 style={{ margin: 0, fontWeight: 'bold' }}>
-                                {item.subtitle}
-                              </h4>
-                              <p style={{ margin: '5px 0 0 0', fontSize: '0.95em' }}>
-                                {item.subtitle2 || item.title}
-                              </p>
-                            </div>
-                          </div>
-                        </Col>
-                        <Col md={4}>
-                          <div
-                            style={{
-                              ...styles.dateBox,
-                              backgroundColor: theme.highlightColor || '#e8f0ff',
-                              color: theme.accentColor || '#4a90e2',
-                              fontWeight: 'bold',
-                              fontSize: '0.95em',
-                            }}
-                          >
-                            {item.dateText}
-                          </div>
-                        </Col>
-                      </Row>
+                      {/* Timeline Marker */}
+                      <div
+                        style={{
+                          ...styles.timelineMarker,
+                          borderColor: theme.accentColor || '#4a90e2',
+                          backgroundColor: theme.accentColor || '#4a90e2',
+                          boxShadow: `0 0 0 4px ${theme.highlightColor || '#f0f0f0'}`,
+                        }}
+                      />
 
-                      {/* Main Content */}
-                      <Row>
-                        {/* Left Side - Description */}
-                        <Col md={7}>
-                          <div style={styles.descriptionSection}>
-                            <h5 style={{ marginBottom: 15, color: theme.accentColor }}>
-                              {item.title}
-                            </h5>
-                            {item.companyDescription && (
-                            <p style={{ fontSize: '0.95em', lineHeight: 1.6, marginBottom: 15 }}>
-                              {item.companyDescription}
-                            </p>
-                            )}
-                          </div>
+                      {/* Content Box */}
+                      <div
+                        style={{
+                          ...styles.contentBox,
+                          borderColor: theme.accentColor || '#4a90e2',
+                          backgroundColor: theme.highlightColor || 'transparent',
+                          color: theme.color,
+                          ...(hoveredIndex === index && styles.contentBoxHover),
+                        }}
+                      >
+                        {/* Date Badge */}
+                        <div
+                          style={{
+                            ...styles.dateBox,
+                            backgroundColor: theme.accentColor || '#4a90e2',
+                            color: '#fff',
+                          }}
+                        >
+                          {item.dateText}
+                        </div>
 
-                          {/* Responsibilities */}
-                          <div>
-                            <h6 style={{ fontWeight: 'bold', marginBottom: 10 }}>
-                              Tanggung Jawab & Deskripsi:
-                            </h6>
-                            <ul style={styles.ulStyle}>
-                              {item.workDescription.map((point) => (
-                                <div key={point}>
-                                  <li style={{ marginBottom: 8 }}>
-                                    <ReactMarkdown
-                                      children={point}
-                                      components={{
-                                        p: 'span',
-                                      }}
-                                    />
-                                  </li>
-                                </div>
-                              ))}
-                            </ul>
-                          </div>
-                        </Col>
+                        {/* Job Details */}
+                        <h4 style={{ ...styles.jobTitle, color: theme.color }}>
+                          {item.title}
+                        </h4>
+                        <div style={{ ...styles.company, color: theme.accentColor }}>
+                          {item.subtitle}
+                        </div>
+                        <p style={{ ...styles.companyDetail, color: theme.color }}>
+                          {item.companyDescription}
+                        </p>
 
-                        {/* Right Side - Image & Skills */}
-                        <Col md={5}>
-                          {/* Image */}
-                          {item.image && (
-                          <div style={{ marginBottom: 20, textAlign: 'center' }}>
-                            <img
-                              src={item.image}
-                              alt={item.title}
+                        {/* Responsibilities */}
+                        <ul style={styles.descriptionList}>
+                          {item.workDescription.map((desc) => (
+                            <li
+                              key={desc}
+                              style={{ ...styles.descriptionItem, color: theme.color }}
+                            >
+                              {desc}
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Skills */}
+                        {item.skills && item.skills.length > 0 && (
+                        <div style={styles.skillsContainer}>
+                          {item.skills.map((skill) => (
+                            <span
+                              key={skill}
                               style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                                borderRadius: 8,
-                                maxHeight: 250,
+                                ...styles.skillBadge,
+                                borderColor: theme.accentColor || '#4a90e2',
+                                color: theme.accentColor || '#4a90e2',
+                                backgroundColor: 'transparent',
                               }}
-                            />
-                          </div>
-                          )}
-
-                          {/* Skills */}
-                          {item.skills && item.skills.length > 0 && (
-                          <div>
-                            <h6 style={{ fontWeight: 'bold', marginBottom: 10 }}>
-                              Practical Skills:
-                            </h6>
-                            <div style={styles.skillsContainer}>
-                              {item.skills.map((skill) => (
-                                <div
-                                  key={skill}
-                                  style={{
-                                    ...styles.skillBadge,
-                                    backgroundColor: theme.accentColor || '#4a90e2',
-                                    color: '#fff',
-                                  }}
-                                >
-                                  •
-                                  {' '}
-                                  {skill}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                          )}
-                        </Col>
-                      </Row>
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                        )}
+                      </div>
                     </div>
                   </Fade>
                 ))}
