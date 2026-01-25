@@ -111,6 +111,30 @@ const styles = {
     display: 'inline-block',
     border: '1px solid',
   },
+  timelineItemWrapper: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: 20,
+    position: 'relative',
+  },
+  imageContainer: {
+    width: '100%',
+    minHeight: 250,
+    borderRadius: 8,
+    overflow: 'hidden',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s ease',
+  },
+  imageContainerHover: {
+    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
+    transform: 'scale(1.02)',
+  },
+  timelineImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    display: 'block',
+  },
 };
 
 function Experience(props) {
@@ -185,66 +209,118 @@ function Experience(props) {
                         }}
                       />
 
-                      {/* Content Box */}
+                      {/* Wrapper untuk Content dan Image */}
                       <div
                         style={{
-                          ...styles.contentBox,
-                          borderColor: theme.accentColor || '#4a90e2',
-                          backgroundColor: theme.highlightColor || 'transparent',
-                          color: theme.color,
-                          ...(hoveredIndex === index && styles.contentBoxHover),
+                          ...styles.timelineItemWrapper,
+                          flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
                         }}
                       >
-                        {/* Date Badge */}
-                        <div
-                          style={{
-                            ...styles.dateBox,
-                            backgroundColor: theme.accentColor || '#4a90e2',
-                            color: '#fff',
-                          }}
-                        >
-                          {item.dateText}
-                        </div>
-
-                        {/* Job Details */}
-                        <h4 style={{ ...styles.jobTitle, color: theme.color }}>
-                          {item.title}
-                        </h4>
-                        <div style={{ ...styles.company, color: theme.accentColor }}>
-                          {item.subtitle}
-                        </div>
-                        <p style={{ ...styles.companyDetail, color: theme.color }}>
-                          {item.companyDescription}
-                        </p>
-
-                        {/* Responsibilities */}
-                        <ul style={styles.descriptionList}>
-                          {item.workDescription.map((desc) => (
-                            <li
-                              key={desc}
-                              style={{ ...styles.descriptionItem, color: theme.color }}
-                            >
-                              {desc}
-                            </li>
-                          ))}
-                        </ul>
-
-                        {/* Skills */}
-                        {item.skills && item.skills.length > 0 && (
-                        <div style={styles.skillsContainer}>
-                          {item.skills.map((skill) => (
-                            <span
-                              key={skill}
+                        {/* Content Box */}
+                        <div style={{ flex: 1 }}>
+                          <div
+                            style={{
+                              ...styles.contentBox,
+                              borderColor: theme.accentColor || '#4a90e2',
+                              backgroundColor: theme.highlightColor || 'transparent',
+                              color: theme.color,
+                              ...(hoveredIndex === index && styles.contentBoxHover),
+                            }}
+                          >
+                            {/* Date Badge */}
+                            <div
                               style={{
-                                ...styles.skillBadge,
-                                borderColor: theme.accentColor || '#4a90e2',
-                                color: theme.accentColor || '#4a90e2',
-                                backgroundColor: 'transparent',
+                                ...styles.dateBox,
+                                backgroundColor: theme.accentColor || '#4a90e2',
+                                color: '#fff',
                               }}
                             >
-                              {skill}
-                            </span>
-                          ))}
+                              {item.dateText}
+                            </div>
+
+                            {/* Job Details */}
+                            <h4 style={{ ...styles.jobTitle, color: theme.color }}>
+                              {item.title}
+                            </h4>
+                            <div style={{ ...styles.company, color: theme.accentColor }}>
+                              {item.subtitle}
+                            </div>
+                            <p style={{ ...styles.companyDetail, color: theme.color }}>
+                              {item.companyDescription}
+                            </p>
+
+                            {/* Responsibilities */}
+                            <ul style={styles.descriptionList}>
+                              {item.workDescription.map((desc) => (
+                                <li
+                                  key={desc}
+                                  style={{ ...styles.descriptionItem, color: theme.color }}
+                                >
+                                  {desc}
+                                </li>
+                              ))}
+                            </ul>
+
+                            {/* Skills */}
+                            {item.skills && item.skills.length > 0 && (
+                            <div style={styles.skillsContainer}>
+                              {item.skills.map((skill) => (
+                                <span
+                                  key={skill}
+                                  style={{
+                                    ...styles.skillBadge,
+                                    borderColor: theme.accentColor || '#4a90e2',
+                                    color: theme.accentColor || '#4a90e2',
+                                    backgroundColor: 'transparent',
+                                  }}
+                                >
+                                  {skill}
+                                </span>
+                              ))}
+                            </div>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Image Container */}
+                        {item.image && (
+                        <div
+                          style={{
+                            flex: 0.8,
+                            minWidth: 200,
+                          }}
+                        >
+                          <div
+                            style={{
+                              ...styles.imageContainer,
+                              ...(hoveredIndex === index && styles.imageContainerHover),
+                            }}
+                          >
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              style={styles.timelineImage}
+                              onError={(e) => {
+                                e.target.parentElement.style.backgroundColor =
+                                  theme.accentColor || '#4a90e2';
+                                e.target.style.display = 'none';
+                                e.target.parentElement.innerHTML = `
+                                  <div style="
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    height: 100%;
+                                    color: white;
+                                    font-weight: bold;
+                                    text-align: center;
+                                    padding: 20px;
+                                  ">
+                                    ${item.subtitle}
+                                  </div>
+                                `;
+                              }}
+                            />
+                          </div>
                         </div>
                         )}
                       </div>
