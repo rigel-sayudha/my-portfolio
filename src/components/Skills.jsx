@@ -6,6 +6,7 @@ import { ThemeContext } from 'styled-components';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
+import '../css/skills.css';
 
 const styles = {
   introTextContainer: {
@@ -77,7 +78,7 @@ const styles = {
   },
   certificatesGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '20px',
     marginTop: 30,
   },
@@ -113,10 +114,11 @@ function Skills(props) {
               </div>
 
               {/* Certificates Grid */}
-              <div style={styles.certificatesGrid}>
+              <div className="certificates-grid">
                 {data.certificates?.map((cert, index) => (
                   <Fade key={cert.title}>
                     <div
+                      className="certificate-card"
                       style={{
                         ...styles.certificateCard,
                         borderColor: theme.accentColor || '#4a90e2',
@@ -195,6 +197,7 @@ function Skills(props) {
                       {/* Certificate Image */}
                       {cert.certificateImage && (
                       <img
+                        className="certificate-image"
                         src={cert.certificateImage}
                         alt={cert.title}
                         style={styles.cardImage}
