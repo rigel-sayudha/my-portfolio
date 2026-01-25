@@ -301,8 +301,9 @@ function Experience(props) {
                               alt={item.title}
                               style={styles.timelineImage}
                               onError={(e) => {
-                                e.target.parentElement.style.backgroundColor =
-                                  theme.accentColor || '#4a90e2';
+                                e.target.parentElement.style.backgroundColor = (
+                                  theme.accentColor || '#4a90e2'
+                                );
                                 e.target.style.display = 'none';
                                 e.target.parentElement.innerHTML = `
                                   <div style="
