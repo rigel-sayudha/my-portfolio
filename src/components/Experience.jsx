@@ -162,6 +162,11 @@ function Experience(props) {
       .catch((err) => err);
   }, []);
 
+  const getFlexDirection = (index) => {
+    if (isMobileView) return 'column';
+    return index % 2 === 0 ? 'row' : 'row-reverse';
+  };
+
   return (
     <>
       <Header title={header} />
@@ -205,7 +210,7 @@ function Experience(props) {
                       className="timeline-item-wrapper"
                       style={{
                         ...styles.timelineItem,
-                        flexDirection: isMobileView ? 'column' : (index % 2 === 0 ? 'row' : 'row-reverse'),
+                        flexDirection: getFlexDirection(index),
                       }}
                       onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)}
