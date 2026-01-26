@@ -8,6 +8,8 @@ import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/experience.css';
 
+const isMobile = () => typeof window !== 'undefined' && window.innerWidth <= 768;
+
 const styles = {
   timelineContainer: {
     position: 'relative',
@@ -140,6 +142,16 @@ function Experience(props) {
   const { header } = props;
   const [data, setData] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isMobileView, setIsMobileView] = useState(isMobile());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     fetch(endpoints.experiences, {
@@ -190,9 +202,10 @@ function Experience(props) {
                 {data.map((item, index) => (
                   <Fade key={item.title + item.dateText}>
                     <div
+                      className="timeline-item-wrapper"
                       style={{
                         ...styles.timelineItem,
-                        flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
+                        flexDirection: isMobileView ? 'column' : (index % 2 === 0 ? 'row' : 'row-reverse'),
                       }}
                       onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)}
@@ -211,7 +224,14 @@ function Experience(props) {
                       <div
                         style={{
                           ...styles.contentBox,
-                          ...styles.timelineItemLeft,
+                          ...(isMobileView ? {
+                            width: '100%',
+                            marginRight: 0,
+                            marginLeft: 0,
+                            paddingRight: 15,
+                            paddingLeft: 15,
+                            textAlign: 'left',
+                          } : styles.timelineItemLeft),
                           borderColor: theme.accentColor || '#4a90e2',
                           backgroundColor: theme.highlightColor || 'transparent',
                           color: theme.color,
@@ -276,7 +296,9 @@ function Experience(props) {
                       <div
                         style={{
                           ...styles.imageContainer,
-                          width: '46%',
+                          width: isMobileView ? '100%' : '46%',
+                          padding: isMobileView ? '15px' : '20px',
+                          marginTop: isMobileView ? '15px' : '0',
                         }}
                       >
                         {item.image && (

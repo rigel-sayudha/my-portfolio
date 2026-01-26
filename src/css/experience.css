@@ -12,57 +12,35 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Timeline Responsive Styles */
-@media only screen and (max-width: 1024px) {
-    /* Adjust timeline for tablets */
-    div[style*="width: '46%'"] {
-        width: 100% !important;
-    }
-    
-    /* Stack content and image vertically on smaller screens */
-    div[style*="display: 'flex'"][style*="alignItems: 'center'"] {
-        width: 100% !important;
-        margin-top: 20px;
-    }
+/* Timeline Wrapper */
+.timeline-item-wrapper {
+    display: flex !important;
+    align-items: flex-start !important;
+    position: relative !important;
 }
 
+/* Mobile Responsive Styles */
 @media only screen and (max-width: 768px) {
-    .item-title {
-        margin-top: 10px !important;
+    .timeline-item-wrapper {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        margin-bottom: 30px !important;
     }
     
-    /* Timeline center line */
-    div[style*="position: 'relative'"] > div:first-child {
+    /* All child elements take full width on mobile */
+    .timeline-item-wrapper > div {
+        width: 100% !important;
+    }
+    
+    /* Timeline center line - move to left on mobile */
+    .timeline-item-wrapper::before {
+        content: '' !important;
+        position: absolute !important;
         left: 10px !important;
-    }
-    
-    /* Timeline items stack vertically on mobile */
-    div[style*="width: '46%'"] {
-        width: 100% !important;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-        padding-right: 0 !important;
-        padding-left: 0 !important;
-        padding-bottom: 20px !important;
-    }
-    
-    /* Timeline markers on mobile */
-    div[style*="left: '50%'"][style*="width: 20"] {
-        left: 10px !important;
-        transform: translateX(-10px) !important;
-    }
-    
-    /* Content boxes full width on mobile */
-    div[style*="display: 'flex'"][style*="minHeight"] {
-        min-height: auto !important;
-        padding: 15px !important;
-        width: 100% !important;
-    }
-    
-    /* Image container full width on mobile */
-    div[style*="alignItems: 'center'"][style*="justifyContent: 'center'"] {
-        width: 100% !important;
-        padding: 15px 0 !important;
+        top: 0 !important;
+        width: 2px !important;
+        height: 100% !important;
     }
 }
 
