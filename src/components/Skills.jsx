@@ -14,24 +14,29 @@ const styles = {
     marginBottom: 40,
   },
   certificateCard: {
-    padding: 20,
+    padding: 0,
     borderRadius: 12,
     marginBottom: 20,
     transition: 'all 0.3s ease',
-    border: '1px solid',
+    border: '2px solid',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     cursor: 'pointer',
-    minHeight: 480,
+    overflow: 'hidden',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+    minHeight: 0,
   },
   cardHover: {
-    transform: 'translateY(-8px)',
-    boxShadow: '0 12px 24px rgba(0, 0, 0, 0.15)',
+    transform: 'translateY(-10px)',
+    boxShadow: '0 16px 32px rgba(0, 0, 0, 0.2)',
+    borderColor: '#fff',
   },
   logoSection: {
     textAlign: 'center',
-    marginBottom: 15,
+    marginBottom: 0,
+    padding: '20px 20px 15px 20px',
+    borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
   },
   logo: {
     height: 70,
@@ -47,35 +52,40 @@ const styles = {
     display: 'inline-block',
   },
   cardTitle: {
-    fontSize: '1.05em',
+    fontSize: '1.1em',
     fontWeight: 'bold',
     marginBottom: 8,
     lineHeight: 1.4,
+    padding: '20px 20px 0 20px',
   },
   cardIssuer: {
     fontSize: '0.9em',
     fontWeight: 500,
     marginBottom: 12,
+    padding: '0 20px',
   },
   cardDate: {
     fontSize: '0.85em',
     marginBottom: 10,
+    padding: '0 20px',
   },
   cardImage: {
-    maxWidth: '100%',
-    height: 'auto',
-    borderRadius: 8,
-    marginTop: 12,
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    maxHeight: 350,
+    width: '100%',
+    height: 280,
     objectFit: 'cover',
+    borderRadius: 0,
+    marginTop: 0,
+    boxShadow: 'none',
+    transition: 'transform 0.3s ease',
   },
   credentialBadge: {
     fontSize: '0.75em',
-    padding: '6px 10px',
+    padding: '8px 12px',
     borderRadius: 4,
     marginTop: 10,
     fontWeight: 500,
+    margin: '12px 20px 20px 20px',
+    alignSelf: 'flex-start',
   },
   certificatesGrid: {
     display: 'grid',
@@ -197,12 +207,14 @@ function Skills(props) {
 
                       {/* Certificate Image */}
                       {cert.certificateImage && (
-                      <img
-                        className="certificate-image"
-                        src={cert.certificateImage}
-                        alt={cert.title}
-                        style={styles.cardImage}
-                      />
+                      <div style={{ position: 'relative', overflow: 'hidden', flex: 1 }}>
+                        <img
+                          className="certificate-image"
+                          src={cert.certificateImage}
+                          alt={cert.title}
+                          style={styles.cardImage}
+                        />
+                      </div>
                       )}
                     </div>
                   </Fade>
