@@ -9,10 +9,6 @@ import FallbackSpinner from './FallbackSpinner';
 import '../css/skills.css';
 
 const styles = {
-  introTextContainer: {
-    whiteSpace: 'pre-wrap',
-    marginBottom: 40,
-  },
   certificateCard: {
     padding: 0,
     borderRadius: 12,
@@ -32,43 +28,6 @@ const styles = {
     boxShadow: '0 16px 32px rgba(0, 0, 0, 0.2)',
     borderColor: '#fff',
   },
-  logoSection: {
-    textAlign: 'center',
-    marginBottom: 0,
-    padding: '20px 20px 15px 20px',
-    borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
-  },
-  logo: {
-    height: 70,
-    width: 70,
-    objectFit: 'contain',
-    marginBottom: 10,
-  },
-  cardNumber: {
-    fontSize: '0.8em',
-    fontWeight: 'bold',
-    padding: '4px 8px',
-    borderRadius: 4,
-    display: 'inline-block',
-  },
-  cardTitle: {
-    fontSize: '1.1em',
-    fontWeight: 'bold',
-    marginBottom: 8,
-    lineHeight: 1.4,
-    padding: '20px 20px 0 20px',
-  },
-  cardIssuer: {
-    fontSize: '0.9em',
-    fontWeight: 500,
-    marginBottom: 12,
-    padding: '0 20px',
-  },
-  cardDate: {
-    fontSize: '0.85em',
-    marginBottom: 10,
-    padding: '0 20px',
-  },
   cardImage: {
     width: '100%',
     height: 280,
@@ -77,15 +36,6 @@ const styles = {
     marginTop: 0,
     boxShadow: 'none',
     transition: 'transform 0.3s ease',
-  },
-  credentialBadge: {
-    fontSize: '0.75em',
-    padding: '8px 12px',
-    borderRadius: 4,
-    marginTop: 10,
-    fontWeight: 500,
-    margin: '12px 20px 20px 20px',
-    alignSelf: 'flex-start',
   },
   scholarshipCard: {
     marginTop: 40,
@@ -118,12 +68,6 @@ const styles = {
   scholarshipIcon: {
     fontSize: '2.6em',
     marginLeft: 8,
-  },
-  certificatesGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '20px',
-    marginTop: 30,
   },
 };
 
@@ -171,92 +115,7 @@ function Skills(props) {
                       onMouseEnter={() => setHoveredCard(index)}
                       onMouseLeave={() => setHoveredCard(null)}
                     >
-                      {/* Logo Section */}
-                      <div style={styles.logoSection}>
-                        {cert.logo && (
-                        <img
-                          src={cert.logo}
-                          alt={cert.issuer}
-                          style={styles.logo}
-                        />
-                        )}
-                      </div>
-
-                      {/* Certificate Title */}
-                      <h5 style={{ ...styles.cardTitle, color: theme.color }}>
-                        {cert.title}
-                      </h5>
-
-                      {/* Issuer */}
-                      <p
-                        style={{
-
-                  {/* Scholarship Highlight */}
-                  <div style={{ marginTop: 32 }}>
-                    <h3 style={{ color: theme.color, marginBottom: 16 }}>Scholarship</h3>
-                    <div
-                      style={{
-                        ...styles.scholarshipCard,
-                        borderColor: theme.accentColor || '#4a90e2',
-                      }}
-                    >
-                      <div
-                        style={{
-                          ...styles.scholarshipBar,
-                          backgroundColor: theme.accentColor || '#4a90e2',
-                        }}
-                      />
-                      <div style={styles.scholarshipContent}>
-                        <div style={{ ...styles.scholarshipTitle, color: theme.color }}>
-                          Recipient of the Kaltim Tuntas Scholarship 2022–2025
-                        </div>
-                        <p style={{ ...styles.scholarshipDesc, color: theme.color }}>
-                          A scholarship awarded by the East Kalimantan Provincial Government for outstanding students,
-                          supporting the completion of studies without financial burden.
-                        </p>
-                      </div>
-                      <div style={styles.scholarshipIcon} aria-hidden="true">🎓</div>
-                    </div>
-                  </div>
-                          ...styles.cardIssuer,
-                          color: theme.accentColor || '#4a90e2',
-                          marginBottom: 'auto',
-                        }}
-                      >
-                        {cert.issuer}
-                      </p>
-
-                      {/* Issue Date */}
-                      <div style={{ ...styles.cardDate, color: theme.color }}>
-                        <strong>Diterbitkan:</strong>
-                        {' '}
-                        {cert.issueDate}
-                        {cert.expiryDate && (
-                        <>
-                          <br />
-                          <strong>Kedaluwarsa:</strong>
-                          {' '}
-                          {cert.expiryDate}
-                        </>
-                        )}
-                      </div>
-
-                      {/* Credential ID */}
-                      {cert.credentialId && (
-                      <div
-                        style={{
-                          ...styles.credentialBadge,
-                          backgroundColor: theme.accentColor || '#4a90e2',
-                          color: '#fff',
-                        }}
-                      >
-                        ID:
-                        {' '}
-                        {cert.credentialId}
-                      </div>
-                      )}
-
-                      {/* Certificate Image */}
+                      {/* Certificate Image Only */}
                       {cert.certificateImage && (
                       <div style={{ position: 'relative', overflow: 'hidden', flex: 1 }}>
                         <img
@@ -270,6 +129,34 @@ function Skills(props) {
                     </div>
                   </Fade>
                 ))}
+              </div>
+
+              {/* Scholarship Highlight */}
+              <div style={{ marginTop: 32 }}>
+                <h3 style={{ color: theme.color, marginBottom: 16 }}>Scholarship</h3>
+                <div
+                  style={{
+                    ...styles.scholarshipCard,
+                    borderColor: theme.accentColor || '#4a90e2',
+                  }}
+                >
+                  <div
+                    style={{
+                      ...styles.scholarshipBar,
+                      backgroundColor: theme.accentColor || '#4a90e2',
+                    }}
+                  />
+                  <div style={styles.scholarshipContent}>
+                    <div style={{ ...styles.scholarshipTitle, color: theme.color }}>
+                      Recipient of the Kaltim Tuntas Scholarship 2022–2025
+                    </div>
+                    <p style={{ ...styles.scholarshipDesc, color: theme.color }}>
+                      A scholarship awarded by the East Kalimantan Provincial Government for outstanding students,
+                      supporting the completion of studies without financial burden.
+                    </p>
+                  </div>
+                  <div style={styles.scholarshipIcon} aria-hidden="true">🎓</div>
+                </div>
               </div>
             </Container>
           </div>
