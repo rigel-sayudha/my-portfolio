@@ -125,8 +125,8 @@ const ProjectCard = (props) => {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              project?.image && onImageClick?.(project);
+            if (e.key === 'Enter' && project?.image) {
+              onImageClick?.(project);
             }
           }}
         >
@@ -234,6 +234,10 @@ ProjectCard.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   onImageClick: PropTypes.func,
+};
+
+ProjectCard.defaultProps = {
+  onImageClick: undefined,
 };
 
 export default ProjectCard;
