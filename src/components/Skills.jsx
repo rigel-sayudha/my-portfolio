@@ -151,8 +151,9 @@ function Skills(props) {
                       Recipient of the Kaltim Tuntas Scholarship 2022–2025
                     </div>
                     <p style={{ ...styles.scholarshipDesc, color: theme.color }}>
-                      A scholarship awarded by the East Kalimantan Provincial Government for outstanding
-                      students, supporting the completion of studies without financial burden.
+                      A scholarship awarded by the East Kalimantan Provincial Government
+                      for outstanding students, supporting the completion of studies without
+                      financial burden.
                     </p>
                   </div>
                   <div style={styles.scholarshipIcon} aria-hidden="true">🎓</div>
