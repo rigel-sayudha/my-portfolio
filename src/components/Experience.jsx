@@ -48,18 +48,24 @@ const styles = {
     justifyContent: 'center',
     padding: '20px',
   },
-  experienceImage: {
-    maxWidth: '100%',
-    height: 'auto',
-    borderRadius: 12,
-    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
-    maxHeight: 280,
-    objectFit: 'cover',
-    transition: 'all 0.3s ease',
+  imagesGallery: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: 12,
+    width: '100%',
   },
-  experienceImageHover: {
+  galleryImage: {
+    width: '100%',
+    height: 120,
+    borderRadius: 8,
+    objectFit: 'cover',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
+  },
+  galleryImageHover: {
     transform: 'scale(1.05)',
-    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0 6px 16px rgba(0, 0, 0, 0.2)',
   },
   timelineMarker: {
     position: 'absolute',
@@ -282,7 +288,7 @@ function Experience(props) {
                         )}
                       </div>
 
-                      {/* Image Container */}
+                      {/* Image Gallery */}
                       <div
                         style={{
                           ...styles.imageContainer,
@@ -291,16 +297,30 @@ function Experience(props) {
                           marginTop: isMobileView ? '15px' : '0',
                         }}
                       >
-                        {item.image && (
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          style={{
-                            ...styles.experienceImage,
-                            ...(hoveredIndex === index && styles.experienceImageHover),
-                          }}
-                        />
-                        )}
+                        {item.images && item.images.length > 0 ? (
+                          <div style={styles.imagesGallery}>
+                            {item.images.map((img, imgIndex) => (
+                              <img
+                                key={imgIndex}
+                                src={img}
+                                alt={`${item.title} - ${imgIndex + 1}`}
+                                style={{
+                                  ...styles.galleryImage,
+                                  ...(hoveredIndex === index && styles.galleryImageHover),
+                                }}
+                              />
+                            ))}
+                          </div>
+                        ) : item.image ? (
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            style={{
+                              ...styles.experienceImage,
+                              ...(hoveredIndex === index && styles.experienceImageHover),
+                            }}
+                          />
+                        ) : null}
                       </div>
                     </div>
                   </Fade>

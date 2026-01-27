@@ -57,17 +57,6 @@ const Projects = (props) => {
         ? (
           <div className="section-content-container">
             <Container style={styles.containerStyle}>
-              {/* Intro Section */}
-              <div style={{ ...styles.introStyle, color: theme.color }}>
-                <h3 style={{ marginBottom: 20, fontWeight: 'bold' }}>
-                  My Recent Projects
-                </h3>
-                <p>
-                  Here are some projects I have worked on in website development,
-                  mobile applications, and machine learning. Each project demonstrates
-                  my expertise and experience with various technologies and frameworks.
-                </p>
-              </div>
 
               {/* Projects Grid */}
               <Row xs={1} sm={1} md={2} lg={3} className="g-4">

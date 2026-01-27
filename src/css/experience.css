@@ -48,7 +48,17 @@
         width: 100% !important;
     }
     
-    /* Timeline center line - disabled on mobile for better aesthetics */
+    /* Gallery responsive grid on mobile */
+    .images-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    /* Gallery image height on mobile */
+    .gallery-image-mobile {
+        height: 100px !important;
+    }
+}    /* Timeline center line - disabled on mobile for better aesthetics */
     .timeline-item-wrapper::after {
         display: none !important;
     }

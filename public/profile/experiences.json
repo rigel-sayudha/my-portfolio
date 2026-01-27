@@ -13,7 +13,12 @@
                 "Perform clearing of matured PDCs to the bank according to the established schedule."
             ],
             "dateText": "Jun 2025 – Present",
-            "image": "images/experiences/bfi-finance.jpg"
+            "image": "images/experiences/BFI-1.jpeg",
+            "images": [
+                "images/experiences/BFI-1.jpeg",
+                "images/experiences/BFI-2.jpeg",
+                "images/experiences/BFI-3.jpeg"
+            ]
         },
         {
             "title": "Digital Marketing Freelance",
@@ -28,7 +33,12 @@
                 "Participate in weekly performance evaluations to monitor progress and achieve sales targets."
             ],
             "dateText": "Nov 2024 – Jul 2025",
-            "image": "images/experiences/pjma.jpg"
+            "image": "images/experiences/pjma.jpg",
+            "images": [
+                "images/experiences/pjma-1.jpg",
+                "images/experiences/pjma-2.jpg",
+                "images/experiences/pjma-3.jpg"
+            ]
         },
         {
             "title": "Internship",
@@ -45,7 +55,12 @@
                 "Report daily progress and work results to mentor to ensure compliance with company standards."
             ],
             "dateText": "Feb 2024 – Jun 2024",
-            "image": "images/experiences/telkom.jpg"
+            "image": "images/experiences/telkom.jpg",
+            "images": [
+                "images/experiences/telkom-1.jpg",
+                "images/experiences/telkom-2.jpg",
+                "images/experiences/telkom-3.jpg"
+            ]
         },
         {
             "title": "Graphic Designer",
@@ -59,7 +74,12 @@
                 "Create professional logo designs using Photoshop and CorelDRAW aligned with company brand identity."
             ],
             "dateText": "Jun 2019 – Oct 2019",
-            "image": "images/experiences/raja-geprek.jpg"
+            "image": "images/experiences/raja-geprek.jpg",
+            "images": [
+                "images/experiences/rajageprek-1.jpg",
+                "images/experiences/rajageprek-2.jpg",
+                "images/experiences/rajageprek-3.jpg"
+            ]
         },
         {
             "title": "Web Developer",
@@ -74,7 +94,12 @@
                 "Analyze performance metrics and provide improvement recommendations to achieve client business targets."
             ],
             "dateText": "Oct 2024 – Present",
-            "image": "images/experiences/freelance.jpg"
+            "image": "images/experiences/freelance.jpg",
+            "images": [
+                "images/experiences/freelance-1.jpg",
+                "images/experiences/freelance-2.jpg",
+                "images/experiences/freelance-3.jpg"
+            ]
         }
     ]
 }

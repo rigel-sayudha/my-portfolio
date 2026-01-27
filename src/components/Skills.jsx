@@ -146,7 +146,7 @@ function Skills(props) {
                   />
                   <div style={styles.scholarshipContent}>
                     <div style={{ ...styles.scholarshipTitle, color: theme.color }}>
-                      Recipient of the Kaltim Tuntas Scholarship 2022–2025
+                      Recipient of the Kaltim Tuntas Scholarship 2023–2025
                     </div>
                     <p style={{ ...styles.scholarshipDesc, color: theme.color }}>
                       A scholarship awarded by the East Kalimantan Provincial Government
