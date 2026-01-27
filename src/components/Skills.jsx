@@ -23,6 +23,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     cursor: 'pointer',
+    minHeight: 480,
   },
   cardHover: {
     transform: 'translateY(-8px)',
@@ -66,7 +67,7 @@ const styles = {
     borderRadius: 8,
     marginTop: 12,
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    maxHeight: 200,
+    maxHeight: 350,
     objectFit: 'cover',
   },
   credentialBadge: {

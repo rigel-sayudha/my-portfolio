@@ -175,33 +175,18 @@ function Experience(props) {
         ? (
           <div className="section-content-container">
             <Container>
-              {/* Intro Section */}
-              <div style={{ textAlign: 'center', marginBottom: 50 }}>
-                <h3 style={{ fontWeight: 'bold', color: theme.color, marginBottom: 15 }}>
-                  Work Experience
-                </h3>
-                <p
-                  style={{
-                    color: theme.color,
-                    fontSize: '1em',
-                    maxWidth: 600,
-                    margin: '0 auto',
-                  }}
-                >
-                  Pengalaman kerja saya mencakup berbagai bidang mulai dari payment processing,
-                  digital marketing, web development, hingga graphic design.
-                </p>
-              </div>
 
               {/* Timeline */}
               <div style={{ ...styles.timelineContainer, position: 'relative' }}>
-                {/* Center Line */}
-                <div
-                  style={{
-                    ...styles.timelineCenter,
-                    backgroundColor: theme.accentColor || '#4a90e2',
-                  }}
-                />
+                {/* Center Line - Hidden on mobile */}
+                {!isMobileView && (
+                  <div
+                    style={{
+                      ...styles.timelineCenter,
+                      backgroundColor: theme.accentColor || '#4a90e2',
+                    }}
+                  />
+                )}
 
                 {/* Timeline Items */}
                 {data.map((item, index) => (
