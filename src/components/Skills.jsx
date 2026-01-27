@@ -139,7 +139,7 @@ function Skills(props) {
                       onMouseEnter={() => setHoveredCard(index)}
                       onMouseLeave={() => setHoveredCard(null)}
                     >
-                      {/* Logo and Number */}
+                      {/* Logo Section */}
                       <div style={styles.logoSection}>
                         {cert.logo && (
                         <img
@@ -148,15 +148,6 @@ function Skills(props) {
                           style={styles.logo}
                         />
                         )}
-                        <div
-                          style={{
-                            ...styles.cardNumber,
-                            backgroundColor: theme.accentColor || '#4a90e2',
-                            color: '#fff',
-                          }}
-                        >
-                          {index + 1}
-                        </div>
                       </div>
 
                       {/* Certificate Title */}
