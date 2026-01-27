@@ -87,6 +87,38 @@ const styles = {
     margin: '12px 20px 20px 20px',
     alignSelf: 'flex-start',
   },
+  scholarshipCard: {
+    marginTop: 40,
+    padding: 20,
+    borderRadius: 12,
+    border: '2px solid',
+    display: 'flex',
+    alignItems: 'center',
+    gap: 16,
+    boxShadow: '0 8px 18px rgba(0, 0, 0, 0.1)',
+    backgroundColor: '#fff',
+  },
+  scholarshipBar: {
+    width: 12,
+    height: '100%',
+    borderRadius: 8,
+  },
+  scholarshipContent: {
+    flex: 1,
+  },
+  scholarshipTitle: {
+    fontSize: '1.05em',
+    fontWeight: 700,
+    marginBottom: 6,
+  },
+  scholarshipDesc: {
+    margin: 0,
+    lineHeight: 1.6,
+  },
+  scholarshipIcon: {
+    fontSize: '2.6em',
+    marginLeft: 8,
+  },
   certificatesGrid: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
@@ -158,6 +190,34 @@ function Skills(props) {
                       {/* Issuer */}
                       <p
                         style={{
+
+                  {/* Scholarship Highlight */}
+                  <div style={{ marginTop: 32 }}>
+                    <h3 style={{ color: theme.color, marginBottom: 16 }}>Scholarship</h3>
+                    <div
+                      style={{
+                        ...styles.scholarshipCard,
+                        borderColor: theme.accentColor || '#4a90e2',
+                      }}
+                    >
+                      <div
+                        style={{
+                          ...styles.scholarshipBar,
+                          backgroundColor: theme.accentColor || '#4a90e2',
+                        }}
+                      />
+                      <div style={styles.scholarshipContent}>
+                        <div style={{ ...styles.scholarshipTitle, color: theme.color }}>
+                          Recipient of the Kaltim Tuntas Scholarship 2022–2025
+                        </div>
+                        <p style={{ ...styles.scholarshipDesc, color: theme.color }}>
+                          A scholarship awarded by the East Kalimantan Provincial Government for outstanding students,
+                          supporting the completion of studies without financial burden.
+                        </p>
+                      </div>
+                      <div style={styles.scholarshipIcon} aria-hidden="true">🎓</div>
+                    </div>
+                  </div>
                           ...styles.cardIssuer,
                           color: theme.accentColor || '#4a90e2',
                           marginBottom: 'auto',
