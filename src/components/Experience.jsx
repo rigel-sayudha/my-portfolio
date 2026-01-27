@@ -247,33 +247,6 @@ function Experience(props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [navButtonHovered, setNavButtonHovered] = useState(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [selectedImage, currentImageIndex]);
-
-  useEffect(() => {
-    fetch(endpoints.experiences, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res.experiences))
-      .catch((err) => err);
-  }, []);
-
-  const getFlexDirection = (index) => {
-    if (isMobileView) return 'column';
-    return index % 2 === 0 ? 'row' : 'row-reverse';
-  };
-
   const handleImageClick = (images, index) => {
     setSelectedImage(images);
     setCurrentImageIndex(index);
@@ -305,6 +278,33 @@ function Experience(props) {
     } else if (e.key === 'ArrowRight') {
       handleNextImage();
     }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedImage, currentImageIndex, handleKeyDown]);
+
+  useEffect(() => {
+    fetch(endpoints.experiences, {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((res) => setData(res.experiences))
+      .catch((err) => err);
+  }, []);
+
+  const getFlexDirection = (index) => {
+    if (isMobileView) return 'column';
+    return index % 2 === 0 ? 'row' : 'row-reverse';
   };
 
   return (
@@ -440,24 +440,30 @@ function Experience(props) {
                           {item.images && item.images.length > 0 && (
                             <div style={styles.imagesGallery} className="images-gallery">
                               {item.images.map((img, imgIndex) => (
-                                <img
+                                <button
                                   key={`${item.title}-${img}`}
-                                  src={img}
-                                  alt={`${item.title} - ${imgIndex + 1}`}
+                                  type="button"
+                                  onClick={() => handleImageClick(item.images, imgIndex)}
                                   style={{
                                     ...styles.galleryImage,
                                     ...(hoveredIndex === index && styles.galleryImageHover),
+                                    background: 'none',
+                                    padding: 0,
                                   }}
                                   className="gallery-image-mobile"
-                                  onClick={() => handleImageClick(item.images, imgIndex)}
-                                  role="button"
-                                  tabIndex={0}
-                                  onKeyDown={(e) => {
-                                    if (e.key === 'Enter') {
-                                      handleImageClick(item.images, imgIndex);
-                                    }
-                                  }}
-                                />
+                                  aria-label={`${item.title} - Gambar ${imgIndex + 1}`}
+                                >
+                                  <img
+                                    src={img}
+                                    alt={`${item.title} - ${imgIndex + 1}`}
+                                    style={{
+                                      width: '100%',
+                                      height: '100%',
+                                      borderRadius: 8,
+                                      objectFit: 'cover',
+                                    }}
+                                  />
+                                </button>
                               ))}
                             </div>
                           )}
@@ -483,16 +489,17 @@ function Experience(props) {
 
       {/* Image Gallery Modal */}
       {selectedImage && (
-        <div
+        <button
+          type="button"
           style={modalStyles.modalOverlay}
           onClick={handleCloseModal}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image gallery modal"
+          aria-label="Image gallery modal. Click outside to close."
         >
           <div
             style={modalStyles.modalContent}
             onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
           >
             <button
               style={modalStyles.closeButton}
@@ -553,7 +560,7 @@ function Experience(props) {
               Tekan ESC untuk menutup atau gunakan tombol Arrow untuk navigasi
             </div>
           </div>
-        </div>
+        </button>
       )}
     </>
   );
