@@ -131,9 +131,7 @@ function Skills(props) {
                 ))}
               </div>
 
-              {/* Scholarship Highlight */}
               <div style={{ marginTop: 32 }}>
-                <h3 style={{ color: theme.color, marginBottom: 16 }}>Scholarship</h3>
                 <div
                   style={{
                     ...styles.scholarshipCard,
