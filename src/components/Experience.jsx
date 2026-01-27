@@ -159,12 +159,93 @@ const styles = {
   },
 };
 
+const modalStyles = {
+  modalOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 9999,
+  },
+  modalContent: {
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxWidth: '90vw',
+    maxHeight: '90vh',
+  },
+  modalImage: {
+    maxWidth: '100%',
+    maxHeight: '75vh',
+    objectFit: 'contain',
+    borderRadius: 8,
+  },
+  closeButton: {
+    position: 'absolute',
+    top: '-40px',
+    right: 0,
+    backgroundColor: 'transparent',
+    border: 'none',
+    color: '#fff',
+    fontSize: '32px',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    padding: '0 10px',
+    transition: 'transform 0.2s ease',
+  },
+  navigationContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: '20px',
+    gap: '20px',
+    width: '100%',
+  },
+  navButton: {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    border: '2px solid rgba(255, 255, 255, 0.5)',
+    color: '#fff',
+    padding: '10px 20px',
+    borderRadius: 6,
+    cursor: 'pointer',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    transition: 'all 0.2s ease',
+  },
+  navButtonHover: {
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    transform: 'scale(1.05)',
+  },
+  imageCounter: {
+    color: '#fff',
+    fontSize: '16px',
+    fontWeight: 'bold',
+  },
+  modalTitle: {
+    color: '#fff',
+    fontSize: '18px',
+    fontWeight: 'bold',
+    marginTop: '15px',
+    textAlign: 'center',
+  },
+};
+
 function Experience(props) {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isMobileView, setIsMobileView] = useState(isMobile());
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [navButtonHovered, setNavButtonHovered] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -172,8 +253,12 @@ function Experience(props) {
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedImage, currentImageIndex]);
 
   useEffect(() => {
     fetch(endpoints.experiences, {
@@ -187,6 +272,39 @@ function Experience(props) {
   const getFlexDirection = (index) => {
     if (isMobileView) return 'column';
     return index % 2 === 0 ? 'row' : 'row-reverse';
+  };
+
+  const handleImageClick = (images, index) => {
+    setSelectedImage(images);
+    setCurrentImageIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+    setCurrentImageIndex(0);
+  };
+
+  const handlePrevImage = () => {
+    if (selectedImage && currentImageIndex > 0) {
+      setCurrentImageIndex(currentImageIndex - 1);
+    }
+  };
+
+  const handleNextImage = () => {
+    if (selectedImage && currentImageIndex < selectedImage.length - 1) {
+      setCurrentImageIndex(currentImageIndex + 1);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (!selectedImage) return;
+    if (e.key === 'Escape') {
+      handleCloseModal();
+    } else if (e.key === 'ArrowLeft') {
+      handlePrevImage();
+    } else if (e.key === 'ArrowRight') {
+      handleNextImage();
+    }
   };
 
   return (
@@ -331,6 +449,14 @@ function Experience(props) {
                                     ...(hoveredIndex === index && styles.galleryImageHover),
                                   }}
                                   className="gallery-image-mobile"
+                                  onClick={() => handleImageClick(item.images, imgIndex)}
+                                  role="button"
+                                  tabIndex={0}
+                                  onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                      handleImageClick(item.images, imgIndex);
+                                    }
+                                  }}
                                 />
                               ))}
                             </div>
@@ -354,6 +480,81 @@ function Experience(props) {
             </Container>
           </div>
         ) : <FallbackSpinner /> }
+
+      {/* Image Gallery Modal */}
+      {selectedImage && (
+        <div
+          style={modalStyles.modalOverlay}
+          onClick={handleCloseModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery modal"
+        >
+          <div
+            style={modalStyles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              style={modalStyles.closeButton}
+              onClick={handleCloseModal}
+              type="button"
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
+
+            <img
+              src={selectedImage[currentImageIndex]}
+              alt={`Gallery ${currentImageIndex + 1}`}
+              style={modalStyles.modalImage}
+            />
+
+            <div style={modalStyles.navigationContainer}>
+              <button
+                style={{
+                  ...modalStyles.navButton,
+                  ...(navButtonHovered === 'prev' && modalStyles.navButtonHover),
+                }}
+                onClick={handlePrevImage}
+                onMouseEnter={() => setNavButtonHovered('prev')}
+                onMouseLeave={() => setNavButtonHovered(null)}
+                type="button"
+                disabled={currentImageIndex === 0}
+                aria-label="Previous image"
+              >
+                ← Sebelumnya
+              </button>
+
+              <div style={modalStyles.imageCounter}>
+                {currentImageIndex + 1}
+                {' '}
+                /
+                {' '}
+                {selectedImage.length}
+              </div>
+
+              <button
+                style={{
+                  ...modalStyles.navButton,
+                  ...(navButtonHovered === 'next' && modalStyles.navButtonHover),
+                }}
+                onClick={handleNextImage}
+                onMouseEnter={() => setNavButtonHovered('next')}
+                onMouseLeave={() => setNavButtonHovered(null)}
+                type="button"
+                disabled={currentImageIndex === selectedImage.length - 1}
+                aria-label="Next image"
+              >
+                Selanjutnya →
+              </button>
+            </div>
+
+            <div style={modalStyles.modalTitle}>
+              Tekan ESC untuk menutup atau gunakan tombol Arrow untuk navigasi
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
