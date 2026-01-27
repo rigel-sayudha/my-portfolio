@@ -127,17 +127,20 @@ const styles = {
     fontSize: '0.9em',
     marginBottom: 15,
     lineHeight: 1.5,
+    textAlign: 'justify',
   },
   descriptionList: {
     listStylePosition: 'inside',
     paddingLeft: 0,
     marginBottom: 15,
     flex: 1,
+    textAlign: 'justify',
   },
   descriptionItem: {
     fontSize: '0.9em',
     lineHeight: 1.6,
     marginBottom: 8,
+    textAlign: 'justify',
   },
   skillsContainer: {
     display: 'flex',
@@ -194,8 +197,6 @@ function Experience(props) {
         ? (
           <div className="section-content-container">
             <Container>
-
-              {/* Timeline */}
               <div style={{ ...styles.timelineContainer, position: 'relative' }}>
                 {/* Center Line - Hidden on mobile */}
                 {!isMobileView && (
@@ -208,138 +209,147 @@ function Experience(props) {
                 )}
 
                 {/* Timeline Items */}
-                {data.map((item, index) => (
-                  <Fade key={item.title + item.dateText}>
-                    <div
-                      className="timeline-item-wrapper"
-                      style={{
-                        ...styles.timelineItem,
-                        flexDirection: getFlexDirection(index),
-                      }}
-                      onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)}
-                    >
-                      {/* Timeline Marker - Always in Center */}
-                      <div
-                        style={{
-                          ...styles.timelineMarker,
-                          borderColor: theme.accentColor || '#4a90e2',
-                          backgroundColor: theme.accentColor || '#4a90e2',
-                          boxShadow: `0 0 0 4px ${theme.highlightColor || '#f0f0f0'}`,
-                        }}
-                      />
+                {data.map((item, index) => {
+                  const getSideStyle = () => {
+                    if (isMobileView) {
+                      return {
+                        width: '100%',
+                        marginRight: 0,
+                        marginLeft: 0,
+                        paddingRight: 15,
+                        paddingLeft: 15,
+                        textAlign: 'left',
+                      };
+                    }
+                    return index % 2 === 0 ? styles.timelineItemLeft : styles.timelineItemRight;
+                  };
 
-                      {/* Content Box */}
+                  return (
+                    <Fade key={item.title + item.dateText}>
                       <div
+                        className="timeline-item-wrapper"
                         style={{
-                          ...styles.contentBox,
-                          ...(isMobileView ? {
-                            width: '100%',
-                            marginRight: 0,
-                            marginLeft: 0,
-                            paddingRight: 15,
-                            paddingLeft: 15,
-                            textAlign: 'left',
-                          } : styles.timelineItemLeft),
-                          borderColor: theme.accentColor || '#4a90e2',
-                          backgroundColor: theme.highlightColor || 'transparent',
-                          color: theme.color,
-                          ...(hoveredIndex === index && styles.contentBoxHover),
+                          ...styles.timelineItem,
+                          flexDirection: getFlexDirection(index),
                         }}
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
                       >
-                        {/* Date Badge */}
+                        {/* Timeline Marker - Always in Center */}
                         <div
                           style={{
-                            ...styles.dateBox,
+                            ...styles.timelineMarker,
+                            borderColor: theme.accentColor || '#4a90e2',
                             backgroundColor: theme.accentColor || '#4a90e2',
-                            color: '#fff',
+                            boxShadow: `0 0 0 4px ${theme.highlightColor || '#f0f0f0'}`,
+                          }}
+                        />
+
+                        {/* Content Box */}
+                        <div
+                          style={{
+                            ...styles.contentBox,
+                            ...getSideStyle(),
+                            borderColor: theme.accentColor || '#4a90e2',
+                            backgroundColor: theme.highlightColor || 'transparent',
+                            color: theme.color,
+                            ...(hoveredIndex === index && styles.contentBoxHover),
                           }}
                         >
-                          {item.dateText}
-                        </div>
+                          {/* Date Badge */}
+                          <div
+                            style={{
+                              ...styles.dateBox,
+                              backgroundColor: theme.accentColor || '#4a90e2',
+                              color: '#fff',
+                            }}
+                          >
+                            {item.dateText}
+                          </div>
 
-                        {/* Job Details */}
-                        <h4 style={{ ...styles.jobTitle, color: theme.color }}>
-                          {item.title}
-                        </h4>
-                        <div style={{ ...styles.company, color: theme.accentColor }}>
-                          {item.subtitle}
-                        </div>
-                        <p style={{ ...styles.companyDetail, color: theme.color }}>
-                          {item.companyDescription}
-                        </p>
+                          {/* Job Details */}
+                          <h4 style={{ ...styles.jobTitle, color: theme.color }}>
+                            {item.title}
+                          </h4>
+                          <div style={{ ...styles.company, color: theme.accentColor }}>
+                            {item.subtitle}
+                          </div>
+                          <p style={{ ...styles.companyDetail, color: theme.color }}>
+                            {item.companyDescription}
+                          </p>
 
-                        {/* Responsibilities */}
-                        <ul style={styles.descriptionList}>
-                          {item.workDescription.map((desc) => (
-                            <li
-                              key={desc}
-                              style={{ ...styles.descriptionItem, color: theme.color }}
-                            >
-                              {desc}
-                            </li>
-                          ))}
-                        </ul>
+                          {/* Responsibilities */}
+                          <ul style={styles.descriptionList}>
+                            {item.workDescription.map((desc) => (
+                              <li
+                                key={desc}
+                                style={{ ...styles.descriptionItem, color: theme.color }}
+                              >
+                                {desc}
+                              </li>
+                            ))}
+                          </ul>
 
-                        {/* Skills */}
-                        {item.skills && item.skills.length > 0 && (
-                        <div style={styles.skillsContainer}>
-                          {item.skills.map((skill) => (
-                            <span
-                              key={skill}
-                              style={{
-                                ...styles.skillBadge,
-                                borderColor: theme.accentColor || '#4a90e2',
-                                color: theme.accentColor || '#4a90e2',
-                                backgroundColor: 'transparent',
-                              }}
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                        )}
-                      </div>
-
-                      {/* Image Gallery */}
-                      <div
-                        style={{
-                          ...styles.imageContainer,
-                          width: isMobileView ? '100%' : '46%',
-                          padding: isMobileView ? '15px' : '20px',
-                          marginTop: isMobileView ? '15px' : '0',
-                        }}
-                      >
-                        {item.images && item.images.length > 0 && (
-                          <div style={styles.imagesGallery} className="images-gallery">
-                            {item.images.map((img, imgIndex) => (
-                              <img
-                                key={`${item.title}-${imgIndex}`}
-                                src={img}
-                                alt={`${item.title} - ${imgIndex + 1}`}
+                          {/* Skills */}
+                          {item.skills && item.skills.length > 0 && (
+                          <div style={styles.skillsContainer}>
+                            {item.skills.map((skill) => (
+                              <span
+                                key={skill}
                                 style={{
-                                  ...styles.galleryImage,
-                                  ...(hoveredIndex === index && styles.galleryImageHover),
+                                  ...styles.skillBadge,
+                                  borderColor: theme.accentColor || '#4a90e2',
+                                  color: theme.accentColor || '#4a90e2',
+                                  backgroundColor: 'transparent',
                                 }}
-                                className="gallery-image-mobile"
-                              />
+                              >
+                                {skill}
+                              </span>
                             ))}
                           </div>
-                        )}
-                        {(!item.images || item.images.length === 0) && item.image && (
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            style={{
-                              ...styles.experienceImage,
-                              ...(hoveredIndex === index && styles.experienceImageHover),
-                            }}
-                          />
-                        )}
+                          )}
+                        </div>
+
+                        {/* Image Gallery */}
+                        <div
+                          style={{
+                            ...styles.imageContainer,
+                            width: isMobileView ? '100%' : '46%',
+                            padding: isMobileView ? '15px' : '20px',
+                            marginTop: isMobileView ? '15px' : '0',
+                          }}
+                        >
+                          {item.images && item.images.length > 0 && (
+                            <div style={styles.imagesGallery} className="images-gallery">
+                              {item.images.map((img, imgIndex) => (
+                                <img
+                                  key={`${item.title}-${img}`}
+                                  src={img}
+                                  alt={`${item.title} - ${imgIndex + 1}`}
+                                  style={{
+                                    ...styles.galleryImage,
+                                    ...(hoveredIndex === index && styles.galleryImageHover),
+                                  }}
+                                  className="gallery-image-mobile"
+                                />
+                              ))}
+                            </div>
+                          )}
+                          {(!item.images || item.images.length === 0) && item.image && (
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              style={{
+                                ...styles.experienceImage,
+                                ...(hoveredIndex === index && styles.experienceImageHover),
+                              }}
+                            />
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </Fade>
-                ))}
+                    </Fade>
+                  );
+                })}
               </div>
             </Container>
           </div>

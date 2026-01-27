@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import PropTypes from 'prop-types';
 import Fade from 'react-reveal';
 import { Container } from 'react-bootstrap';
 import { ThemeContext } from 'styled-components';
-import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/skills.css';
@@ -36,6 +34,54 @@ const styles = {
     marginTop: 0,
     boxShadow: 'none',
     transition: 'transform 0.3s ease',
+  },
+  modalOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 9999,
+    padding: 20,
+    cursor: 'pointer',
+  },
+  modalContent: {
+    position: 'relative',
+    maxWidth: '90%',
+    maxHeight: '90%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  modalImage: {
+    maxWidth: '100%',
+    maxHeight: '85vh',
+    objectFit: 'contain',
+    borderRadius: 8,
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
+  },
+  closeButton: {
+    position: 'absolute',
+    top: -40,
+    right: 0,
+    background: 'transparent',
+    border: 'none',
+    color: '#fff',
+    fontSize: '2em',
+    cursor: 'pointer',
+    padding: '5px 15px',
+    transition: 'transform 0.2s ease',
+  },
+  modalTitle: {
+    color: '#fff',
+    marginTop: 15,
+    fontSize: '1.2em',
+    textAlign: 'center',
+    maxWidth: '100%',
   },
   scholarshipCard: {
     marginTop: 40,
@@ -71,11 +117,11 @@ const styles = {
   },
 };
 
-function Skills(props) {
+function Skills() {
   const theme = useContext(ThemeContext);
-  const { header } = props;
   const [data, setData] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
 
   useEffect(() => {
     fetch(endpoints.skills, {
@@ -86,9 +132,16 @@ function Skills(props) {
       .catch((err) => err);
   }, []);
 
+  const handleCertificateClick = (cert) => {
+    setSelectedCertificate(cert);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCertificate(null);
+  };
+
   return (
     <>
-      <Header title={header} />
       {data ? (
         <Fade>
           <div className="section-content-container">
@@ -114,6 +167,13 @@ function Skills(props) {
                       }}
                       onMouseEnter={() => setHoveredCard(index)}
                       onMouseLeave={() => setHoveredCard(null)}
+                      onClick={() => handleCertificateClick(cert)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') handleCertificateClick(cert);
+                      }}
+                      tabIndex={0}
+                      role="button"
+                      aria-pressed="false"
                     >
                       {/* Certificate Image Only */}
                       {cert.certificateImage && (
@@ -161,12 +221,49 @@ function Skills(props) {
           </div>
         </Fade>
       ) : <FallbackSpinner /> }
+
+      {/* Modal Popup */}
+      {selectedCertificate && (
+        <div
+          style={styles.modalOverlay}
+          onClick={handleCloseModal}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') handleCloseModal();
+          }}
+          role="presentation"
+        >
+          <div
+            style={styles.modalContent}
+            role="dialog"
+            aria-modal="true"
+          >
+            <button
+              type="button"
+              style={styles.closeButton}
+              onClick={handleCloseModal}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+              }}
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            <img
+              src={selectedCertificate.certificateImage}
+              alt={selectedCertificate.title}
+              style={styles.modalImage}
+            />
+            <div style={styles.modalTitle}>
+              {selectedCertificate.title}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
-
-Skills.propTypes = {
-  header: PropTypes.string.isRequired,
-};
 
 export default Skills;

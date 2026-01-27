@@ -259,6 +259,21 @@ function About(props) {
                       </a>
                     </div>
                     )}
+                    {data.contact.whatsapp && (
+                    <div style={{ ...styles.contactItem, color: theme.color }}>
+                      <span style={{ ...styles.contactIcon, color: theme.accentColor }}>
+                        💬
+                      </span>
+                      <a
+                        href={`https://wa.me/${data.contact.whatsapp}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: theme.accentColor, textDecoration: 'none' }}
+                      >
+                        WhatsApp
+                      </a>
+                    </div>
+                    )}
                     {data.contact.linkedin && (
                     <div style={{ ...styles.contactItem, color: theme.color }}>
                       <span style={{ ...styles.contactIcon, color: theme.accentColor }}>
