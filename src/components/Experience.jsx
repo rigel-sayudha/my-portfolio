@@ -80,6 +80,7 @@ const styles = {
     transform: 'scale(1.05)',
     boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
   },
+  timelineMarker: {
     position: 'absolute',
     left: '50%',
     transform: 'translateX(-50%)',
