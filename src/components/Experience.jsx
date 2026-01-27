@@ -50,13 +50,13 @@ const styles = {
   },
   imagesGallery: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: 12,
+    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+    gap: 14,
     width: '100%',
   },
   galleryImage: {
     width: '100%',
-    height: 120,
+    height: 180,
     borderRadius: 8,
     objectFit: 'cover',
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
@@ -311,7 +311,7 @@ function Experience(props) {
                         }}
                       >
                         {item.images && item.images.length > 0 && (
-                          <div style={styles.imagesGallery}>
+                          <div style={styles.imagesGallery} className="images-gallery">
                             {item.images.map((img, imgIndex) => (
                               <img
                                 key={`${item.title}-${imgIndex}`}
@@ -321,6 +321,7 @@ function Experience(props) {
                                   ...styles.galleryImage,
                                   ...(hoveredIndex === index && styles.galleryImageHover),
                                 }}
+                                className="gallery-image-mobile"
                               />
                             ))}
                           </div>
