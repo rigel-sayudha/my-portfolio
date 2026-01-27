@@ -21,7 +21,7 @@
             ]
         },
         {
-            "image" : "images/projects/kasirku.jpg",
+            "image" : "images/projects/POSTER KASIRKU.png",
             "title": "Kasirku - Cashier Management System",
             "bodyText": "- A comprehensive Cashier Management System built using **CodeIgniter** framework.\n - Modern UI designed with **Bootstrap**.\n - Secure payment gateway integration with **Midtrans**.\n - Dynamic interactions powered by **jQuery** AJAX.", 
             "links": [

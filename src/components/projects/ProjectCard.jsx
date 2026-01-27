@@ -51,6 +51,7 @@ const styles = {
     justifyContent: 'center',
     opacity: 0,
     transition: 'opacity 0.3s ease',
+    cursor: 'pointer',
   },
   cardTitleStyle: {
     fontSize: 20,
@@ -92,7 +93,7 @@ const styles = {
 
 const ProjectCard = (props) => {
   const theme = useContext(ThemeContext);
-  const { project } = props;
+  const { project, onImageClick } = props;
   const [isHovered, setIsHovered] = useState(false);
   const [imageHovered, setImageHovered] = useState(false);
 
@@ -120,6 +121,14 @@ const ProjectCard = (props) => {
           style={styles.imageContainer}
           onMouseEnter={() => setImageHovered(true)}
           onMouseLeave={() => setImageHovered(false)}
+          onClick={() => project?.image && onImageClick?.(project)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              project?.image && onImageClick?.(project);
+            }
+          }}
         >
           {project?.image && (
           <Card.Img
@@ -138,7 +147,7 @@ const ProjectCard = (props) => {
             }}
           >
             <span style={{ color: '#fff', fontSize: '14px', fontWeight: 500 }}>
-              Hover for details
+              Klik untuk melihat
             </span>
           </div>
         </div>
@@ -224,6 +233,7 @@ ProjectCard.propTypes = {
     })),
     tags: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
+  onImageClick: PropTypes.func,
 };
 
 export default ProjectCard;
