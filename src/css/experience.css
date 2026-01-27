@@ -58,7 +58,8 @@
     .gallery-image-mobile {
         height: 100px !important;
     }
-}    /* Timeline center line - disabled on mobile for better aesthetics */
+    
+    /* Timeline center line - disabled on mobile for better aesthetics */
     .timeline-item-wrapper::after {
         display: none !important;
     }

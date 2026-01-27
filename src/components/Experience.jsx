@@ -67,7 +67,19 @@ const styles = {
     transform: 'scale(1.05)',
     boxShadow: '0 6px 16px rgba(0, 0, 0, 0.2)',
   },
-  timelineMarker: {
+  experienceImage: {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: 12,
+    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+    maxHeight: 280,
+    objectFit: 'cover',
+    transition: 'all 0.3s ease',
+  },
+  experienceImageHover: {
+    transform: 'scale(1.05)',
+    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+  },
     position: 'absolute',
     left: '50%',
     transform: 'translateX(-50%)',
@@ -297,11 +309,11 @@ function Experience(props) {
                           marginTop: isMobileView ? '15px' : '0',
                         }}
                       >
-                        {item.images && item.images.length > 0 ? (
+                        {item.images && item.images.length > 0 && (
                           <div style={styles.imagesGallery}>
                             {item.images.map((img, imgIndex) => (
                               <img
-                                key={imgIndex}
+                                key={`${item.title}-${imgIndex}`}
                                 src={img}
                                 alt={`${item.title} - ${imgIndex + 1}`}
                                 style={{
@@ -311,7 +323,8 @@ function Experience(props) {
                               />
                             ))}
                           </div>
-                        ) : item.image ? (
+                        )}
+                        {(!item.images || item.images.length === 0) && item.image && (
                           <img
                             src={item.image}
                             alt={item.title}
@@ -320,7 +333,7 @@ function Experience(props) {
                               ...(hoveredIndex === index && styles.experienceImageHover),
                             }}
                           />
-                        ) : null}
+                        )}
                       </div>
                     </div>
                   </Fade>
