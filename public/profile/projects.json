@@ -22,8 +22,8 @@
         },
         {
             "image" : "images/projects/POSTER KASIRKU.png",
-            "title": "Kasirku - Cashier Management System",
-            "bodyText": "- A comprehensive Cashier Management System built using **CodeIgniter** framework.\n - Modern UI designed with **Bootstrap**.\n - Secure payment gateway integration with **Midtrans**.\n - Dynamic interactions powered by **jQuery** AJAX.", 
+            "title": "Kasirku - Point of Sales",
+            "bodyText": "- An Point of Sales built using **CodeIgniter** framework.\n - Modern UI designed with **Bootstrap**.\n - Secure payment gateway integration with **Midtrans**.\n - Dynamic interactions powered by **jQuery** AJAX.", 
             "links": [
                 {
                     "text": "GitHub",
@@ -151,14 +151,14 @@
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/rigel-sayudha/desa-ganten"
+                    "href": "https://github.com/rigel-sayudha/desaganten"
                 }
             ],
             "tags" : [
                 "PHP",
                 "Laravel",
                 "Website",
-                "Village Portal",
+                "Informasi Desa",
                 "Tailwind CSS"
             ]
         }
