@@ -25,5 +25,11 @@
             "path": "/projects",
             "headerTitle": "Projects"
         }
+        ,
+        {
+            "component": "Organizational",
+            "path": "/organizational",
+            "headerTitle": "Organizational Experience"
+        }
     ]
 }
