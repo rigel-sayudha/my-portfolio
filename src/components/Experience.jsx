@@ -426,6 +426,17 @@ function Experience(props) {
                             ))}
                           </div>
                           )}
+                          {item.projectLink && (
+                            <a
+                              href={item.projectLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-outline-success"
+                              style={{ marginTop: 12, alignSelf: 'flex-start' }}
+                            >
+                              See Project
+                            </a>
+                          )}
                         </div>
 
                         {/* Image Gallery */}
