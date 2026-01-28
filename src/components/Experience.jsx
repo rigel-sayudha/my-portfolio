@@ -439,32 +439,50 @@ function Experience(props) {
                         >
                           {item.images && item.images.length > 0 && (
                             <div style={styles.imagesGallery} className="images-gallery">
-                              {item.images.map((img, imgIndex) => (
-                                <button
-                                  key={`${item.title}-${img}`}
-                                  type="button"
-                                  onClick={() => handleImageClick(item.images, imgIndex)}
-                                  style={{
-                                    ...styles.galleryImage,
-                                    ...(hoveredIndex === index && styles.galleryImageHover),
-                                    background: 'none',
-                                    padding: 0,
-                                  }}
-                                  className="gallery-image-mobile"
-                                  aria-label={`${item.title} - Gambar ${imgIndex + 1}`}
-                                >
-                                  <img
-                                    src={img}
-                                    alt={`${item.title} - ${imgIndex + 1}`}
+                              {item.images.map((img, imgIndex) => {
+                                const key = `${item.title}-${typeof img === 'string' ? img : img.src}`;
+                                return (
+                                  <button
+                                    key={key}
+                                    type="button"
+                                    onClick={() => handleImageClick(item.images, imgIndex)}
                                     style={{
-                                      width: '100%',
-                                      height: '100%',
-                                      borderRadius: 8,
-                                      objectFit: 'cover',
+                                      ...styles.galleryImage,
+                                      ...(hoveredIndex === index && styles.galleryImageHover),
+                                      background: 'none',
+                                      padding: 0,
                                     }}
-                                  />
-                                </button>
-                              ))}
+                                    className="gallery-image-mobile"
+                                    aria-label={`${item.title} - Item ${imgIndex + 1}`}
+                                  >
+                                    {typeof img === 'string' ? (
+                                      <img
+                                        src={img}
+                                        alt={`${item.title} - ${imgIndex + 1}`}
+                                        style={{
+                                          width: '100%',
+                                          height: '100%',
+                                          borderRadius: 8,
+                                          objectFit: 'cover',
+                                        }}
+                                      />
+                                    ) : img && img.type === 'video' ? (
+                                      <video
+                                        src={img.src}
+                                        style={{
+                                          width: '100%',
+                                          height: '100%',
+                                          borderRadius: 8,
+                                          objectFit: 'cover',
+                                        }}
+                                        muted={!img.autoplay}
+                                        controls={!!img.controls}
+                                        loop={!!img.loop}
+                                      />
+                                    ) : null}
+                                  </button>
+                                );
+                              })}
                             </div>
                           )}
                           {(!item.images || item.images.length === 0) && item.image && (
@@ -509,11 +527,30 @@ function Experience(props) {
               ✕
             </button>
 
-            <img
-              src={selectedImage[currentImageIndex]}
-              alt={`Gallery ${currentImageIndex + 1}`}
-              style={modalStyles.modalImage}
-            />
+            {selectedImage && (() => {
+              const current = selectedImage[currentImageIndex];
+              if (typeof current === 'string') {
+                return (
+                  <img
+                    src={current}
+                    alt={`Gallery ${currentImageIndex + 1}`}
+                    style={modalStyles.modalImage}
+                  />
+                );
+              }
+              if (current && current.type === 'video') {
+                return (
+                  <video
+                    src={current.src}
+                    style={modalStyles.modalImage}
+                    controls={!!current.controls}
+                    autoPlay={!!current.autoplay}
+                    loop={!!current.loop}
+                  />
+                );
+              }
+              return null;
+            })()}
 
             <div style={modalStyles.navigationContainer}>
               <button

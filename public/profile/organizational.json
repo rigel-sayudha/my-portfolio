@@ -1,41 +1,49 @@
 {
     "experiences": [
         {
-            "title": "Ketua Divisi Acara",
-            "subtitle": "Himpunan Mahasiswa Informatika",
-            "subtitle2": "Universitas XYZ",
+            "title": "Anggota Pengurus",
+            "subtitle": "UKM Amikom Badminton Club",
+            "subtitle2": "Universitas Amikom Yogyakarta",
             "workType": "Organizational",
-            "companyDescription": "Himpunan Mahasiswa Informatika adalah organisasi kemahasiswaan yang bergerak di bidang pengembangan minat, bakat, dan keilmuan mahasiswa informatika.",
+            "companyDescription": "ABC atau singkatan dari Amikom Badminton Club merupakan suatu organisasi dalam Unit Kegiatan Mahasiswa yang bergerak di bidang olahraga bulutangkis.",
             "workDescription": [
-                "Merancang dan mengelola seluruh rangkaian acara tahunan Informatics Festival.",
-                "Mengkoordinasi tim acara yang terdiri dari 20+ anggota.",
-                "Bekerja sama dengan divisi lain untuk kelancaran acara.",
-                "Menyusun laporan pertanggungjawaban kegiatan."
+                "Mendaftarkan anggota baru Amikom Badminton Club.",
+                "Mengelola akun sosial media Amikom Badminton Club.",
+                "Membuat postingan feed untuk Instagram dengan Tools Canva",
+                "Memberi arahan dan pelatihan kepada peserta baru Amikom Badminton Club",
+                "Mengadakan turnamen antar anggota Amikom Badminton Club."
             ],
-            "dateText": "Jan 2023 – Des 2023",
-            "image": "images/organizational/himatif-1.jpg",
+            "dateText": "Aug 2024 – Oct 2024",
+            "image": "images/organizational/ABC 1.jpeg",
             "images": [
-                "images/organizational/himatif-1.jpg",
-                "images/organizational/himatif-2.jpg",
-                "images/organizational/himatif-3.jpg"
+                "images/organizational/ABC 1.jpeg",
+                "images/organizational/ABC 2.jpeg",
+                "images/organizational/ABC 3.jpeg",
+            {
+                "type": "video",
+                "src": "images/organizational/ABC 4.mp4",
+                "autoplay": true,
+                "controls": true,
+                "loop": true
+            }
             ]
         },
         {
-            "title": "Anggota Divisi Media & Publikasi",
-            "subtitle": "UKM Fotografi",
-            "subtitle2": "Universitas XYZ",
+            "title": "Komunitas Multimedia Amikom",
+            "subtitle": "Anggota Divisi Film Pendek",
+            "subtitle2": "Universitas Amikom Yogyakarta",
             "workType": "Organizational",
-            "companyDescription": "UKM Fotografi adalah unit kegiatan mahasiswa yang mewadahi minat dan bakat mahasiswa di bidang fotografi dan publikasi.",
+            "companyDescription": "KOMA atau singkatan dari Komunitas Multimedia Amikom merupakan suatu organisasi dalam Unit Kegiatan Mahasiswa yang bergerak di bidang multimedia. KOMA memiliki 4 divisi keilmuan yaitu Graphic Design, UI/UX Design, Film, dan Animation.",
             "workDescription": [
-                "Membuat konten visual untuk media sosial organisasi.",
-                "Mendokumentasikan seluruh kegiatan organisasi.",
-                "Mengelola akun Instagram dan Facebook UKM."
+                "Merupakan divisi yang mempelajari dan membahas tentang proses pembuatan , penulisan naskah film pendek, dan pembagian tugas antar tim untuk menghasilkan sebuah karya dan pengalaman baru, Software yang digunakan adalah Adobe Premiere Pro dan lainnya."
             ],
-            "dateText": "Jan 2022 – Des 2022",
+            "dateText": "Mar 2023 – Mar 2024",
             "image": "images/organizational/fotografi-1.jpg",
             "images": [
-                "images/organizational/fotografi-1.jpg",
-                "images/organizational/fotografi-2.jpg"
+                "images/organizational/KOMA 1.jpeg",
+                "images/organizational/KOMA 2.jpeg",
+                "images/organizational/KOMA 3.jpeg",
+                "images/organizational/KOMA 4.jpeg"
             ]
         }
     ]
