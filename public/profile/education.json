@@ -5,6 +5,7 @@
             "cardTitle": "Bachelor Degree, Computer Science",
             "cardSubtitle":"AMIKOM University, Yogyakarta",
             "cardDetailedText": "GPA - 3.67",
+            "certificateLink": "",
             "icon" : {
                 "src": "images/education/foto.png"
             }
@@ -14,6 +15,7 @@
             "cardTitle": "High School, Software Engineering",
             "cardSubtitle":"State Vocational School Airlangga, Balikpapan",
             "cardDetailedText": "Marks - 84/100",
+            "certificateLink": "",
             "icon" : {
                 "src": "images/education/foto.png"
             }
