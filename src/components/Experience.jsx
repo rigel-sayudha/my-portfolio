@@ -239,7 +239,7 @@ const modalStyles = {
 
 function Experience(props) {
   const theme = useContext(ThemeContext);
-  const { header } = props;
+  const { header, endpoint } = props;
   const [data, setData] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isMobileView, setIsMobileView] = useState(isMobile());
@@ -294,13 +294,13 @@ function Experience(props) {
   }, [selectedImage, currentImageIndex, handleKeyDown]);
 
   useEffect(() => {
-    fetch(endpoints.experiences, {
+    fetch(endpoint || endpoints.experiences, {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => setData(res.experiences))
       .catch((err) => err);
-  }, []);
+  }, [endpoint]);
 
   const getFlexDirection = (index) => {
     if (isMobileView) return 'column';
@@ -567,6 +567,10 @@ function Experience(props) {
 
 Experience.propTypes = {
   header: PropTypes.string.isRequired,
+  endpoint: PropTypes.string,
 };
 
+Experience.defaultProps = {
+  endpoint: undefined,
+};
 export default Experience;

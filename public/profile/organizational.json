@@ -1,0 +1,42 @@
+{
+    "experiences": [
+        {
+            "title": "Ketua Divisi Acara",
+            "subtitle": "Himpunan Mahasiswa Informatika",
+            "subtitle2": "Universitas XYZ",
+            "workType": "Organizational",
+            "companyDescription": "Himpunan Mahasiswa Informatika adalah organisasi kemahasiswaan yang bergerak di bidang pengembangan minat, bakat, dan keilmuan mahasiswa informatika.",
+            "workDescription": [
+                "Merancang dan mengelola seluruh rangkaian acara tahunan Informatics Festival.",
+                "Mengkoordinasi tim acara yang terdiri dari 20+ anggota.",
+                "Bekerja sama dengan divisi lain untuk kelancaran acara.",
+                "Menyusun laporan pertanggungjawaban kegiatan."
+            ],
+            "dateText": "Jan 2023 – Des 2023",
+            "image": "images/organizational/himatif-1.jpg",
+            "images": [
+                "images/organizational/himatif-1.jpg",
+                "images/organizational/himatif-2.jpg",
+                "images/organizational/himatif-3.jpg"
+            ]
+        },
+        {
+            "title": "Anggota Divisi Media & Publikasi",
+            "subtitle": "UKM Fotografi",
+            "subtitle2": "Universitas XYZ",
+            "workType": "Organizational",
+            "companyDescription": "UKM Fotografi adalah unit kegiatan mahasiswa yang mewadahi minat dan bakat mahasiswa di bidang fotografi dan publikasi.",
+            "workDescription": [
+                "Membuat konten visual untuk media sosial organisasi.",
+                "Mendokumentasikan seluruh kegiatan organisasi.",
+                "Mengelola akun Instagram dan Facebook UKM."
+            ],
+            "dateText": "Jan 2022 – Des 2022",
+            "image": "images/organizational/fotografi-1.jpg",
+            "images": [
+                "images/organizational/fotografi-1.jpg",
+                "images/organizational/fotografi-2.jpg"
+            ]
+        }
+    ]
+}

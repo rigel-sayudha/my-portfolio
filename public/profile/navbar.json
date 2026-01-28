@@ -22,8 +22,12 @@
             "href": "/education"
         },
         {
-            "title": "Experience",
+            "title": "Work Experience",
             "href": "/experience"
+        },
+        {
+            "title": "Organizational Experience",
+            "href": "/organizational"
         },
         {
             "title": "Projects",
