@@ -441,6 +441,39 @@ function Experience(props) {
                             <div style={styles.imagesGallery} className="images-gallery">
                               {item.images.map((img, imgIndex) => {
                                 const key = `${item.title}-${typeof img === 'string' ? img : img.src}`;
+                                let content = null;
+                                if (typeof img === 'string') {
+                                  content = (
+                                    <img
+                                      src={img}
+                                      alt={`${item.title} - ${imgIndex + 1}`}
+                                      style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        borderRadius: 8,
+                                        objectFit: 'cover',
+                                      }}
+                                    />
+                                  );
+                                } else if (img && img.type === 'video') {
+                                  content = (
+                                    <video
+                                      src={img.src}
+                                      style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        borderRadius: 8,
+                                        objectFit: 'cover',
+                                      }}
+                                      muted={!img.autoplay}
+                                      controls={!!img.controls}
+                                      loop={!!img.loop}
+                                    >
+                                      <track kind="captions" src={img.caption || ''} />
+                                    </video>
+                                  );
+                                }
+
                                 return (
                                   <button
                                     key={key}
@@ -455,31 +488,7 @@ function Experience(props) {
                                     className="gallery-image-mobile"
                                     aria-label={`${item.title} - Item ${imgIndex + 1}`}
                                   >
-                                    {typeof img === 'string' ? (
-                                      <img
-                                        src={img}
-                                        alt={`${item.title} - ${imgIndex + 1}`}
-                                        style={{
-                                          width: '100%',
-                                          height: '100%',
-                                          borderRadius: 8,
-                                          objectFit: 'cover',
-                                        }}
-                                      />
-                                    ) : img && img.type === 'video' ? (
-                                      <video
-                                        src={img.src}
-                                        style={{
-                                          width: '100%',
-                                          height: '100%',
-                                          borderRadius: 8,
-                                          objectFit: 'cover',
-                                        }}
-                                        muted={!img.autoplay}
-                                        controls={!!img.controls}
-                                        loop={!!img.loop}
-                                      />
-                                    ) : null}
+                                    {content}
                                   </button>
                                 );
                               })}
@@ -546,7 +555,9 @@ function Experience(props) {
                     controls={!!current.controls}
                     autoPlay={!!current.autoplay}
                     loop={!!current.loop}
-                  />
+                  >
+                    <track kind="captions" src={current.caption || ''} />
+                  </video>
                 );
               }
               return null;
