@@ -42,7 +42,7 @@
             ]
         },
         {
-            "title": "Internship",
+            "title": "Web Development Internship",
             "subtitle": "Telkom Indonesia",
             "subtitle2": "Telkom Regional VI Kalimantan",
             "workType": "Internship",
@@ -56,6 +56,7 @@
                 "Report daily progress and work results to mentor to ensure compliance with company standards."
             ],
             "dateText": "Feb 2024 – Jun 2024",
+            "projectLink": "https://github.com/rigel-sayudha",
             "image": "images/experiences/telkom.jpg",
             "images": [
                 "images/experiences/TELKOM-1.jpeg",
