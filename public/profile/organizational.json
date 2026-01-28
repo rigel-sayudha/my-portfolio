@@ -1,17 +1,17 @@
 {
     "experiences": [
         {
-            "title": "Anggota Pengurus",
-            "subtitle": "UKM Amikom Badminton Club",
+            "title": "Board Member",
+            "subtitle": "Amikom Badminton Club (UKM)",
             "subtitle2": "Universitas Amikom Yogyakarta",
             "workType": "Organizational",
-            "companyDescription": "ABC atau singkatan dari Amikom Badminton Club merupakan suatu organisasi dalam Unit Kegiatan Mahasiswa yang bergerak di bidang olahraga bulutangkis.",
+            "companyDescription": "ABC (Amikom Badminton Club) is a student activity unit organization focused on badminton.",
             "workDescription": [
-                "Mendaftarkan anggota baru Amikom Badminton Club.",
-                "Mengelola akun sosial media Amikom Badminton Club.",
-                "Membuat postingan feed untuk Instagram dengan Tools Canva",
-                "Memberi arahan dan pelatihan kepada peserta baru Amikom Badminton Club",
-                "Mengadakan turnamen antar anggota Amikom Badminton Club."
+                "Register new members for Amikom Badminton Club.",
+                "Manage Amikom Badminton Club's social media accounts.",
+                "Create Instagram feed posts using Canva.",
+                "Provide guidance and training to new club members.",
+                "Organize internal tournaments for club members."
             ],
             "dateText": "Aug 2024 – Oct 2024",
             "image": "images/organizational/ABC 1.jpeg",
@@ -19,23 +19,23 @@
                 "images/organizational/ABC 1.jpeg",
                 "images/organizational/ABC 2.jpeg",
                 "images/organizational/ABC 3.jpeg",
-            {
-                "type": "video",
-                "src": "images/organizational/ABC 4.mp4",
-                "autoplay": true,
-                "controls": true,
-                "loop": true
-            }
+                {
+                    "type": "video",
+                    "src": "images/organizational/ABC 4.mp4",
+                    "autoplay": true,
+                    "controls": true,
+                    "loop": true
+                }
             ]
         },
         {
-            "title": "Komunitas Multimedia Amikom",
-            "subtitle": "Anggota Divisi Film Pendek",
+            "title": "Amikom Multimedia Community (KOMA)",
+            "subtitle": "Member, Short Film Division",
             "subtitle2": "Universitas Amikom Yogyakarta",
             "workType": "Organizational",
-            "companyDescription": "KOMA atau singkatan dari Komunitas Multimedia Amikom merupakan suatu organisasi dalam Unit Kegiatan Mahasiswa yang bergerak di bidang multimedia. KOMA memiliki 4 divisi keilmuan yaitu Graphic Design, UI/UX Design, Film, dan Animation.",
+            "companyDescription": "KOMA (Amikom Multimedia Community) is a student activity unit organization focused on multimedia. KOMA has four divisions: Graphic Design, UI/UX Design, Film, and Animation.",
             "workDescription": [
-                "Merupakan divisi yang mempelajari dan membahas tentang proses pembuatan , penulisan naskah film pendek, dan pembagian tugas antar tim untuk menghasilkan sebuah karya dan pengalaman baru, Software yang digunakan adalah Adobe Premiere Pro dan lainnya."
+                "A division that studies and discusses the process of creating and writing scripts for short films, and divides tasks among team members to produce new works and experiences. Software used includes Adobe Premiere Pro and others."
             ],
             "dateText": "Mar 2023 – Mar 2024",
             "image": "images/organizational/fotografi-1.jpg",
