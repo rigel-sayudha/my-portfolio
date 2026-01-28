@@ -63,15 +63,31 @@ function Education(props) {
                   titleColor: theme.chronoTheme.titleColor,
                 }}
               >
-                <div className="chrono-icons">
-                  {data.education.map((education) => (education.icon ? (
-                    <img
-                      key={education.icon.src}
-                      src={education.icon.src}
-                      alt={education.icon.alt}
-                    />
-                  ) : null))}
-                </div>
+                {data.education.map((education, idx) => (
+                  <div key={`edu-card-${idx}`} style={{ padding: 12 }}>
+                    {education.icon && (
+                      <img
+                        src={education.icon.src}
+                        alt={education.icon.alt || education.cardTitle}
+                        style={{ width: 48, height: 48, marginBottom: 8 }}
+                      />
+                    )}
+                    <h3 style={{ marginTop: 0 }}>{education.cardTitle}</h3>
+                    <h5 style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
+                    <p>{education.cardDetailedText}</p>
+                    {education.certificateLink && (
+                      <a
+                        href={education.certificateLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-outline-primary"
+                        style={{ marginTop: 8 }}
+                      >
+                        View Diploma
+                      </a>
+                    )}
+                  </div>
+                ))}
               </Chrono>
               {/* View Diploma Links */}
               <div style={{ marginTop: 20 }}>
