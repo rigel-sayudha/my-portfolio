@@ -64,7 +64,7 @@ function Education(props) {
                 }}
               >
                 {data.education.map((education, idx) => (
-                  <div key={`edu-card-${idx}`} style={{ padding: 12 }}>
+                  <div key={`edu-card-${education.cardTitle}-${idx}`} style={{ padding: 12 }}>
                     {education.icon && (
                       <img
                         src={education.icon.src}
@@ -94,14 +94,14 @@ function Education(props) {
                 {data.education.map((edu, idx) => (
                   edu.certificateLink ? (
                     <a
-                      key={`cert-${idx}`}
+                      key={`cert-${edu.cardTitle}-${idx}`}
                       href={edu.certificateLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-outline-primary"
                       style={{ marginRight: 12, marginBottom: 8 }}
                     >
-                      View Diploma - {edu.cardTitle}
+                      {`View Diploma - ${edu.cardTitle}`}
                     </a>
                   ) : null
                 ))}
