@@ -89,23 +89,6 @@ function Education(props) {
                   </div>
                 ))}
               </Chrono>
-              {/* View Diploma Links */}
-              <div style={{ marginTop: 20 }}>
-                {data.education.map((edu) => (
-                  edu.certificateLink ? (
-                    <a
-                      key={`cert-${edu.cardTitle}-${edu.title}`}
-                      href={edu.certificateLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline-primary"
-                      style={{ marginRight: 12, marginBottom: 8 }}
-                    >
-                      {`View Diploma - ${edu.cardTitle}`}
-                    </a>
-                  ) : null
-                ))}
-              </div>
             </Container>
           </div>
         </Fade>
