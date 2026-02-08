@@ -1,4 +1,9 @@
-import React, { useEffect, useState, useContext, Suspense } from 'react';
+import React, {
+  useEffect,
+  useState,
+  useContext,
+  Suspense,
+} from 'react';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal';
@@ -8,7 +13,6 @@ import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
 
-// Lazy-load Chrono and map named export
 const Chrono = React.lazy(() => import('react-chrono').then((mod) => ({ default: mod.Chrono })));
 
 class ChronoErrorBoundary extends React.Component {
@@ -21,9 +25,8 @@ class ChronoErrorBoundary extends React.Component {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error) {
-    // you could log the error here
-    // console.error('Chrono load error', error);
+  componentDidCatch(err) {
+    console.error('Chrono load error', err);
   }
 
   handleRetry = () => {
@@ -34,11 +37,14 @@ class ChronoErrorBoundary extends React.Component {
   };
 
   render() {
-    if (this.state.hasError) {
+    const { hasError, error } = this.state;
+    const { children } = this.props;
+
+    if (hasError) {
       return (
         <div style={{ padding: 24 }}>
           <h4>Failed to load timeline component.</h4>
-          <p style={{ color: '#666' }}>{String(this.state.error || '')}</p>
+          <p style={{ color: '#666' }}>{String(error || '')}</p>
           <div style={{ marginTop: 12 }}>
             <button type="button" className="btn btn-primary" onClick={this.handleRetry}>
               Retry / Reload
@@ -48,9 +54,13 @@ class ChronoErrorBoundary extends React.Component {
       );
     }
 
-    return this.props.children;
+    return children;
   }
 }
+
+ChronoErrorBoundary.propTypes = {
+  children: PropTypes.node,
+};
 
 function Education(props) {
   const theme = useContext(ThemeContext);
@@ -92,24 +102,30 @@ function Education(props) {
           <div style={{ width }} className="section-content-container">
             <Container>
               <ChronoErrorBoundary>
-                <Suspense fallback={<div style={{ padding: 24 }}><FallbackSpinner /></div>}>
+                <Suspense
+                  fallback={
+                    <div style={{ padding: 24 }}>
+                      <FallbackSpinner />
+                    </div>
+                  }
+                >
                   <Chrono
-                hideControls
-                allowDynamicUpdate
-                useReadMore={false}
-                items={data.education}
-                cardHeight={cardHeight}
-                mode={mode}
-                theme={{
-                  primary: theme.accentColor,
-                  secondary: theme.accentColor,
-                  cardBgColor: theme.chronoTheme.cardBgColor,
-                  cardForeColor: theme.chronoTheme.cardForeColor,
-                  titleColor: theme.chronoTheme.titleColor,
-                }}
-              >
-                {data.education.map((education) => (
-                  <div key={`edu-card-${education.cardTitle}-${education.title}`} style={{ padding: 12 }}>
+                    hideControls
+                    allowDynamicUpdate
+                    useReadMore={false}
+                    items={data.education}
+                    cardHeight={cardHeight}
+                    mode={mode}
+                    theme={{
+                      primary: theme.accentColor,
+                      secondary: theme.accentColor,
+                      cardBgColor: theme.chronoTheme.cardBgColor,
+                      cardForeColor: theme.chronoTheme.cardForeColor,
+                      titleColor: theme.chronoTheme.titleColor,
+                    }}
+                  >
+                    {data.education.map((education) => (
+                      <div key={`edu-card-${education.cardTitle}-${education.title}`} style={{ padding: 12 }}>
                     {education.icon && (
                       <img
                         src={education.icon.src}
