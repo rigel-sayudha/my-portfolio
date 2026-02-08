@@ -372,21 +372,38 @@ function About(props) {
                           <img
                             src={data.imageSources[0]}
                             alt="collage-1"
-                            style={{ ...styles.collageImg, ...styles.collageLayer1, borderRadius: 14, height: '100%' }}
+                            style={{
+                              ...styles.collageImg,
+                              ...styles.collageLayer1,
+                              borderRadius: 14,
+                              height: '100%',
+                            }}
                             onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(-6px, -6px) rotate(-2deg)'; e.currentTarget.style.boxShadow = '0 18px 48px rgba(0,0,0,0.25)'; }}
                             onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-6px, -6px) rotate(-2deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
                           />
                           <img
                             src={data.imageSources[1]}
                             alt="collage-2"
-                            style={{ ...styles.collageImg, ...styles.collageLayer2, width: '92%', height: '92%', borderRadius: 10 }}
+                            style={{
+                              ...styles.collageImg,
+                              ...styles.collageLayer2,
+                              width: '92%',
+                              height: '92%',
+                              borderRadius: 10,
+                            }}
                             onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(-16px, 8px) rotate(6deg)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)'; }}
                             onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-16px, 8px) rotate(6deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
                           />
                           <img
                             src={data.imageSources[2]}
                             alt="collage-3"
-                            style={{ ...styles.collageImg, ...styles.collageLayer3, width: '92%', height: '92%', borderRadius: 10 }}
+                            style={{
+                              ...styles.collageImg,
+                              ...styles.collageLayer3,
+                              width: '92%',
+                              height: '92%',
+                              borderRadius: 10,
+                            }}
                             onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(10px, 12px) rotate(-4deg)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)'; }}
                             onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(10px, 12px) rotate(-4deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
                           />
