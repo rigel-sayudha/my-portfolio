@@ -32,7 +32,6 @@ class ChronoErrorBoundary extends React.Component {
   handleRetry = () => {
     // Attempt a full reload which forces dev server to re-serve chunks
     this.setState({ hasError: false, error: null });
-    // small delay then reload
     setTimeout(() => window.location.reload(), 100);
   };
 
@@ -72,6 +71,7 @@ function Education(props) {
   const [width, setWidth] = useState('50vw');
   const [mode, setMode] = useState('VERTICAL_ALTERNATING');
   const [cardHeight, setCardHeight] = useState(250);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     fetch(endpoints.education, {
@@ -84,6 +84,7 @@ function Education(props) {
     if (window?.innerWidth < 576) {
       setMode('VERTICAL');
       setCardHeight(200);
+      setIsMobile(true);
     }
 
     if (window?.innerWidth < 576) {
@@ -140,8 +141,20 @@ function Education(props) {
                           />
                         )}
 
-                        <h3 style={{ marginTop: 0 }}>{education.cardTitle}</h3>
-                        <h5 style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
+                        {isMobile ? (
+                          <h3 style={{ marginTop: 0 }}>
+                            {education.cardTitle}
+                            <br />
+                            <span style={{ color: theme.accentColor, fontWeight: 600 }}>
+                              {education.cardSubtitle}
+                            </span>
+                          </h3>
+                        ) : (
+                          <>
+                            <h3 style={{ marginTop: 0 }}>{education.cardTitle}</h3>
+                            <h5 style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
+                          </>
+                        )}
                         <p>{education.cardDetailedText}</p>
 
                         {education.certificateLink && (
