@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-import Fade from 'react-reveal';
 import { Container } from 'react-bootstrap';
 import { ThemeContext } from 'styled-components';
 import endpoints from '../constants/endpoints';
@@ -143,7 +142,7 @@ function Skills() {
   return (
     <>
       {data ? (
-        <Fade>
+        <>
           <div className="section-content-container">
             <Container>
               {/* Title */}
@@ -156,7 +155,7 @@ function Skills() {
               {/* Certificates Grid */}
               <div className="certificates-grid">
                 {data.certificates?.map((cert, index) => (
-                  <Fade key={cert.title}>
+                  <div key={cert.title}>
                     <div
                       className="certificate-card"
                       style={{
@@ -187,7 +186,7 @@ function Skills() {
                       </div>
                       )}
                     </div>
-                  </Fade>
+                  </div>
                 ))}
               </div>
 
@@ -219,7 +218,7 @@ function Skills() {
               </div>
             </Container>
           </div>
-        </Fade>
+        </>
       ) : <FallbackSpinner /> }
 
       {/* Modal Popup */}

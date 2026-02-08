@@ -3,7 +3,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
-import Fade from 'react-reveal';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
@@ -149,7 +148,7 @@ function About(props) {
       <div className="section-content-container">
         <Container>
           {data ? (
-            <Fade>
+            <>
               {/* Title Section */}
               <div style={{ textAlign: 'center', marginBottom: 40 }}>
                 <p style={{ ...styles.titleText, color: theme.accentColor }}>
@@ -479,7 +478,7 @@ function About(props) {
                   )}
                 </Col>
               </Row>
-            </Fade>
+            </>
           ) : (
             <FallbackSpinner />
           )}

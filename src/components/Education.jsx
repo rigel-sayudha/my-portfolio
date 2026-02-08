@@ -6,7 +6,6 @@ import React, {
 } from 'react';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal';
 import { ThemeContext } from 'styled-components';
 import endpoints from '../constants/endpoints';
 import Header from './Header';
@@ -101,7 +100,7 @@ function Education(props) {
     <>
       <Header title={header} />
       {data ? (
-        <Fade>
+        <>
           <div style={{ width }} className="section-content-container">
             <Container>
               <ChronoErrorBoundary>
@@ -175,7 +174,7 @@ function Education(props) {
               </ChronoErrorBoundary>
             </Container>
           </div>
-        </Fade>
+        </>
       ) : (
         <FallbackSpinner />
       )}

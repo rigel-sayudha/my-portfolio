@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
-import Fade from 'react-reveal';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
@@ -343,7 +342,7 @@ function Experience(props) {
                   };
 
                   return (
-                    <Fade key={item.title + item.dateText}>
+                    <div key={item.title + item.dateText}>
                       <div
                         className="timeline-item-wrapper"
                         style={{
@@ -517,7 +516,7 @@ function Experience(props) {
                           )}
                         </div>
                       </div>
-                    </Fade>
+                    </div>
                   );
                 })}
               </div>
