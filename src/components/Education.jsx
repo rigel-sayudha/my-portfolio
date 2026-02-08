@@ -30,7 +30,6 @@ class ChronoErrorBoundary extends React.Component {
   }
 
   handleRetry = () => {
-    // Attempt a full reload which forces dev server to re-serve chunks
     this.setState({ hasError: false, error: null });
     setTimeout(() => window.location.reload(), 100);
   };

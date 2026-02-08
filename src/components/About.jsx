@@ -61,40 +61,48 @@ const styles = {
   },
   collageContainer: {
     position: 'relative',
-    width: '320px',
-    height: '260px',
+    width: '560px',
+    height: '360px',
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: '1fr 1fr',
-    gap: '12px',
-    justifyItems: 'center',
+    gridTemplateRows: '1fr 0.45fr',
+    gridTemplateAreas: '\'main main\' \'left right\'',
+    gap: 12,
+    justifyItems: 'stretch',
+    alignItems: 'stretch',
+  },
+  collageItem: {
+    display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    boxShadow: '0 10px 25px rgba(0,0,0,0.12)',
+    padding: 4,
   },
   collageImg: {
     width: '100%',
     height: '100%',
-    objectFit: 'cover',
-    borderRadius: 12,
-    boxShadow: '0 10px 25px rgba(0,0,0,0.18)',
+    objectFit: 'contain',
     transition: 'transform 0.35s ease, box-shadow 0.35s ease',
   },
   collageLayer1: {
-    gridColumn: '1 / span 2',
-    gridRow: '1 / span 1',
-    transform: 'translate(-6px, -6px) rotate(-2deg)',
+    gridArea: 'main',
+    transform: 'rotate(-1deg)',
     zIndex: 1,
   },
   collageLayer2: {
-    gridColumn: '1 / span 1',
-    gridRow: '2 / span 1',
-    transform: 'translate(-16px, 8px) rotate(6deg)',
+    gridArea: 'left',
+    transform: 'rotate(2deg)',
     zIndex: 2,
+    alignSelf: 'center',
   },
   collageLayer3: {
-    gridColumn: '2 / span 1',
-    gridRow: '2 / span 1',
-    transform: 'translate(10px, 12px) rotate(-4deg)',
+    gridArea: 'right',
+    transform: 'rotate(-2deg)',
     zIndex: 3,
+    alignSelf: 'center',
   },
   skillBadge: {
     padding: '8px 16px',
@@ -369,44 +377,71 @@ function About(props) {
                     >
                       {data.imageSources && data.imageSources.length >= 3 ? (
                         <>
-                          <img
-                            src={data.imageSources[0]}
-                            alt="collage-1"
+                          <div
                             style={{
-                              ...styles.collageImg,
+                              ...styles.collageItem,
                               ...styles.collageLayer1,
                               borderRadius: 14,
-                              height: '100%',
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(-6px, -6px) rotate(-2deg)'; e.currentTarget.style.boxShadow = '0 18px 48px rgba(0,0,0,0.25)'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-6px, -6px) rotate(-2deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
-                          />
-                          <img
-                            src={data.imageSources[1]}
-                            alt="collage-2"
+                          >
+                            <img
+                              src={data.imageSources[0]}
+                              alt="collage-1"
+                              style={{ ...styles.collageImg }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.02)';
+                                e.currentTarget.style.boxShadow = '0 18px 48px rgba(0,0,0,0.25)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.boxShadow = 'none';
+                              }}
+                            />
+                          </div>
+
+                          <div
                             style={{
-                              ...styles.collageImg,
+                              ...styles.collageItem,
                               ...styles.collageLayer2,
-                              width: '92%',
-                              height: '92%',
                               borderRadius: 10,
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(-16px, 8px) rotate(6deg)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-16px, 8px) rotate(6deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
-                          />
-                          <img
-                            src={data.imageSources[2]}
-                            alt="collage-3"
+                          >
+                            <img
+                              src={data.imageSources[1]}
+                              alt="collage-2"
+                              style={{ ...styles.collageImg }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.03)';
+                                e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.boxShadow = 'none';
+                              }}
+                            />
+                          </div>
+
+                          <div
                             style={{
-                              ...styles.collageImg,
+                              ...styles.collageItem,
                               ...styles.collageLayer3,
-                              width: '92%',
-                              height: '92%',
                               borderRadius: 10,
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(10px, 12px) rotate(-4deg)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(10px, 12px) rotate(-4deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
-                          />
+                          >
+                            <img
+                              src={data.imageSources[2]}
+                              alt="collage-3"
+                              style={{ ...styles.collageImg }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.03)';
+                                e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.boxShadow = 'none';
+                              }}
+                            />
+                          </div>
                         </>
                       ) : (
                         <img
