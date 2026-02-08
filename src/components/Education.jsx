@@ -83,9 +83,8 @@ function Education(props) {
 
     if (window?.innerWidth < 576) {
       setMode('VERTICAL');
-      // increase card height on small screens to avoid cramped layout
-      setCardHeight(320);
       setIsMobile(true);
+      setCardHeight(320);
     }
 
     if (window?.innerWidth < 576) {
