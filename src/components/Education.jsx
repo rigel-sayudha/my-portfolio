@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { Chrono } from 'react-chrono';
+import React, { useEffect, useState, useContext, Suspense } from 'react';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal';
@@ -8,6 +7,50 @@ import endpoints from '../constants/endpoints';
 import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
+
+// Lazy-load Chrono and map named export
+const Chrono = React.lazy(() => import('react-chrono').then((mod) => ({ default: mod.Chrono })));
+
+class ChronoErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error) {
+    // you could log the error here
+    // console.error('Chrono load error', error);
+  }
+
+  handleRetry = () => {
+    // Attempt a full reload which forces dev server to re-serve chunks
+    this.setState({ hasError: false, error: null });
+    // small delay then reload
+    setTimeout(() => window.location.reload(), 100);
+  };
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: 24 }}>
+          <h4>Failed to load timeline component.</h4>
+          <p style={{ color: '#666' }}>{String(this.state.error || '')}</p>
+          <div style={{ marginTop: 12 }}>
+            <button type="button" className="btn btn-primary" onClick={this.handleRetry}>
+              Retry / Reload
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
 
 function Education(props) {
   const theme = useContext(ThemeContext);
@@ -48,7 +91,9 @@ function Education(props) {
         <Fade>
           <div style={{ width }} className="section-content-container">
             <Container>
-              <Chrono
+              <ChronoErrorBoundary>
+                <Suspense fallback={<div style={{ padding: 24 }}><FallbackSpinner /></div>}>
+                  <Chrono
                 hideControls
                 allowDynamicUpdate
                 useReadMore={false}
@@ -88,7 +133,9 @@ function Education(props) {
                     )}
                   </div>
                 ))}
-              </Chrono>
+                  </Chrono>
+                </Suspense>
+              </ChronoErrorBoundary>
             </Container>
           </div>
         </Fade>
