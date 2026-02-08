@@ -1,5 +1,8 @@
 {
   "buildCommand": "npm run build",
-  "installCommand": "yarn install --ignore-engines",
-  "outputDirectory": "build"
+  "installCommand": "npm ci --legacy-peer-deps",
+  "outputDirectory": "build",
+  "env": {
+    "CI": "true"
+  }
 }
