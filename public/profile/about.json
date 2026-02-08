@@ -6,6 +6,11 @@
         "width": "300px",
         "height": "auto"
     },
+    "imageSources": [
+        "images/about/pas-foto.jpg",
+        "images/about/profile.png",
+        "images/about/pas-foto.jpg"
+    ],
     "education": {
         "degree": "Bachelor of Information Systems",
         "institution": "AMIKOM Yogyakarta University",

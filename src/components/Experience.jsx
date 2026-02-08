@@ -434,7 +434,7 @@ function Experience(props) {
                               className="btn btn-outline-success"
                               style={{ marginTop: 12, alignSelf: 'flex-start' }}
                             >
-                              See Project
+                              Click to See Project
                             </a>
                           )}
                         </div>

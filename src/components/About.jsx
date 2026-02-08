@@ -59,6 +59,43 @@ const styles = {
     gap: 12,
     marginTop: 15,
   },
+  collageContainer: {
+    position: 'relative',
+    width: '320px',
+    height: '360px',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridTemplateRows: '1fr 1fr',
+    gap: '12px',
+    justifyItems: 'center',
+    alignItems: 'center',
+  },
+  collageImg: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    borderRadius: 12,
+    boxShadow: '0 10px 25px rgba(0,0,0,0.18)',
+    transition: 'transform 0.35s ease, box-shadow 0.35s ease',
+  },
+  collageLayer1: {
+    gridColumn: '1 / span 1',
+    gridRow: '1 / span 2',
+    transform: 'translate(-10px, 0) rotate(-2deg)',
+    zIndex: 1,
+  },
+  collageLayer2: {
+    gridColumn: '2 / span 1',
+    gridRow: '1 / span 1',
+    transform: 'translate(10px, -20px) rotate(6deg)',
+    zIndex: 2,
+  },
+  collageLayer3: {
+    gridColumn: '2 / span 1',
+    gridRow: '2 / span 1',
+    transform: 'translate(10px, 20px) rotate(-4deg)',
+    zIndex: 3,
+  },
   skillBadge: {
     padding: '8px 16px',
     borderRadius: 20,
@@ -319,19 +356,53 @@ function About(props) {
                   )}
                 </Col>
 
-                {/* Right Side - Image and Skills */}
+                {/* Right Side - Image and Skills (collage) */}
                 <Col lg={5}>
-                  {/* Profile Image */}
-                  <div style={styles.introImageContainer}>
-                    <img
-                      src={data?.imageSource}
-                      alt="profile"
+                  {/* Collage Container */}
+                  <div style={{ ...styles.introImageContainer, justifyContent: 'flex-end' }}>
+                    <div
                       style={{
-                        ...data?.imageStyle,
-                        borderRadius: 12,
-                        boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+                        ...styles.collageContainer,
+                        width: data?.imageStyle?.width || styles.collageContainer.width,
+                        height: data?.imageStyle?.height || styles.collageContainer.height,
                       }}
-                    />
+                    >
+                      {data.imageSources && data.imageSources.length >= 3 ? (
+                        <>
+                          <img
+                            src={data.imageSources[0]}
+                            alt="collage-1"
+                            style={{ ...styles.collageImg, ...styles.collageLayer1 }}
+                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(-10px, 0) rotate(-2deg)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(-10px, 0) rotate(-2deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
+                          />
+                          <img
+                            src={data.imageSources[1]}
+                            alt="collage-2"
+                            style={{ ...styles.collageImg, ...styles.collageLayer2 }}
+                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(10px, -20px) rotate(6deg)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(10px, -20px) rotate(6deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
+                          />
+                          <img
+                            src={data.imageSources[2]}
+                            alt="collage-3"
+                            style={{ ...styles.collageImg, ...styles.collageLayer3 }}
+                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02) translate(10px, 20px) rotate(-4deg)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.25)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translate(10px, 20px) rotate(-4deg)'; e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.18)'; }}
+                          />
+                        </>
+                      ) : (
+                        <img
+                          src={data?.imageSource}
+                          alt="profile"
+                          style={{
+                            ...data?.imageStyle,
+                            borderRadius: 12,
+                            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+                          }}
+                        />
+                      )}
+                    </div>
                   </div>
 
                   {/* Skills Section */}
