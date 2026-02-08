@@ -83,7 +83,8 @@ function Education(props) {
 
     if (window?.innerWidth < 576) {
       setMode('VERTICAL');
-      setCardHeight(200);
+      // increase card height on small screens to avoid cramped layout
+      setCardHeight(320);
       setIsMobile(true);
     }
 
@@ -131,6 +132,7 @@ function Education(props) {
                     {data.education.map((education) => (
                       <div
                         key={`edu-card-${education.cardTitle}-${education.title}`}
+                        className="timeline-card-content"
                         style={{ padding: 12 }}
                       >
                         {education.icon && (
@@ -142,17 +144,17 @@ function Education(props) {
                         )}
 
                         {isMobile ? (
-                          <h3 style={{ marginTop: 0 }}>
+                          <h3 className="card-title" style={{ marginTop: 0 }}>
                             {education.cardTitle}
                             <br />
-                            <span style={{ color: theme.accentColor, fontWeight: 600 }}>
+                            <span className="card-sub-title" style={{ fontWeight: 600 }}>
                               {education.cardSubtitle}
                             </span>
                           </h3>
                         ) : (
                           <>
-                            <h3 style={{ marginTop: 0 }}>{education.cardTitle}</h3>
-                            <h5 style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
+                            <h3 className="card-title" style={{ marginTop: 0 }}>{education.cardTitle}</h3>
+                            <h5 className="card-sub-title" style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
                           </>
                         )}
                         <p>{education.cardDetailedText}</p>
