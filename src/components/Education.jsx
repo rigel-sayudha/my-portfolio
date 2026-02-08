@@ -106,11 +106,11 @@ function Education(props) {
             <Container>
               <ChronoErrorBoundary>
                 <Suspense
-                  fallback={
+                  fallback={(
                     <div style={{ padding: 24 }}>
                       <FallbackSpinner />
                     </div>
-                  }
+                  )}
                 >
                   <Chrono
                     hideControls
@@ -128,35 +128,35 @@ function Education(props) {
                     }}
                   >
                     {data.education.map((education) => (
-                        <div
-                          key={`edu-card-${education.cardTitle}-${education.title}`}
-                          style={{ padding: 12 }}
-                        >
-                          {education.icon && (
-                            <img
-                              src={education.icon.src}
-                              alt={education.icon.alt || education.cardTitle}
-                              style={{ width: 48, height: 48, marginBottom: 8 }}
-                            />
-                          )}
+                      <div
+                        key={`edu-card-${education.cardTitle}-${education.title}`}
+                        style={{ padding: 12 }}
+                      >
+                        {education.icon && (
+                          <img
+                            src={education.icon.src}
+                            alt={education.icon.alt || education.cardTitle}
+                            style={{ width: 48, height: 48, marginBottom: 8 }}
+                          />
+                        )}
 
-                          <h3 style={{ marginTop: 0 }}>{education.cardTitle}</h3>
-                          <h5 style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
-                          <p>{education.cardDetailedText}</p>
+                        <h3 style={{ marginTop: 0 }}>{education.cardTitle}</h3>
+                        <h5 style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
+                        <p>{education.cardDetailedText}</p>
 
-                          {education.certificateLink && (
-                            <a
-                              href={education.certificateLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="btn btn-outline-primary"
-                              style={{ marginTop: 8 }}
-                            >
-                              View Diploma
-                            </a>
-                          )}
-                        </div>
-                      ))}
+                        {education.certificateLink && (
+                          <a
+                            href={education.certificateLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-outline-primary"
+                            style={{ marginTop: 8 }}
+                          >
+                            View Diploma
+                          </a>
+                        )}
+                      </div>
+                    ))}
                   </Chrono>
                 </Suspense>
               </ChronoErrorBoundary>
