@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Container, Row, Button, Form } from 'react-bootstrap';
+import {
+  Container,
+  Row,
+  Button,
+  Form,
+} from 'react-bootstrap';
 import { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
 import Header from './Header';
@@ -30,6 +35,18 @@ const styles = {
     fontSize: '0.9em',
     opacity: 0.8,
     marginTop: 10,
+  },
+  searchContainer: {
+    display: 'flex',
+    gap: 12,
+    alignItems: 'center',
+    marginBottom: 20,
+    flexWrap: 'wrap',
+  },
+  tagButtonsContainer: {
+    display: 'flex',
+    gap: 8,
+    flexWrap: 'wrap',
   },
   modalOverlay: {
     position: 'fixed',
@@ -119,73 +136,84 @@ const Projects = (props) => {
   return (
     <>
       <Header title={header} />
-      {data
-        ? (
-          <div className="section-content-container">
-            <Container style={styles.containerStyle}>
+      {data ? (
+        <div className="section-content-container">
+          <Container style={styles.containerStyle}>
 
-              {/* Projects Grid */}
-              <Row xs={1} sm={1} md={2} lg={3} className="g-4">
-                {data.projects?.map((project) => (
-                  <ProjectCard
-                    key={project.title}
-                    project={project}
-                    onImageClick={handleProjectImageClick}
-                  />
+            {/* Search & Tag Filters */}
+            <div style={styles.searchContainer}>
+              <Form.Control
+                placeholder="Cari project (judul, deskripsi, tag)..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                style={{ maxWidth: 320 }}
+              />
+
+              <div style={styles.tagButtonsContainer}>
+                <Button
+                  variant={activeTag === '' ? 'primary' : 'outline-primary'}
+                  onClick={() => setActiveTag('')}
+                  size="sm"
+                >
+                  Semua Tag
+                </Button>
+                {allTags.map((tag) => (
+                  <Button
+                    key={tag}
+                    variant={activeTag === tag ? 'primary' : 'outline-primary'}
+                    size="sm"
+                    onClick={() => setActiveTag(activeTag === tag ? '' : tag)}
+                  >
+                    {tag}
+                  </Button>
                 ))}
-              {data ? (
-                <div className="section-content-container">
-                  <Container style={styles.containerStyle}>
+              </div>
+            </div>
 
-                    {/* Search & Tag Filters */}
-                    <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 20, flexWrap: 'wrap' }}>
-                      <Form.Control
-                        placeholder="Cari project (judul, deskripsi, tag)..."
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        style={{ maxWidth: 320 }}
-                      />
+            {/* Projects Grid */}
+            <Row xs={1} sm={2} md={3} lg={4} className="g-4 project-grid">
+              {filteredProjects.map((project, idx) => (
+                <ProjectCard
+                  key={project.title}
+                  project={project}
+                  onImageClick={handleProjectImageClick}
+                  animationDelay={`${idx * 60}ms`}
+                />
+              ))}
+            </Row>
 
-                      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                        <Button
-                          variant={activeTag === '' ? 'primary' : 'outline-primary'}
-                          onClick={() => setActiveTag('')}
-                          size="sm"
-                        >
-                          Semua Tag
-                        </Button>
-                        {allTags.map((tag) => (
-                          <Button
-                            key={tag}
-                            variant={activeTag === tag ? 'primary' : 'outline-primary'}
-                            size="sm"
-                            onClick={() => setActiveTag(activeTag === tag ? '' : tag)}
-                          >
-                            {tag}
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
+            <div style={{ marginTop: 16, color: theme.color }}>
+              Menampilkan
+              {' '}
+              {filteredProjects.length}
+              {' '}
+              dari
+              {' '}
+              {data.projects.length}
+              {' '}
+              project
+            </div>
 
-                    {/* Projects Grid */}
-                    <Row xs={1} sm={2} md={3} lg={4} className="g-4 project-grid">
-                      {filteredProjects.map((project, idx) => (
-                        <ProjectCard
-                          key={project.title}
-                          project={project}
-                          onImageClick={handleProjectImageClick}
-                          animationDelay={`${idx * 60}ms`}
-                        />
-                      ))}
-                    </Row>
+          </Container>
+        </div>
+      ) : (
+        <FallbackSpinner />
+      )}
 
-                    <div style={{ marginTop: 16, color: theme.color }}>
-                      Menampilkan {filteredProjects.length} dari {data.projects.length} project
-                    </div>
-
-                  </Container>
-                </div>
-              ) : <FallbackSpinner /> }
+      {/* Modal Popup */}
+      {selectedProject && (
+        <div
+          style={styles.modalOverlay}
+          onClick={handleCloseModal}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') handleCloseModal();
+          }}
+          role="presentation"
+        >
+          <div
+            style={styles.modalContent}
+            role="dialog"
+            aria-modal="true"
           >
             <button
               type="button"
