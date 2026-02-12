@@ -1,14 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {
-  Container,
-  Row,
-  Button,
-  Form,
-} from 'react-bootstrap';
+import { Container, Row, Button } from 'react-bootstrap';
 import { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
 import Header from './Header';
-import '../css/projects.css';
 import endpoints from '../constants/endpoints';
 import ProjectCard from './projects/ProjectCard';
 import FallbackSpinner from './FallbackSpinner';
@@ -35,18 +29,6 @@ const styles = {
     fontSize: '0.9em',
     opacity: 0.8,
     marginTop: 10,
-  },
-  searchContainer: {
-    display: 'flex',
-    gap: 12,
-    alignItems: 'center',
-    marginBottom: 20,
-    flexWrap: 'wrap',
-  },
-  tagButtonsContainer: {
-    display: 'flex',
-    gap: 8,
-    flexWrap: 'wrap',
   },
   modalOverlay: {
     position: 'fixed',
@@ -102,8 +84,6 @@ const Projects = (props) => {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
-  const [query, setQuery] = useState('');
-  const [activeTag, setActiveTag] = useState('');
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
@@ -123,82 +103,30 @@ const Projects = (props) => {
     setSelectedProject(null);
   };
 
-  const filteredProjects = data?.projects?.filter((p) => {
-    const q = query.trim().toLowerCase();
-    const inText = `${p.title} ${p.bodyText || ''}`.toLowerCase().includes(q);
-    const inTags = p.tags?.some((t) => t.toLowerCase().includes(q));
-    const tagMatch = activeTag ? p.tags?.includes(activeTag) : true;
-    return (q ? (inText || inTags) : true) && tagMatch;
-  }) || [];
-
-  const allTags = Array.from(new Set((data?.projects || []).flatMap((p) => p.tags || [])));
+  // Always show all projects
 
   return (
     <>
       <Header title={header} />
-      {data ? (
-        <div className="section-content-container">
-          <Container style={styles.containerStyle}>
+      {data
+        ? (
+          <div className="section-content-container">
+            <Container style={styles.containerStyle}>
 
-            {/* Search & Tag Filters */}
-            <div style={styles.searchContainer}>
-              <Form.Control
-                placeholder="Cari project (judul, deskripsi, tag)..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                style={{ maxWidth: 320 }}
-              />
-
-              <div style={styles.tagButtonsContainer}>
-                <Button
-                  variant={activeTag === '' ? 'primary' : 'outline-primary'}
-                  onClick={() => setActiveTag('')}
-                  size="sm"
-                >
-                  Semua Tag
-                </Button>
-                {allTags.map((tag) => (
-                  <Button
-                    key={tag}
-                    variant={activeTag === tag ? 'primary' : 'outline-primary'}
-                    size="sm"
-                    onClick={() => setActiveTag(activeTag === tag ? '' : tag)}
-                  >
-                    {tag}
-                  </Button>
+              {/* Projects Grid */}
+              <Row xs={1} sm={1} md={2} lg={3} className="g-4">
+                {data.projects?.map((project) => (
+                  <div key={project.title}>
+                    <ProjectCard
+                      project={project}
+                      onImageClick={handleProjectImageClick}
+                    />
+                  </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Projects Grid */}
-            <Row xs={1} sm={2} md={3} lg={4} className="g-4 project-grid">
-              {filteredProjects.map((project, idx) => (
-                <ProjectCard
-                  key={project.title}
-                  project={project}
-                  onImageClick={handleProjectImageClick}
-                  animationDelay={`${idx * 60}ms`}
-                />
-              ))}
-            </Row>
-
-            <div style={{ marginTop: 16, color: theme.color }}>
-              Menampilkan
-              {' '}
-              {filteredProjects.length}
-              {' '}
-              dari
-              {' '}
-              {data.projects.length}
-              {' '}
-              project
-            </div>
-
-          </Container>
-        </div>
-      ) : (
-        <FallbackSpinner />
-      )}
+              </Row>
+            </Container>
+          </div>
+        ) : <FallbackSpinner /> }
 
       {/* Modal Popup */}
       {selectedProject && (
