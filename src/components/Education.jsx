@@ -25,6 +25,7 @@ class ChronoErrorBoundary extends React.Component {
   }
 
   componentDidCatch(err) {
+    // eslint-disable-next-line no-console
     console.error('Chrono load error', err);
   }
 
