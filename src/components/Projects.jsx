@@ -84,7 +84,7 @@ const Projects = (props) => {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
-  const [showMore, setShowMore] = useState(false);
+  const [showMore] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const Projects = (props) => {
     setSelectedProject(null);
   };
 
-  const numberOfItems = showMore && data ? data.length : 6;
+  const numberOfItems = data ? data.projects.length : 0;
 
   return (
     <>
@@ -116,49 +116,15 @@ const Projects = (props) => {
 
               {/* Projects Grid */}
               <Row xs={1} sm={1} md={2} lg={3} className="g-4">
-                {data.projects?.slice(0, numberOfItems).map((project) => (
-                  <div key={project.title}>
-                    <ProjectCard
-                      project={project}
-                      onImageClick={handleProjectImageClick}
-                    />
-                  </div>
+                {data.projects?.map((project) => (
+                  <ProjectCard
+                    key={project.title}
+                    project={project}
+                    onImageClick={handleProjectImageClick}
+                  />
                 ))}
               </Row>
-
-              {/* Show More Button */}
-              {!showMore && data.projects && data.projects.length > 6
-                && (
-                <div style={{ textAlign: 'center', marginTop: 40 }}>
-                  <Button
-                    style={{
-                      ...styles.showMoreStyle,
-                      backgroundColor: theme.accentColor || '#4a90e2',
-                      borderColor: theme.accentColor || '#4a90e2',
-                      color: '#fff',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.transform = 'translateY(-2px)';
-                      e.target.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.transform = 'translateY(0)';
-                      e.target.style.boxShadow = 'none';
-                    }}
-                    variant="primary"
-                    onClick={() => setShowMore(true)}
-                  >
-                    Tampilkan Lebih Banyak
-                  </Button>
-                  <p style={{ ...styles.projectsCountStyle, color: theme.color }}>
-                    Menampilkan 6 dari
-                    {' '}
-                    {data.projects.length}
-                    {' '}
-                    project
-                  </p>
-                </div>
-                )}
+              {/* All projects are displayed by default; removed "Show More" button */}
             </Container>
           </div>
         ) : <FallbackSpinner /> }
