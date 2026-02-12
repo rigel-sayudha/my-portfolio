@@ -94,6 +94,7 @@ const styles = {
 const ProjectCard = (props) => {
   const theme = useContext(ThemeContext);
   const { project, onImageClick } = props;
+  const { animationDelay } = props;
   const [isHovered, setIsHovered] = useState(false);
   const [imageHovered, setImageHovered] = useState(false);
 
@@ -102,12 +103,16 @@ const ProjectCard = (props) => {
   return (
     <Col>
       <Card
+        className="project-card"
         style={{
           ...styles.cardStyle,
           backgroundColor: theme.cardBackground,
           borderColor: theme.cardBorderColor,
           border: `1px solid ${theme.cardBorderColor || '#e0e0e0'}`,
           ...(isHovered && styles.cardHoverStyle),
+          animation: 'projectFadeUp 400ms ease forwards',
+          animationDelay: animationDelay || '0ms',
+          opacity: 0,
         }}
         text={theme.bsSecondaryVariant}
         onMouseEnter={() => setIsHovered(true)}
@@ -234,10 +239,12 @@ ProjectCard.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   onImageClick: PropTypes.func,
+  animationDelay: PropTypes.string,
 };
 
 ProjectCard.defaultProps = {
   onImageClick: undefined,
+  animationDelay: '0ms',
 };
 
 export default ProjectCard;
