@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Container, Row, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
 import Header from './Header';
@@ -81,7 +81,6 @@ const styles = {
 };
 
 const Projects = (props) => {
-  const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
