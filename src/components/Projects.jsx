@@ -123,7 +123,7 @@ const Projects = (props) => {
                       onImageClick={handleProjectImageClick}
                     />
                   </div>
-                ))}}
+                ))}
               </Row>
 
               {/* Show More Button */}
