@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { ThemeContext } from 'styled-components';
+// ThemeContext removed — not used in this component
 import PropTypes from 'prop-types';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
