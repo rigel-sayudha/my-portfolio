@@ -12,11 +12,7 @@ import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
 
-const Chrono = React.lazy(() =>
-  import('react-chrono').then((mod) => ({
-    default: mod.Chrono,
-  }))
-);
+const Chrono = React.lazy(() => import('react-chrono').then((mod) => ({ default: mod.Chrono })));
 
 class ChronoErrorBoundary extends React.Component {
   constructor(props) {
@@ -110,6 +106,15 @@ function Education(props) {
     };
   }, []);
 
+  // Extract chrono theme object to avoid inline JSX object newline rules
+  const chronoTheme = {
+    primary: theme.accentColor,
+    secondary: theme.accentColor,
+    cardBgColor: theme.chronoTheme.cardBgColor,
+    cardForeColor: theme.chronoTheme.cardForeColor,
+    titleColor: theme.chronoTheme.titleColor,
+  };
+
   return (
     <>
       <Header title={header} />
@@ -132,13 +137,7 @@ function Education(props) {
                     items={data.education}
                     cardHeight={cardHeight}
                     mode={mode}
-                    theme={{
-                      primary: theme.accentColor,
-                      secondary: theme.accentColor,
-                      cardBgColor: theme.chronoTheme.cardBgColor,
-                      cardForeColor: theme.chronoTheme.cardForeColor,
-                      titleColor: theme.chronoTheme.titleColor,
-                    }}
+                    theme={chronoTheme}
                   >
                     {data.education.map((education) => (
                       <div
