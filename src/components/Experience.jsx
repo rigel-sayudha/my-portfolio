@@ -79,17 +79,6 @@ const styles = {
     transform: 'scale(1.05)',
     boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
   },
-  timelineMarker: {
-    position: 'absolute',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: 20,
-    height: 20,
-    backgroundColor: '#fff',
-    border: '4px solid',
-    borderRadius: '50%',
-    top: 20,
-  },
   contentBox: {
     padding: 20,
     borderRadius: 8,
@@ -352,16 +341,6 @@ function Experience(props) {
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                       >
-                        {/* Timeline Marker - Always in Center */}
-                        <div
-                          style={{
-                            ...styles.timelineMarker,
-                            borderColor: theme.accentColor || '#4a90e2',
-                            backgroundColor: theme.accentColor || '#4a90e2',
-                            boxShadow: `0 0 0 4px ${theme.highlightColor || '#f0f0f0'}`,
-                          }}
-                        />
-
                         {/* Content Box */}
                         <div
                           style={{

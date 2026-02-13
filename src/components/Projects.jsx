@@ -101,9 +101,6 @@ const Projects = (props) => {
   const handleCloseModal = () => {
     setSelectedProject(null);
   };
-
-  // Always show all projects
-
   return (
     <>
       <Header title={header} />

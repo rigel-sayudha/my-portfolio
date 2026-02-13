@@ -69,8 +69,6 @@ function Education(props) {
   const [width, setWidth] = useState('50vw');
   const [mode, setMode] = useState('VERTICAL_ALTERNATING');
   const [cardHeight, setCardHeight] = useState(250);
-  const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     fetch(endpoints.education, {
       method: 'GET',
@@ -81,10 +79,10 @@ function Education(props) {
 
     if (window?.innerWidth < 576) {
       setMode('VERTICAL');
-      setIsMobile(true);
       setCardHeight(320);
+    } else {
+      setMode('VERTICAL_ALTERNATING');
     }
-
     if (window?.innerWidth < 576) {
       setWidth('95vw');
     } else if (window?.innerWidth >= 576 && window?.innerWidth < 768) {
@@ -140,20 +138,6 @@ function Education(props) {
                           />
                         )}
 
-                        {isMobile ? (
-                          <h3 className="card-title" style={{ marginTop: 0 }}>
-                            {education.cardTitle}
-                            <br />
-                            <span className="card-sub-title" style={{ fontWeight: 600 }}>
-                              {education.cardSubtitle}
-                            </span>
-                          </h3>
-                        ) : (
-                          <>
-                            <h3 className="card-title" style={{ marginTop: 0 }}>{education.cardTitle}</h3>
-                            <h5 className="card-sub-title" style={{ color: theme.accentColor }}>{education.cardSubtitle}</h5>
-                          </>
-                        )}
                         <p>{education.cardDetailedText}</p>
 
                         {education.certificateLink && (

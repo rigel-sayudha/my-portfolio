@@ -85,6 +85,14 @@
 
 section.timeline-card-content {
   justify-content: center;
+  min-width: 280px;
+  width: 100%;
+}
+
+/* Timeline card content wrapper - make card section longer (wider) */
+div.card-content-wrapper {
+  min-width: 280px;
+  flex: 1;
 }
 
 section.timeline-card-content p.card-title {
