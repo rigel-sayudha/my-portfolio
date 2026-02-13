@@ -149,7 +149,12 @@ function Education(props) {
                           <img
                             src={education.icon.src}
                             alt={education.icon.alt || education.cardTitle}
-                            style={{ width: '48px', height: 'auto', maxWidth: '100%', marginBottom: 8 }}
+                            style={{
+                              width: '48px',
+                              height: 'auto',
+                              maxWidth: '100%',
+                              marginBottom: 8,
+                            }}
                           />
                         )}
 
