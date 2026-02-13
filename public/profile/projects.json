@@ -179,24 +179,6 @@
                 "Javascript",
                 "Tailwind CSS"
             ]
-        },
-        {
-            "image" : "images/projects/POSTER DESA GANTEN LANDSCAPE.png",
-            "title": "Desa Ganten - Village Portal",
-            "bodyText": "- Official village website providing comprehensive information about Desa Ganten.\n - Developed using **PHP** and **Laravel Framework** for reliable performance.\n - Features tourism information, local news, and community services.\n - Fully responsive design optimized for mobile and desktop devices.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/rigel-sayudha/desaganten"
-                }
-            ],
-            "tags" : [
-                "PHP",
-                "Laravel",
-                "Website",
-                "Informasi Desa",
-                "Tailwind CSS"
-            ]
         }
     ]
 }
