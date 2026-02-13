@@ -12,7 +12,11 @@ import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
 
-const Chrono = React.lazy(() => import('react-chrono').then((mod) => ({ default: mod.Chrono })));
+const Chrono = React.lazy(() =>
+  import('react-chrono').then((mod) => ({
+    default: mod.Chrono,
+  }))
+);
 
 class ChronoErrorBoundary extends React.Component {
   constructor(props) {
@@ -67,31 +71,43 @@ function Education(props) {
   const { header } = props;
   const [data, setData] = useState(null);
   const [width, setWidth] = useState('50vw');
-  const [mode, setMode] = useState('VERTICAL_ALTERNATING');
+  const [mode, setMode] = useState('VERTICAL');
   const [cardHeight, setCardHeight] = useState(250);
+
   useEffect(() => {
+    let mounted = true;
     fetch(endpoints.education, {
       method: 'GET',
     })
       .then((res) => res.json())
-      .then((res) => setData(res))
+      .then((res) => mounted && setData(res))
       .catch((err) => err);
 
-    if (window?.innerWidth < 576) {
+    const updateLayout = () => {
+      const w = window?.innerWidth || 1024;
       setMode('VERTICAL');
-      setCardHeight(320);
-    } else {
-      setMode('VERTICAL_ALTERNATING');
-    }
-    if (window?.innerWidth < 576) {
-      setWidth('95vw');
-    } else if (window?.innerWidth >= 576 && window?.innerWidth < 768) {
-      setWidth('90vw');
-    } else if (window?.innerWidth >= 768 && window?.innerWidth < 1024) {
-      setWidth('75vw');
-    } else {
-      setWidth('50vw');
-    }
+
+      if (w < 576) {
+        setCardHeight(320);
+        setWidth('95vw');
+      } else if (w >= 576 && w < 768) {
+        setCardHeight(300);
+        setWidth('90vw');
+      } else if (w >= 768 && w < 1024) {
+        setCardHeight(280);
+        setWidth('75vw');
+      } else {
+        setCardHeight(250);
+        setWidth('50vw');
+      }
+    };
+
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
+    return () => {
+      mounted = false;
+      window.removeEventListener('resize', updateLayout);
+    };
   }, []);
 
   return (
@@ -134,7 +150,7 @@ function Education(props) {
                           <img
                             src={education.icon.src}
                             alt={education.icon.alt || education.cardTitle}
-                            style={{ width: 48, height: 48, marginBottom: 8 }}
+                            style={{ width: '48px', height: 'auto', maxWidth: '100%', marginBottom: 8 }}
                           />
                         )}
 
