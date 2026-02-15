@@ -72,7 +72,7 @@
             ]
         },
         {
-            "image" : "images/projects/ojeatv.jpg",
+            "image" : "images/projects/WEB OJEATV.png",
             "title": "Oje ATV - Offroad Adventure Rental",
             "bodyText": "- Business website for ATV rental services specializing in offroad adventures.\n - Built with **WordPress** for easy content management.\n - Responsive design created with **Elementor** page builder.", 
             "links": [
@@ -112,7 +112,7 @@
         {
             "image" : "images/projects/POSTER SD IT CENDEKIA LANSCAPE.png",
             "title": "SD IT Semesta Cendekia School Portal",
-            "bodyText": "- Comprehensive school portal website for SD IT Semesta Cendekia.\n - Built with **PHP** and **Laravel Framework** for robust backend.\n - Interactive frontend using **Alpine.js** and styled with **Tailwind CSS**.\n - Features include student management, announcements, and administrative tools.",
+            "bodyText": "- School portal based on Website for SD IT Semesta Cendekia..\n - Built with **PHP** and **Laravel Framework** for robust backend.\n - Interactive frontend using **Alpine.js** and styled with **Tailwind CSS**.\n - Features include student management, announcements, and administrative tools.\n - PDF Report generate feature",
             "links": [
                 {
                     "text": "GitHub",
@@ -149,7 +149,7 @@
         {
             "image" : "images/projects/POSTER DESA GANTEN LANDSCAPE.png",
             "title": "Desa Ganten - Village Portal",
-            "bodyText": "- Official village website providing comprehensive information about Desa Ganten.\n - Developed using **PHP** and **Laravel Framework** for reliable performance.\n - Features tourism information, local news, and community services.\n - Fully responsive design optimized for mobile and desktop devices.",
+            "bodyText": "- Official village website providing information system about Desa Ganten\n - Developed using PHP and Laravel Framework for reliable performance.\n - Features tourism information, local news, and community services.\n - Fully responsive design optimized for mobile and desktop devices.\n - Report creation services for specific purposes such as domicile certificates, marriage certificates, etc.\n - PDF generate for report.",
             "links": [
                 {
                     "text": "GitHub",

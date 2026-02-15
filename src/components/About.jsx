@@ -1,4 +1,3 @@
-// filepath: d:\laravel\dev-portfolio\src\components\About.jsx
 import React, { useState, useEffect, useContext } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
