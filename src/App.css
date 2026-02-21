@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
   align-items: center;
@@ -7,12 +6,13 @@
   height: 100vh;
   flex-direction: row;
 }
+
 .about-text {
   text-align: justify;
 }
 
 .navbar-custom {
-  font-size:large;
+  font-size: large;
 }
 
 .navbar__link {
@@ -36,7 +36,7 @@
   width: 0;
 }
 
- .navbar__link:hover::after {
+.navbar__link:hover::after {
   visibility: visible;
   width: 40%;
 }
@@ -105,7 +105,7 @@ section.timeline-card-content p.card-sub-title {
   margin-top: 10px;
 }
 
-section.timeline-card-content div.card-description > p {
+section.timeline-card-content div.card-description>p {
   font-size: 1.1em;
   margin-top: 10px;
   font-weight: 500;
@@ -131,6 +131,11 @@ section.timeline-card-content div.card-description > p {
 
 @media (max-width: 768px) {
 
+  .MainApp {
+    margin-top: 0;
+    padding-bottom: 88px;
+  }
+
   .navbar__link::after {
     background: none;
     content: "";
@@ -143,13 +148,17 @@ section.timeline-card-content div.card-description > p {
   .navbar__link--active::after {
     width: 0;
   }
-  
+
   .navbar__link--active:hover::after {
     width: 0;
   }
 
   .navbar__link:hover::after {
     width: 0;
+  }
+
+  .header {
+    font-size: 2em;
   }
 }
 
@@ -158,4 +167,3 @@ section.timeline-card-content div.card-description > p {
   font-weight: bold;
   margin-bottom: 25px;
 }
-

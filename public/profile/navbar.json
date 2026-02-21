@@ -1,43 +1,55 @@
 {
-    "logo" : {
+    "logo": {
         "source": "images/foto.png",
-        "height" : 45,
-        "width" : 50
+        "height": 45,
+        "width": 50
     },
     "sections": [
         {
             "title": "Home",
-            "href": "/"
+            "href": "/",
+            "icon": "🏠",
+            "bottomNav": true
         },
         {
             "title": "About",
-            "href": "/about"
+            "href": "/about",
+            "icon": "👤",
+            "bottomNav": true
         },
         {
             "title": "Achievements & Certifications",
-            "href": "/skills"
+            "href": "/skills",
+            "icon": "🏆",
+            "bottomNav": true
         },
         {
             "title": "Education",
-            "href": "/education"
+            "href": "/education",
+            "icon": "🎓",
+            "bottomNav": true
         },
         {
-            "title": "Professional Experience",
-            "href": "/experience"
+            "title": "Work Experience",
+            "href": "/experience",
+            "icon": "💼"
         },
         {
             "title": "Organizational Experience",
-            "href": "/organizational"
+            "href": "/organizational",
+            "icon": "🤝"
         },
         {
             "title": "Projects",
-            "href": "/projects"
+            "href": "/projects",
+            "icon": "💻",
+            "bottomNav": true
         },
         {
             "title": "Resume",
             "href": "https://drive.google.com/file/d/125NFeE2ZsFFqIrz-Tk9AkxZ0yXBfngQy/view?usp=sharing",
-            "type": "link"
+            "type": "link",
+            "icon": "📄"
         }
     ]
-
 }
