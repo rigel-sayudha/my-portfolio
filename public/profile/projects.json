@@ -1,6 +1,7 @@
 {
     "projects": [
         {
+            "image": "images/projects/CHATRIGEL.png",
             "title": "ChatRigel - AI Chatbot",
             "bodyText": "- Custom AI Chatbot Application.\n - Frontend built with **Nuxt**.\n - Backend API powered by **Laravel**.",
             "links": [
