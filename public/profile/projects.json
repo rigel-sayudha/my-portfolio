@@ -3,7 +3,7 @@
         {
             "image": "images/projects/CHATRIGEL.png",
             "title": "ChatRigel - AI Chatbot",
-            "bodyText": "- Custom AI Chatbot Application.\n - Frontend built with **Nuxt**.\n - Backend API powered by **Laravel**.\n - Multi AI Model such as ChatGPT 40, GPT 5.1, Gemini 3.1, Claude Sonnet 4.5, Claude Opus 4.6 and Grok 4.1.",
+            "bodyText": "- Custom AI Chatbot Application.\n - Frontend built with **Nuxt**.\n - Backend API powered by **Laravel**.\n - Multi AI Model such as ChatGPT 4o, GPT 5.1, Gemini 3.1, Claude Sonnet 4.5, Claude Opus 4.6 and Grok 4.1.",
             "links": [
                 {
                     "text": "GitHub",
@@ -20,7 +20,7 @@
         },
         {
             "image": "images/projects/",
-            "title": "East Kalimantan Explore Information",
+            "title": "Kaltim Explore",
             "bodyText": "- web application designed to showcase tourism destinations, news, and bookings for the East Borneo. \n - It utilizes Laravel Filament for the backend administration panel and Next.js / React for the frontend user interface.",
             "links": [
                 {
