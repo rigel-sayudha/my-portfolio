@@ -21,7 +21,7 @@
         {
             "image": "images/projects/POSTER KALTIMEXPLORE.png",
             "title": "Kaltim Explore",
-            "bodyText": "- web application designed to showcase tourism destinations, news, and bookings for the East Borneo. \n - It utilizes Laravel Filament for the backend administration panel and Next.js / React for the frontend user interface.",
+            "bodyText": "Welcome to **KaltimExplore** Information System. \n - Web application designed to showcase tourism destinations, news, and bookings for the East Borneo. \n - It utilizes Laravel Filament for the backend administration panel and Next.js / React for the frontend user interface.",
             "links": [
                 {
                     "text": "GitHub",
