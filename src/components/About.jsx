@@ -465,7 +465,7 @@ function About(props) {
                             rel="noopener noreferrer"
                             style={{ color: theme.accentColor, textDecoration: 'none' }}
                           >
-                            {data.name}
+                            Instagram
                           </a>
                         </div>
                       )}
@@ -480,7 +480,7 @@ function About(props) {
                             rel="noopener noreferrer"
                             style={{ color: theme.accentColor, textDecoration: 'none' }}
                           >
-                            {data.name}
+                            WhatsApp
                           </a>
                         </div>
                       )}
@@ -495,7 +495,7 @@ function About(props) {
                             rel="noopener noreferrer"
                             style={{ color: theme.accentColor, textDecoration: 'none' }}
                           >
-                            {data.name}
+                            LinkedIn
                           </a>
                         </div>
                       )}
@@ -508,7 +508,7 @@ function About(props) {
                             href={`tel:${data.contact.phone}`}
                             style={{ color: theme.accentColor, textDecoration: 'none' }}
                           >
-                            {data.name}
+                            Phone
                           </a>
                         </div>
                       )}
@@ -521,7 +521,7 @@ function About(props) {
                             href={`mailto:${data.contact.email}`}
                             style={{ color: theme.accentColor, textDecoration: 'none' }}
                           >
-                            {data.name}
+                            Email
                           </a>
                         </div>
                       )}
