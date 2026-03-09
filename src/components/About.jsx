@@ -343,190 +343,189 @@ function About(props) {
 
                   {/* Education Section */}
                   {data.education && (
-                  <div
-                    style={{
-                      ...styles.educationSection,
-                      borderLeftColor: theme.accentColor,
-                      backgroundColor: theme.highlightColor || 'transparent',
-                    }}
-                  >
-                    <div style={styles.educationTitle}>
-                      Educated
-                    </div>
-                    <div style={{ color: theme.accentColor, fontWeight: 'bold', marginBottom: 5 }}>
-                      {data.education.institution}
-                    </div>
-                    <p style={{ margin: 0, fontSize: '0.9em', color: theme.color }}>
-                      {data.education.degree}
-                      {' '}
-                      |
-                      {' '}
-                      {data.education.year}
-                    </p>
-                    {data.education.gpa && (
-                    <p style={{ margin: '5px 0 0 0', fontSize: '0.85em', color: theme.color }}>
-                      Cumulative GPA:
-                      {' '}
-                      {data.education.gpa}
-                    </p>
-                    )}
-
-                    {/* Education Documents Buttons */}
-                    {data.education.documents && (
                     <div
                       style={{
-                        marginTop: 15,
-                        display: 'flex',
-                        gap: 10,
-                        flexWrap: 'wrap',
+                        ...styles.educationSection,
+                        borderLeftColor: theme.accentColor,
+                        backgroundColor: theme.highlightColor || 'transparent',
                       }}
                     >
-                      {data.education.documents.diploma && (
-                      <a
-                        href={data.education.documents.diploma}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          padding: '8px 14px',
-                          backgroundColor: theme.accentColor || '#4a90e2',
-                          color: '#fff',
-                          borderRadius: 4,
-                          textDecoration: 'none',
-                          fontSize: '0.9em',
-                          fontWeight: 500,
-                          transition: 'all 0.3s ease',
-                          display: 'inline-block',
-                          border: 'none',
-                          cursor: 'pointer',
-                        }}
-                        onMouseEnter={(e) => {
-                          e.target.style.transform = 'translateY(-2px)';
-                          e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.transform = 'translateY(0)';
-                          e.target.style.boxShadow = 'none';
-                        }}
-                      >
-                        📄 Ijazah
-                      </a>
+                      <div style={styles.educationTitle}>
+                        Educated
+                      </div>
+                      <div style={{ color: theme.accentColor, fontWeight: 'bold', marginBottom: 5 }}>
+                        {data.education.institution}
+                      </div>
+                      <p style={{ margin: 0, fontSize: '0.9em', color: theme.color }}>
+                        {data.education.degree}
+                        {' '}
+                        |
+                        {' '}
+                        {data.education.year}
+                      </p>
+                      {data.education.gpa && (
+                        <p style={{ margin: '5px 0 0 0', fontSize: '0.85em', color: theme.color }}>
+                          Cumulative GPA:
+                          {' '}
+                          {data.education.gpa}
+                        </p>
                       )}
-                      {data.education.documents.transcript && (
-                      <a
-                        href={data.education.documents.transcript}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          padding: '8px 14px',
-                          backgroundColor: theme.accentColor || '#4a90e2',
-                          color: '#fff',
-                          borderRadius: 4,
-                          textDecoration: 'none',
-                          fontSize: '0.9em',
-                          fontWeight: 500,
-                          transition: 'all 0.3s ease',
-                          display: 'inline-block',
-                          border: 'none',
-                          cursor: 'pointer',
-                        }}
-                        onMouseEnter={(e) => {
-                          e.target.style.transform = 'translateY(-2px)';
-                          e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.transform = 'translateY(0)';
-                          e.target.style.boxShadow = 'none';
-                        }}
-                      >
-                        📋 Transkrip Nilai
-                      </a>
+
+                      {/* Education Documents Buttons */}
+                      {data.education.documents && (
+                        <div
+                          style={{
+                            marginTop: 15,
+                            display: 'flex',
+                            gap: 10,
+                            flexWrap: 'wrap',
+                          }}
+                        >
+                          {data.education.documents.diploma && (
+                            <a
+                              href={data.education.documents.diploma}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                padding: '8px 14px',
+                                backgroundColor: theme.accentColor || '#4a90e2',
+                                color: '#fff',
+                                borderRadius: 4,
+                                textDecoration: 'none',
+                                fontSize: '0.9em',
+                                fontWeight: 500,
+                                transition: 'all 0.3s ease',
+                                display: 'inline-block',
+                                border: 'none',
+                                cursor: 'pointer',
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.transform = 'translateY(-2px)';
+                                e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.transform = 'translateY(0)';
+                                e.target.style.boxShadow = 'none';
+                              }}
+                            >
+                              📄 Ijazah
+                            </a>
+                          )}
+                          {data.education.documents.transcript && (
+                            <a
+                              href={data.education.documents.transcript}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                padding: '8px 14px',
+                                backgroundColor: theme.accentColor || '#4a90e2',
+                                color: '#fff',
+                                borderRadius: 4,
+                                textDecoration: 'none',
+                                fontSize: '0.9em',
+                                fontWeight: 500,
+                                transition: 'all 0.3s ease',
+                                display: 'inline-block',
+                                border: 'none',
+                                cursor: 'pointer',
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.transform = 'translateY(-2px)';
+                                e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.transform = 'translateY(0)';
+                                e.target.style.boxShadow = 'none';
+                              }}
+                            >
+                              📋 Transkrip Nilai
+                            </a>
+                          )}
+                        </div>
                       )}
                     </div>
-                    )}
-                  </div>
                   )}
 
                   {/* Contact Info */}
                   {data.contact && (
-                  <div
-                    style={{
-                      ...styles.contactSection,
-                      backgroundColor: theme.highlightColor || 'transparent',
-                    }}
-                  >
-                    {data.contact.instagram && (
-                    <div style={{ ...styles.contactItem, color: theme.color }}>
-                      <span style={{ ...styles.contactIcon }}>
-                        <ContactIcons.Instagram color={theme.accentColor || '#4a90e2'} />
-                      </span>
-                      <a
-                        href={`https://instagram.com/${data.contact.instagram}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: theme.accentColor, textDecoration: 'none' }}
-                      >
-                        @
-                        {data.contact.instagram}
-                      </a>
+                    <div
+                      style={{
+                        ...styles.contactSection,
+                        backgroundColor: theme.highlightColor || 'transparent',
+                      }}
+                    >
+                      {data.contact.instagram && (
+                        <div style={{ ...styles.contactItem, color: theme.color }}>
+                          <span style={{ ...styles.contactIcon }}>
+                            <ContactIcons.Instagram color={theme.accentColor || '#4a90e2'} />
+                          </span>
+                          <a
+                            href={data.contact.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: theme.accentColor, textDecoration: 'none' }}
+                          >
+                            {data.name}
+                          </a>
+                        </div>
+                      )}
+                      {data.contact.whatsapp && (
+                        <div style={{ ...styles.contactItem, color: theme.color }}>
+                          <span style={{ ...styles.contactIcon }}>
+                            <ContactIcons.WhatsApp color={theme.accentColor || '#4a90e2'} />
+                          </span>
+                          <a
+                            href={data.contact.whatsapp}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: theme.accentColor, textDecoration: 'none' }}
+                          >
+                            {data.name}
+                          </a>
+                        </div>
+                      )}
+                      {data.contact.linkedin && (
+                        <div style={{ ...styles.contactItem, color: theme.color }}>
+                          <span style={{ ...styles.contactIcon }}>
+                            <ContactIcons.LinkedIn color={theme.accentColor || '#4a90e2'} />
+                          </span>
+                          <a
+                            href={data.contact.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: theme.accentColor, textDecoration: 'none' }}
+                          >
+                            {data.name}
+                          </a>
+                        </div>
+                      )}
+                      {data.contact.phone && (
+                        <div style={{ ...styles.contactItem, color: theme.color }}>
+                          <span style={{ ...styles.contactIcon }}>
+                            <ContactIcons.Phone color={theme.accentColor || '#4a90e2'} />
+                          </span>
+                          <a
+                            href={`tel:${data.contact.phone}`}
+                            style={{ color: theme.accentColor, textDecoration: 'none' }}
+                          >
+                            {data.name}
+                          </a>
+                        </div>
+                      )}
+                      {data.contact.email && (
+                        <div style={{ ...styles.contactItem, color: theme.color }}>
+                          <span style={{ ...styles.contactIcon }}>
+                            <ContactIcons.Email color={theme.accentColor || '#4a90e2'} />
+                          </span>
+                          <a
+                            href={`mailto:${data.contact.email}`}
+                            style={{ color: theme.accentColor, textDecoration: 'none' }}
+                          >
+                            {data.name}
+                          </a>
+                        </div>
+                      )}
                     </div>
-                    )}
-                    {data.contact.whatsapp && (
-                    <div style={{ ...styles.contactItem, color: theme.color }}>
-                      <span style={{ ...styles.contactIcon }}>
-                        <ContactIcons.WhatsApp color={theme.accentColor || '#4a90e2'} />
-                      </span>
-                      <a
-                        href={`https://wa.me/${data.contact.whatsapp}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: theme.accentColor, textDecoration: 'none' }}
-                      >
-                        WhatsApp
-                      </a>
-                    </div>
-                    )}
-                    {data.contact.linkedin && (
-                    <div style={{ ...styles.contactItem, color: theme.color }}>
-                      <span style={{ ...styles.contactIcon }}>
-                        <ContactIcons.LinkedIn color={theme.accentColor || '#4a90e2'} />
-                      </span>
-                      <a
-                        href={data.contact.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: theme.accentColor, textDecoration: 'none' }}
-                      >
-                        LinkedIn
-                      </a>
-                    </div>
-                    )}
-                    {data.contact.phone && (
-                    <div style={{ ...styles.contactItem, color: theme.color }}>
-                      <span style={{ ...styles.contactIcon }}>
-                        <ContactIcons.Phone color={theme.accentColor || '#4a90e2'} />
-                      </span>
-                      <a
-                        href={`tel:${data.contact.phone}`}
-                        style={{ color: theme.accentColor, textDecoration: 'none' }}
-                      >
-                        {data.contact.phone}
-                      </a>
-                    </div>
-                    )}
-                    {data.contact.email && (
-                    <div style={{ ...styles.contactItem, color: theme.color }}>
-                      <span style={{ ...styles.contactIcon }}>
-                        <ContactIcons.Email color={theme.accentColor || '#4a90e2'} />
-                      </span>
-                      <a
-                        href={`mailto:${data.contact.email}`}
-                        style={{ color: theme.accentColor, textDecoration: 'none' }}
-                      >
-                        {data.contact.email}
-                      </a>
-                    </div>
-                    )}
-                  </div>
                   )}
                 </Col>
 
@@ -693,23 +692,23 @@ function About(props) {
 
                   {/* Skills Section */}
                   {data.skills && data.skills.length > 0 && (
-                  <div style={{ marginTop: 30 }}>
-                    <div style={styles.skillsContainer}>
-                      {data.skills.map((skill) => (
-                        <div
-                          key={skill}
-                          style={{
-                            ...styles.skillBadge,
-                            borderColor: theme.accentColor,
-                            color: theme.accentColor,
-                            backgroundColor: theme.highlightColor || 'transparent',
-                          }}
-                        >
-                          {skill}
-                        </div>
-                      ))}
+                    <div style={{ marginTop: 30 }}>
+                      <div style={styles.skillsContainer}>
+                        {data.skills.map((skill) => (
+                          <div
+                            key={skill}
+                            style={{
+                              ...styles.skillBadge,
+                              borderColor: theme.accentColor,
+                              color: theme.accentColor,
+                              backgroundColor: theme.highlightColor || 'transparent',
+                            }}
+                          >
+                            {skill}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
                   )}
                 </Col>
               </Row>
